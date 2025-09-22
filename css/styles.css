@@ -188,7 +188,7 @@ footer a:hover {
 
 /* styles.css */
 .bio-img {
-  width:100%;
+  width:50%;
   max-width:200px;
   border-radius:1rem;
   object-fit:cover;
