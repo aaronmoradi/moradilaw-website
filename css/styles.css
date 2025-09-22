@@ -185,3 +185,11 @@ footer a:hover {
   .hero p { font-size: 1rem; }
   #contact .row { flex-direction: column; }
 }
+
+/* styles.css */
+.bio-img {
+  max-width: 250px; /* limits the width */
+  height: auto;     /* keeps aspect ratio */
+  display: block;
+  margin: 0 auto;   /* centers in container */
+}
