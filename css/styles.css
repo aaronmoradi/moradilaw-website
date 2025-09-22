@@ -47,6 +47,15 @@ body {
   font-weight: 600;
 }
 
+#contact .row {
+  align-items: stretch;
+}
+
+#contact iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 /* Footer */
 footer {
   background-color: #1a1a1a;
