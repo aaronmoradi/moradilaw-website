@@ -23,7 +23,13 @@ a:hover {
   color: white;
   text-align: center;
   padding: 120px 20px;
-  border-bottom: 5px solid #f0ad4e;
+
+  /* Center vertically + horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh; /* makes sure it's tall enough to center */
 }
 
 .hero h1 {
