@@ -188,10 +188,10 @@ footer a:hover {
 
 /* styles.css */
 .bio-img {
-  max-width: 250px; /* limits the width */
-  height: 250px;     /* keeps aspect ratio */
-  object-fit: cover;  /* ensures the image fills the circle without distortion */
-  display: block;
-  margin: 0 auto;     /* center horizontally */
-  border-radius: 50%; /* keep circle */
+  width:100%;
+  max-width:360px;
+  border-radius:1rem;
+  object-fit:cover;
+  height:auto;
+  display:block;
 }
