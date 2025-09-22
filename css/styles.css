@@ -2,6 +2,18 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+a {
+  color: #003366;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  color: #f0ad4e;
+  text-decoration: underline;
 }
 
 /* Hero Section */
@@ -11,6 +23,7 @@ body {
   color: white;
   text-align: center;
   padding: 120px 20px;
+  border-bottom: 5px solid #f0ad4e;
 }
 
 .hero h1 {
@@ -30,6 +43,7 @@ body {
 .practice-area h2 {
   font-weight: bold;
   margin-bottom: 40px;
+  color: #003366;
 }
 
 .practice-area h3 {
@@ -37,9 +51,21 @@ body {
   color: #003366;
 }
 
+.practice-area .card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.practice-area .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
 /* Contact Section */
 #contact h2 {
   font-weight: bold;
+  color: #003366;
 }
 
 #contact h5 {
@@ -56,6 +82,59 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Contact Form */
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+  outline: none;
+}
+
+.contact-form .btn {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #002244;
+  transform: translateY(-2px);
+}
+
+/* Social Links */
+#contact p a {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+#contact p a:hover {
+  color: #f0ad4e;
+}
+
 /* Footer */
 footer {
   background-color: #1a1a1a;
@@ -70,6 +149,7 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+  color: #ffd24d;
 }
 
 /* Buttons */
