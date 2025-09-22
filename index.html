@@ -6,11 +6,12 @@
   <title>Moradi Law Group, APC</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Moradi Law Group, APC</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -20,8 +21,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <a class="nav-link" href="#practice">Practice Areas</a></li>
-          <a href="#contact" class="btn btn-primary btn-lg mt-3">Contact Us #10</a>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#practice">Practice Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact 11</a></li>
         </ul>
       </div>
     </div>
@@ -33,6 +37,20 @@
     <div class="hero-content container text-center">
       <h1>Protecting Your Rights, Fighting for Justice</h1>
       <p>Specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer</p>
+      <a href="#contact" class="btn btn-primary btn-lg mt-3">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- About / Attorney Bio -->
+  <section id="about" class="container py-5 text-center">
+    <h2 class="mb-4">About Leeora B. Moradi</h2>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 mb-4">
+        <img src="https://via.placeholder.com/300x300.png?text=Attorney+Photo" alt="Leeora B. Moradi" class="img-fluid rounded-circle shadow-sm">
+      </div>
+      <div class="col-md-6">
+        <p>Leeora B. Moradi is an experienced attorney specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer. With over 15 years of dedicated legal practice, she ensures her clients receive personalized attention and aggressive representation. Certified by the State Bar Association, Leeora is committed to justice and client advocacy.</p>
+      </div>
     </div>
   </section>
 
@@ -42,18 +60,21 @@
     <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm p-4 h-100">
+          <i class="fas fa-briefcase fa-2x mb-3"></i>
           <h3>Workers' Compensation</h3>
           <p>Helping injured workers secure the benefits they deserve.</p>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm p-4 h-100">
+          <i class="fas fa-user-injured fa-2x mb-3"></i>
           <h3>Personal Injury</h3>
           <p>Dedicated to protecting victims of accidents and negligence.</p>
         </div>
       </div>
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm p-4 h-100">
+          <i class="fas fa-shield-alt fa-2x mb-3"></i>
           <h3>Defense of the Uninsured Employer</h3>
           <p>Providing strong defense and guidance for uninsured employers facing claims.</p>
         </div>
@@ -61,28 +82,92 @@
     </div>
   </section>
 
-  <!-- Contact + Map Side by Side -->
+  <!-- Testimonials -->
+  <section id="testimonials" class="container py-5 text-center">
+    <h2 class="mb-5">What Our Clients Say</h2>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <p class="testimonial-text">"Ms. Moradi handled my case with professionalism and care. I felt supported every step of the way!"</p>
+          <p><strong>- J. Smith</strong></p>
+        </div>
+        <div class="carousel-item">
+          <p class="testimonial-text">"The team at Moradi Law Group exceeded my expectations and secured the outcome I needed."</p>
+          <p><strong>- A. Johnson</strong></p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container py-5">
+    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            What is Workers' Compensation?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Workers' Compensation provides benefits to employees injured on the job, covering medical expenses and lost wages.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            How do I file a Personal Injury claim?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Contact our firm to discuss your case. We'll guide you through filing and representation.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            What if I am an uninsured employer facing a claim?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We provide experienced defense strategies and help minimize liabilities in compliance with the law.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact + Map -->
   <section id="contact" class="container py-5">
     <h2 class="text-center mb-4">Contact Us</h2>
     <div class="row">
-      <!-- Contact Form -->
       <div class="col-md-6 mb-4">
         <form class="contact-form" action="https://formspree.io" method="POST">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Your full name" required />
           </div>
-      
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
-      
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
-      
           <button class="btn btn-primary" type="submit">Send Message</button>
         </form>
 
@@ -96,19 +181,17 @@
 
           <h5>Stay Connected</h5>
           <p>
-            <a href="https://www.linkedin.com/company/moradilawgroup/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a> | 
-            <a href="https://www.facebook.com/moradilaw" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> | 
-            <a href="https://share.google/3MQMIJnjl23ZAIRrk" target="_blank" rel="noopener noreferrer" aria-label="Google">Google</a> | 
-            <a href="https://www.instagram.com/moradilawgroup/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> | 
-            <a href="https://www.yelp.com/biz/moradi-law-group-van-nuys" target="_blank" rel="noopener noreferrer" aria-label="Yelp">Yelp</a>
+            <a href="https://www.linkedin.com/company/moradilawgroup/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/moradilaw" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/moradilawgroup/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.yelp.com/biz/moradi-law-group-van-nuys" target="_blank" rel="noopener noreferrer" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
           </p>
         </div>
       </div>
 
-      <!-- Google Map -->
       <div class="col-md-6">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.420736069645!2d-118.45263982360503!3d34.18672497310664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29705971df999%3A0xdc098540ab6833a4!2sMoradi%20Law%20Group%2C%20APC%20%7C%20Leeora%20B.%20Moradi!5e0!3m2!1sen!2sus!4v1758577804802!5m2!1sen!2sus" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.420736069645!2d-118.45263982360503!3d34.18672497310664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29705971df999%3A0xdc098540ab6833a4!2sMoradi%20Law%20Group%2C%20APC%20%7C%20Leeora%20B.%20Moradi!5e0!3m2!1sen!2sus!4v1758577804802!5m2!1sen!2sus"
             width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
