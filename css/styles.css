@@ -188,10 +188,4 @@ footer a:hover {
 
 /* Attorney Bio Image */
 .bio-img {
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  border: 2px solid #003366;
 }
