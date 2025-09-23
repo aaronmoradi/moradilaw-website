@@ -186,12 +186,13 @@ footer a:hover {
   #contact .row { flex-direction: column; }
 }
 
-/* styles.css */
+/* Attorney Bio Image */
 .bio-img {
-  width: 150px;       /* set desired width */
-  height: 150px;      /* set same height for a square */
-  object-fit: cover;  /* crops image to fill the square without distortion */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;     /* center horizontally */
-  border-radius: 8px; /* optional: small rounded corners */
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #003366;
 }
