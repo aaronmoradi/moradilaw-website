@@ -190,7 +190,6 @@ footer a:hover {
 .bio-img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
   display: block;
   margin: 0 auto;
   border-radius: 8px;
