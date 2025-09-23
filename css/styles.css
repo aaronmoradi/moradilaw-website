@@ -188,10 +188,10 @@ footer a:hover {
 
 /* styles.css */
 .bio-img {
-  width:50%;
-  max-width:200px;
-  border-radius:1rem;
-  object-fit:cover;
-  height:auto;
-  display:block;
+  width: 150px;       /* set desired width */
+  height: 150px;      /* set same height for a square */
+  object-fit: cover;  /* crops image to fill the square without distortion */
+  display: block;
+  margin: 0 auto;     /* center horizontally */
+  border-radius: 8px; /* optional: small rounded corners */
 }
