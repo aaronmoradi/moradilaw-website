@@ -231,10 +231,10 @@ min-width: 250px;
 }
 
 /* Button Styles */
-.lakers-btn {
-  background-color: #FDB927;
-  color: #552583;
-  border: 2px solid #552583;
+.money-btn {
+  background-color: #3e9c35;
+  color: #036704;
+  border: 2px solid #036704;
   padding: 10px 20px;
   font-weight: bold;
   cursor: pointer;
@@ -245,7 +245,7 @@ min-width: 250px;
 }
 
 .money-btn:hover {
-  background-color: #036704;
+  background-color: #;
   color: #3e9c35;
   box-shadow: 0 0 10px #3e9c35;
 }
