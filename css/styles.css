@@ -186,21 +186,13 @@ footer a:hover {
   #contact .row { flex-direction: column; }
 }
 
-/* Bio Image Fix */
+/* Bio Image Circular Headshot */
 .bio-img {
-  max-width: 100%;
-  height: auto;
+  width: 200px;          /* fixed size for consistency */
+  height: 200px;         /* makes it a perfect square */
+  object-fit: cover;     /* crops to fill circle without distortion */
+  border-radius: 50%;    /* makes it circular */
+  border: 3px solid #003366; /* subtle professional border */
   display: block;
   margin: 0 auto;
-  border-radius: 12px;
-  border: 2px solid #003366;
-  object-fit: contain;
-}
-
-/* Optional: Add a max-height so tall images don’t stretch too big */
-@media (min-width: 768px) {
-  .bio-img {
-    max-width: 250px; /* adjust to taste */
-    max-height: 350px; /* keeps portrait size under control */
-  }
 }
