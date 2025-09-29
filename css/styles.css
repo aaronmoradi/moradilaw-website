@@ -361,16 +361,3 @@ min-width: 250px;
   align-items: center;
   justify-content: center;
 }
-
-/* Testimonials: lock height and center slides */
-#testimonialCarousel .carousel-inner {
-  overflow: hidden;
-  transition: height 0.35s ease;
-}
-#testimonialCarousel .carousel-item,
-#testimonialCarousel .carousel-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
