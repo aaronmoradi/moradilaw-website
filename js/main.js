@@ -29,7 +29,7 @@ document.querySelectorAll('.skill-bar').forEach(sb => {
   sb.style.background = `linear-gradient(90deg,var(--accent) ${level}%, #e6eefc ${level}%)`;
 });
 
-const button = document.getElementById('lakersBtn');
+const button = document.getElementById('cashBtn');
 const confettiContainer = document.getElementById('confetti-container');
 
 button.addEventListener('click', () => {
@@ -43,7 +43,7 @@ function createConfetti() {
   confetti.classList.add('confetti');
 
   // Randomly make it purple or yellow
-  confetti.classList.add(Math.random() > 0.5 ? 'confetti-purple' : 'confetti-yellow');
+  confetti.classList.add(Math.random() > 0.5 ? 'confetti-lightgreen' : 'confetti-darkgreen');
 
   // Random starting position
   confetti.style.left = Math.random() * window.innerWidth + 'px';
