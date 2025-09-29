@@ -1,6 +1,6 @@
 :root{
   --max:1100px; --accent:#1e90ff; --muted:#000000; --bg:#9DCEFF;
-  --glass: #00fe33;
+  --glass: #fe0000;
 }
 *{box-sizing:border-box}
 body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:#0f172a;background:var(--bg);line-height:1.5;margin:0;padding:0;}
@@ -203,7 +203,7 @@ outline: none;
 }
 
 .contact-form button {
-background: #9500c2;
+background: #1e90ff;
 color: white;
 padding: 0.8rem 1.5rem;
 font-size: 1rem;
@@ -215,7 +215,7 @@ transition: background 0.2s;
 }
 
 .contact-form button:hover {
-background: #7a00a1; /* slightly darker on hover */
+background: #1e8fff; /* slightly darker on hover */
 } 
 
 .contact-container {
