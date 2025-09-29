@@ -1,5 +1,5 @@
 :root{
-  --max:1100px; --accent:#9DCEFF; --muted:#000000; --bg:#1e90ff;
+  --max:1100px; --accent:#1e90ff; --muted:#000000; --bg:#9DCEFF;
   --glass: #00fe33;
 }
 *{box-sizing:border-box}
