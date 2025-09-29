@@ -286,3 +286,10 @@ min-width: 250px;
     opacity: 0;
   }
 }
+
+/* Testimonials */
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
