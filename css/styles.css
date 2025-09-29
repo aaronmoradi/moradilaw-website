@@ -179,20 +179,18 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.hero-photo img {
+  width:100%;
+  max-width:360px;
+  border-radius:1rem;
+  object-fit:cover;
+  height:auto;
+  display:block;
+}
+
 /* Responsive Enhancements */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1rem; }
   #contact .row { flex-direction: column; }
-}
-
-/* Bio Image Circular Headshot */
-.bio-img {
-  width: 200px;          /* fixed size for consistency */
-  height: 200px;         /* makes it a perfect square */
-  object-fit: cover;     /* crops to fill circle without distortion */
-  border-radius: 50%;    /* makes it circular */
-  border: 3px solid #003366; /* subtle professional border */
-  display: block;
-  margin: 0 auto;
 }
