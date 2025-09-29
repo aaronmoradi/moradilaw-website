@@ -353,3 +353,11 @@ min-width: 250px;
 .carousel-nav .current-slide {
   background: #333;
 }
+
+.carousel,
+.carousel-track,
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

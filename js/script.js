@@ -22,6 +22,11 @@ slides.forEach((slide, index) => {
   slide.style.left = slideWidth * index + "px";
 });
 
+// lock carousel container height to tallest slide
+const carousel = document.querySelector(".carousel");
+const maxHeight = Math.max(...slides.map(slide => slide.offsetHeight));
+carousel.style.height = maxHeight + "px";
+
 const moveToSlide = (track, currentSlide, targetSlide) => {
   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
   currentSlide.classList.remove("current-slide");
