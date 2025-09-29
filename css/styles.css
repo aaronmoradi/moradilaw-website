@@ -1,6 +1,6 @@
 :root{
-  --max:1100px; --accent:#9500c2; --muted:#000000; --bg:#ffffff;
-  --glass: #e79aff;
+  --max:1100px; --accent:#0066ff; --muted:#000000; --bg:#ff0000;
+  --glass: #00fe33;
 }
 *{box-sizing:border-box}
 body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:#0f172a;background:var(--bg);line-height:1.5}
