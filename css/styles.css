@@ -56,7 +56,7 @@ body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;c
 .typing-header {
   font-size:10rem;
   font-weight:bold;
-  color:#ffffff;
+  color:#1e90ff;
   white-space:nowrap;
   overflow:hidden;
   margin: 0;        /* remove default top/bottom margin */
