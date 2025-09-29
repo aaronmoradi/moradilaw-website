@@ -1,219 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moradi Law Group, APC</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aaron Moradi</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Aaron Moradi: Resume, Projects, Experience, Contact...." />
+  <meta property="og:title" content="Aaron Moradi's Website'" />
+  <meta property="og:description" content="Aaron Moradi's Portfolio and Experience" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aaronmoradi.com" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="icon" href="/assets/img/sface.png" />
+  <!-- structured data (resume snippet) -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Aaron Moradi",
+    "url": "https://aaronmoradi.com",
+    "sameAs": ["https://github.com/aaronmoradi","https://www.linkedin.com/in/aaronmoradi>"],
+    "jobTitle": "Recent Graduate",
+    "worksFor": {"@type":"Organization","name":"Self"}
+  }
+  </script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#top">Moradi Law Group, APC</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" aria-controls="navbarNav" 
-              aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#practice">Practice Areas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gethelp">Get Help 43</a></li>
-        </ul>
-      </div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/">Aaron Moradi</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#number">Test #44</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#life">Life</a>
+        <a href="/assets/AaronMoradiResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content container text-center">
-      <h1>Protecting Your Rights, Fighting for Justice</h1>
-      <p>Specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer</p>
-      <a href="#gethelp" class="btn btn-primary btn-lg mt-3">Get Help</a>
-    </div>
-  </section>
-
-  <!-- About / Attorney Bio -->
-  <section id="about" class="hero">
-      <div class="hero-photo">
-        <img src="assets/img/LeeoraMoradi.png" alt="Leeora B. Moradi, Attorney">
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <!-- LEFT COLUMN (text) -->
+        <div class="hero-text">
+          <h1>Hello World! My name is <br/> Aaron Moradi and I am a...</h1>
+          <h1 class="typing-header">
+            <span class="text"></span><span class="cursor">|</span>
+          </h1>
+          <p class="lead">I pride myself on being professional, creative, determined, and personable.</p>
+        </div>
+    
+        <!-- RIGHT COLUMN (photo) -->
+        <div class="hero-photo">
+          <img src="/assets/img/AaronGrad.jpg" alt="Photo of Aaron Moradi" />
+        </div>
+          <script>
+            const textElement = document.querySelector('.typing-header .text');
+            const phrases = [
+              " Web Developer",
+              " Creative Coder",
+              " Problem Solver",
+              " Computer Scientist"
+            ];
+          
+            let currentPhrase = 0;
+            let currentChar = 0;
+            let typing = true;
+          
+            function typeEffect() {
+              const phrase = phrases[currentPhrase];
+          
+              if (typing) {
+                textElement.textContent += phrase.charAt(currentChar);
+                currentChar++;
+                if (currentChar === phrase.length) {
+                  typing = false;
+                  setTimeout(typeEffect, 1500); // Wait before deleting
+                  return;
+                }
+              } else {
+                textElement.textContent = phrase.substring(0, currentChar - 1) || "\u00A0";
+                currentChar--;
+                if (currentChar === 1) {
+                  typing = true;
+                  currentPhrase = (currentPhrase + 1) % phrases.length;
+                }
+              }
+          
+              setTimeout(typeEffect, typing ? 100 : 50); // Typing speed / deleting speed
+            }
+          
+            window.onload = typeEffect;
+          </script>          
       </div>
-        <h2>About Leeora B. Moradi</h2>
-        <p>Leeora B. Moradi is an experienced attorney specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer. With over 15 years of dedicated legal practice, she ensures her clients receive personalized attention and aggressive representation. Certified by the State Bar Association, Leeora is committed to justice and client advocacy.</p>
-    </div>
-  </section>
-
-  <!-- Practice Areas -->
-  <section id="practice" class="practice-area container text-center">
-    <h2 class="mb-5"><strong>Our Practice Areas</strong></h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm p-4 h-100">
-          <i class="fas fa-briefcase fa-2x mb-3 text-primary"></i>
-          <h3>Workers' Compensation</h3>
-          <p>Helping injured workers secure the benefits they deserve.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm p-4 h-100">
-          <i class="fas fa-user-injured fa-2x mb-3 text-primary"></i>
-          <h3>Personal Injury</h3>
-          <p>Dedicated to protecting victims of accidents and negligence.</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm p-4 h-100">
-          <i class="fas fa-shield-alt fa-2x mb-3 text-primary"></i>
-          <h3>Defense of the Uninsured Employer</h3>
-          <p>Providing strong defense and guidance for uninsured employers facing claims.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="container py-5 text-center">
-    <h2 class="mb-5">What Our Clients Say</h2>
-    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <p class="testimonial-text">"Moradi Law Group is a fair and honest Corporation. It has always been an honor to me to have been represented by this company. If you're tired of not getting the right help you need for your injury do not hesitate to call this company I stand by it."</p>
-          <p><strong>- L. Gray</strong></p>
-        </div>
-        <div class="carousel-item">
-          <p class="testimonial-text">"I am very pleased with the excellent work that this law firm did for my worker's compensation case. Ms. Moradi was always available for questions and got a great result for my case. I strongly recommend this firm to anyone if you are looking for an honest and professional attorney."</p>
-          <p><strong>- K. Malekakhlagh</strong></p>
-        </div>
-        <div class="carousel-item">
-          <p class="testimonial-text">"She is an excellent attorney. She was quick to respond and precise when I had questions. She is quite knowledgeable. Overall, I'm happy with her work and would gladly recommend her to anyone. I value the time, effort, and hard work you put into my case, so thank you very much."</p>
-          <p><strong>- K. Zaroukian</strong></p>
-        </div>
-        <div class="carousel-item">
-          <p class="testimonial-text">"I recently had the pleasure of working with Leeora for my legal needs, and I couldn't be more satisfied with the experience. From the initial consultation to the resolution of my case, she was professional, knowledgeable, and genuinely caring. She took the time to listen to my concerns and provided clear, concise advice every step of the way. Her attention to detail and commitment to achieving the best outcome for me was impressive. I highly recommend Moradi Law Group to anyone seeking reliable and effective legal representation."</p>
-          <p><strong>- S. Labib</strong></p>
+    </section>
+    
+    <section id="about" class="wrap about reveal">
+      <h2>About</h2>
+      <div class="grid two-col">
+        <div>
+          <p>I'm a recent Computer Science gradute from Syracuse University, exploring opportunities for full-time positions. I love improving people's lives by creating impactful products and providing support to those who need it.</p>
+          <p>Programming Languages: <strong>Python</strong>, <strong> C</strong>, HTML, CSS, Java, Javascript, Racket, and Haskell.</p>
+          <p>Outside Computer Science: I love playing/watching basketball, enjoying music, and art.</p>
+          <p>I was born and raised in Los Angeles, California.</p>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="container py-5">
-    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-            What is Workers' Compensation?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Workers' Compensation provides benefits to employees injured on the job, covering medical expenses and lost wages.
+    <section id="projects" class="wrap reveal">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button data-filter="*" class="active">All</button>
+          <button data-filter="website">Website</button>
+          <button data-filter="data">Data</button>
+          <button data-filter="encryption">Encryption</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Example card -->
+        <article class="card" data-tags="website">
+          <img src="/assets/img/websitess.png" alt="Website screenshot" />
+          <div class="card-body">
+            <h3>Website</h3>
+            <p>Designed and created my own website to display information about myself and to engage networking opportunities.
+            <br>
+            <br>
+            <br>
+            </p>
+            <p class="meta">HTML • CSS • JavaScript</p>
+            <p class="card-links">
+              <a href="https://aaronmoradi.com" target="_blank" rel="noopener">Website</a>
+              <a>|</a>
+              <a href="https://github.com/aaronmoradi/aaronmoradi.github.io" target="_blank" rel="noopener">GitHub</a>
+            </p>
           </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-            How do I file a Personal Injury claim?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Contact our firm to discuss your case. We'll guide you through filing and representation.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-            What if I am an uninsured employer facing a claim?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            We provide experienced defense strategies and help minimize liabilities in compliance with the law.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </article>
 
-  <!-- Contact + Map -->
-  <section id="gethelp" class="container py-5">
-    <h2 class="text-center mb-4"> Get Help</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <form class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
+        <article class="card" data-tags="data">
+          <img src="/assets/img/DataMining.png" alt="Data Mining screenshot" />
+          <div class="card-body">
+            <h3>Data Mining Project</h3>
+            <p>Comparative Sentiment Analysis of X (Twitter) and Bluesky.<br>
+            <br>
+            <br>
+            <br>
+            </p>
+            <p class="meta">Python • Data</p>
+            <p class="card-links">
+              <a href="/assets/DataMiningPresentation.pdf" target="_blank">Presentation</a>
+              <a>|</a>
+              <a href="https://github.com/TownsendSP/Comparative_Sentiment_Analysis" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-tags="encryption">
+          <img src="/assets/img/SU.png" alt="SU screenshot" />
+          <div class="card-body">
+            <h3>Encryption Project</h3>
+            <p>This project is designed for taking in a text file, compressing it into binary digits, and decrypting it back into its original state.
+            <br>
+            <br>
+            </p>
+            <p class="meta">Python • Collaboration</p>
+            <p class="card-links">
+              <a href="https://github.com/aaronmoradi/M013-Group12" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="life" class="wrap reveal">
+      <h2>Life</h2>
+      <div class="resume-row">
+        <div class="resume-left">
+          <h3><u>Education</u></h3>
+          <ol class="timeline">
+            <li>
+              <p><strong>Syracuse University - </strong>College of Engineering & Computer Science <strong>May 2025</strong></p>
+              <p>Bachelor of Science, Computer Science</p>
+              <p> Minor, Engineering & Computer Science Management</p>
+              <p>Cum Laude</p>
+            </li>
+            <!-- more items -->
+          </ol>
+          <h3><u>Experience</u></h3>
+          <ol class="timeline">
+            <li>
+              <p><strong>Data Science Analyst Intern,</strong><em> PlanetArt,</em> Calabasas, CA</p>
+              <p>June 2024 – August 2024</p>
+              <p><strong>Panel Member,</strong><em> Engineering and Computer Science Dean’s Advisory Panel,</em> Syracuse, NY</p>
+              <p>May 2022 – May 2025</p>
+              <p><strong>Guest Services,</strong><em> Barnes Center at The Arch,</em> Syracuse, NY</p>
+              <p>August 2022 – May 2025</p>
+            </li>
+            <!-- more items -->
+          </ol>
+        </div>
+
+        <aside class="resume-right">
+          <div class="skills">
+            <h4>Programming Languages</h4>
+            <div class="skill">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">C</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">HTML</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">CSS</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:30%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Javascript</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+            </div>
+        </aside>
+        
+      </div>
+    </section>
+
+    <section id="contact" class="wrap reveal">
+      <h2>Contact</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>Complete this contact form to reach out to me</p>
+          <p>Email: <a href="mailto:aaronmoradi2@gmail.com">aaronmoradi2@gmail.com</a></p>
+          <a href="https://www.linkedin.com/in/aaronmoradi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    
+        <!-- Formspree example -->
+        <form class="contact-form" action="https://formspree.io/f/xdklynry" method="POST">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Your full name" required />
           </div>
+      
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
+      
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
-          <button class="btn btn-primary" type="submit">Send Message</button>
+      
+          <button class="btn" type="submit">Send Message</button>
         </form>
-
-        <div class="mt-4">
-          <h4>Office Information</h4>
-          <p><strong>Moradi Law Group, APC</strong><br>
-          14545 Victory Blvd. #403<br>
-          Van Nuys, CA 91411<br>
-          Email: <a href="mailto:moradilawgroup@gmail.com" target="_blank" rel="noopener noreferrer">moradilawgroup@gmail.com</a><br>
-          Phone: <a href="tel:+18187811579">(818) 781-1579</a></p>
-
-          <h5>Stay Connected</h5>
-          <p>
-            <a href="https://www.linkedin.com/company/moradilawgroup/posts/?feedView=all" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.facebook.com/moradilaw" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i> Facebook</a>
-            <a href="https://www.instagram.com/moradilawgroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.yelp.com/biz/moradi-law-group-van-nuys" target="_blank" rel="noopener noreferrer"><i class="fab fa-yelp"></i> Yelp</a>
-          </p>
-        </div>
       </div>
+    </section>      
 
-      <div class="col-md-6">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.420736069645!2d-118.45263982360503!3d34.18672497310664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29705971df999%3A0xdc098540ab6833a4!2sMoradi%20Law%20Group%2C%20APC%20%7C%20Leeora%20B.%20Moradi!5e0!3m2!1sen!2sus!4v1758577804802!5m2!1sen!2sus"
-            width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      © <span id="year"></span> Aaron Moradi | 
+      <a href="/assets/AaronMoradiResume.pdf" target="_blank">Resume</a> • 
+      <a href="https://github.com/aaronmoradi" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
-  </section>
+    <button class="lakers-btn" id="lakersBtn">Go Lakers!</button>
 
-  <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p class="mb-1">&copy; 2025 Moradi Law Group, APC. All Rights Reserved.</p>
-      <p class="small">
-        14545 Victory Blvd. #403, Van Nuys, CA 91411 | 
-        <a href="mailto:moradilawgroup@gmail.com" target="_blank" rel="noopener noreferrer">moradilawgroup@gmail.com</a> | 
-        <a href="tel:+18187811579">(818) 781-1579</a>
-      </p>
-    </div>
-  </footer>
+    <!-- Container for confetti -->
+    <div id="confetti-container"></div>  </footer>
+  
+<!-- This might need to be removed just be mindful-->
+  <script>
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+      const level = bar.dataset.level;
+      bar.style.width = level + '%';
+    });
+  </script>  
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
