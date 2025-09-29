@@ -7,7 +7,7 @@
 
   <!-- SEO & Social -->
   <meta name="description" content="Moradi Law Group, APC: Law firm covering Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer." />
-  <meta property="og:title" content="Moradi Law Group's Website" />
+  <meta property="og:title" content="Moradi Law Group's Website'" />
   <meta property="og:description" content="Leeora B. Moradi, Attorney at Law" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://moradilaw.com" />
@@ -15,13 +15,25 @@
 
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="icon" href="assets/img/MoradiLogo.png" />
+  <!-- structured data (resume snippet) -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Leeora B. Moradi",
+    "url": "https://moradilaw.com",
+    "sameAs": ["https://moradilawgroup.com"],
+    "jobTitle": "Attorney at Law",
+    "worksFor": {"@type":"Organization","name":"Moradi Law Group, APC"}
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="/">MORADI LAW GROUP, APC</a>
       <nav class="nav" aria-label="Main">
-        <a href="#number">Test #54</a>
+        <a href="#number">Test #55</a>
         <a href="#about">About</a>
         <a href="#practiceareas">Practice Areas</a>
         <a href="#testimonials">Testimonials</a>
@@ -29,7 +41,7 @@
         <a href="#gethelp" class="cta">Get Help</a>
       </nav>
 
-      <!-- Language Selector -->
+            <!-- Language Selector -->
       <select id="languageSelector">
         <option value="en">English</option>
         <option value="es">Español</option>
@@ -40,58 +52,225 @@
   <main>
     <section class="hero">
       <div class="wrap">
+        <!-- LEFT COLUMN (text) -->
         <div class="hero-text">
-          <h1 class="hero-heading"></h1>
+          <h1>Hi! I am Leeora B. Moradi, Attorney at Law, and I specialize in...</h1>
           <h1 class="typing-header">
             <span class="text"></span><span class="cursor">|</span>
           </h1>
-          <p class="lead"></p>
+          <p class="lead">Helping you tackle legal issues with clarity, expertise, and results.</p>
         </div>
+    
+        <!-- RIGHT COLUMN (photo) -->
         <div class="hero-photo">
           <img src="assets/img/LeeoraMoradi.png" alt="Photo of Leeora B. Moradi" />
+        </div>
+          <script>
+            const textElement = document.querySelector('.typing-header .text');
+            const phrases = [
+              " Worker's Compensation",
+              " Personal Injury",
+              " Defense of the Uninsured Employer",
+            ];
+          
+            let currentPhrase = 0;
+            let currentChar = 0;
+            let typing = true;
+          
+            function typeEffect() {
+              const phrase = phrases[currentPhrase];
+          
+              if (typing) {
+                textElement.textContent += phrase.charAt(currentChar);
+                currentChar++;
+                if (currentChar === phrase.length) {
+                  typing = false;
+                  setTimeout(typeEffect, 1500); // Wait before deleting
+                  return;
+                }
+              } else {
+                textElement.textContent = phrase.substring(0, currentChar - 1) || "\u00A0";
+                currentChar--;
+                if (currentChar === 1) {
+                  typing = true;
+                  currentPhrase = (currentPhrase + 1) % phrases.length;
+                }
+              }
+          
+              setTimeout(typeEffect, typing ? 100 : 50); // Typing speed / deleting speed
+            }
+          
+            window.onload = typeEffect;
+          </script>          
+      </div>
+    </section>
+    
+    <section id="about" class="wrap about reveal">
+      <h2>About</h2>
+      <div class="grid two-col">
+        <div>
+          <p>Leeora B. Moradi is an experienced attorney specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer. With over 15 years of dedicated legal practice, she ensures her clients receive personalized attention and aggressive representation. Certified by the State Bar Association, Leeora is committed to justice and client advocacy.</p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="wrap about reveal">
-      <h2 class="about-title"></h2>
-      <p class="about-text"></p>
-    </section>
-
     <section id="practiceareas" class="wrap reveal">
-      <h2 class="practice-title"></h2>
+      <div class="section-head">
+        <h2>Practice Areas</h2>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button data-filter="*" class="active">All</button>
+          <button data-filter="wc">Workers' Compensation</button>
+          <button data-filter="data">Personal Injury</button>
+          <button data-filter="encryption">Defense of the Uninsured Employer</button>
+        </div>
+      </div>
+
       <div class="projects-grid" id="projects-grid">
+        <!-- Example card -->
         <article class="card" data-tags="wc">
           <img src="assets/img/wc.jpg" alt="Stick figure injured worker" />
           <div class="card-body">
-            <h3 class="card-title"></h3>
-            <p class="card-desc"></p>
+            <h3>Workers' Compensation</h3>
+            <p>Workers' compensation is a system designed to provide financial and medical benefits to employees who are injured or become ill as a result of their job. It ensures that workers receive the care and support they need while protecting employers from lawsuits related to workplace injuries, helping maintain a safer and more accountable work environment.
+            <br>
+            <br>
+            <br>
+            </p>
+            <p class="meta">HTML • CSS • JavaScript</p>
+            <p class="card-links">
+              <a href="https://aaronmoradi.com" target="_blank" rel="noopener">Website</a>
+              <a>|</a>
+              <a href="https://github.com/aaronmoradi/aaronmoradi.github.io" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-tags="data">
+          <img src="/assets/img/DataMining.png" alt="Data Mining screenshot" />
+          <div class="card-body">
+            <h3>Data Mining Project</h3>
+            <p>Comparative Sentiment Analysis of X (Twitter) and Bluesky.<br>
+            <br>
+            <br>
+            <br>
+            </p>
+            <p class="meta">Python • Data</p>
+            <p class="card-links">
+              <a href="/assets/DataMiningPresentation.pdf" target="_blank">Presentation</a>
+              <a>|</a>
+              <a href="https://github.com/TownsendSP/Comparative_Sentiment_Analysis" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card" data-tags="encryption">
+          <img src="/assets/img/SU.png" alt="SU screenshot" />
+          <div class="card-body">
+            <h3>Encryption Project</h3>
+            <p>This project is designed for taking in a text file, compressing it into binary digits, and decrypting it back into its original state.
+            <br>
+            <br>
+            </p>
+            <p class="meta">Python • Collaboration</p>
+            <p class="card-links">
+              <a href="https://github.com/aaronmoradi/M013-Group12" target="_blank" rel="noopener">GitHub</a>
+            </p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="wrap reveal">
-      <h2 class="contact-title"></h2>
-      <div class="contact-container">
-        <p class="contact-info"></p>
-        <form class="contact-form" action="https://formspree.io/f/xdklynry" method="POST">
-          <div class="form-group">
-            <label for="name" class="label-name"></label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email" class="label-email"></label>
-            <input type="email" id="email" name="_replyto" required />
-          </div>
-          <div class="form-group">
-            <label for="message" class="label-message"></label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-          <button class="btn" type="submit"></button>
-        </form>
+    <section id="life" class="wrap reveal">
+      <h2>Life</h2>
+      <div class="resume-row">
+        <div class="resume-left">
+          <h3><u>Education</u></h3>
+          <ol class="timeline">
+            <li>
+              <p><strong>Syracuse University - </strong>College of Engineering & Computer Science <strong>May 2025</strong></p>
+              <p>Bachelor of Science, Computer Science</p>
+              <p> Minor, Engineering & Computer Science Management</p>
+              <p>Cum Laude</p>
+            </li>
+            <!-- more items -->
+          </ol>
+          <h3><u>Experience</u></h3>
+          <ol class="timeline">
+            <li>
+              <p><strong>Data Science Analyst Intern,</strong><em> PlanetArt,</em> Calabasas, CA</p>
+              <p>June 2024 – August 2024</p>
+              <p><strong>Panel Member,</strong><em> Engineering and Computer Science Dean’s Advisory Panel,</em> Syracuse, NY</p>
+              <p>May 2022 – May 2025</p>
+              <p><strong>Guest Services,</strong><em> Barnes Center at The Arch,</em> Syracuse, NY</p>
+              <p>August 2022 – May 2025</p>
+            </li>
+            <!-- more items -->
+          </ol>
+        </div>
+
+        <aside class="resume-right">
+          <div class="skills">
+            <h4>Programming Languages</h4>
+            <div class="skill">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">C</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">HTML</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">CSS</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:30%"></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Javascript</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:25%"></div></div>
+            </div>
+        </aside>
+        
       </div>
     </section>
+
+    <section id="contact" class="wrap reveal">
+      <h2>Contact</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p>Complete this contact form to reach out to me</p>
+          <p>Email: <a href="mailto:aaronmoradi2@gmail.com">aaronmoradi2@gmail.com</a></p>
+          <a href="https://www.linkedin.com/in/aaronmoradi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    
+        <!-- Formspree example -->
+        <form class="contact-form" action="https://formspree.io/f/xdklynry" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+          </div>
+      
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
+          </div>
+      
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+      
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>      
+
   </main>
 
   <footer class="site-footer">
@@ -100,9 +279,20 @@
       <a href="/assets/AaronMoradiResume.pdf" target="_blank">Resume</a> • 
       <a href="https://github.com/aaronmoradi" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
-  </footer>
+    <button class="lakers-btn" id="lakersBtn">Go Lakers!</button>
 
-  <!-- Scripts -->
-  <script src="/js/language.js"></script>
+    <!-- Container for confetti -->
+    <div id="confetti-container"></div>  </footer>
+  
+<!-- This might need to be removed just be mindful-->
+  <script>
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+      const level = bar.dataset.level;
+      bar.style.width = level + '%';
+    });
+  </script>  
+
+  <script src="/js/main.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
