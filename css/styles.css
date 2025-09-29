@@ -186,17 +186,21 @@ footer a:hover {
   #contact .row { flex-direction: column; }
 }
 
-/* replace .bio-img section */
+/* Bio Image Fix */
 .bio-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 2px solid #003366;
+  object-fit: contain;
 }
 
-@media (min-width: 992px) {
-  .bio-img { width: 160px; height: 160px; }
+/* Optional: Add a max-height so tall images don’t stretch too big */
+@media (min-width: 768px) {
+  .bio-img {
+    max-width: 250px; /* adjust to taste */
+    max-height: 350px; /* keeps portrait size under control */
+  }
 }
