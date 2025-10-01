@@ -387,9 +387,9 @@ min-width: 250px;
 }
 
 /* Hide the default Google branding (optional, but allowed) */
-.goog-te-gadget span {
+/* .goog-te-gadget span {
   display: none !important;
 }
 .goog-te-gadget img {
   display: none !important;
-}
+} */
