@@ -362,11 +362,11 @@ min-width: 250px;
   justify-content: center;
 }
 
-/* Container styling */
+/* Container styling
 #translate-container {
   text-align: right; /* Puts it in the top-right */
-  margin: 10px;
-}
+  /* margin: 10px;
+} */
 
 /* Override Google styles */
 #google_translate_element {
