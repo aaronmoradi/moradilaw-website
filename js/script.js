@@ -1,11 +1,11 @@
 if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  history.scrollRestoration = 'manual';
+}
 
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        window.scrollTo(top); // negative values aren't needed
-    }, 0);
+window.addEventListener('load', function () {
+  setTimeout(() => {
+    window.scrollTo(top); // negative values aren't needed
+  }, 0);
 });
 
 const track = document.querySelector(".carousel-track");
@@ -77,15 +77,44 @@ dotsNav.addEventListener("click", e => {
 
 const customTranslations = {
   es: [
-            " CDMX",
-            " HOLA",
-            " Gracias",
-            " No!"
-          ],
+    " CDMX",
+    " HOLA",
+    " Gracias",
+    " No!"
+  ],
   fa: [
-            " IRAN",
-            " PERSIA",
-            " SMH",
-            " AHHH"
-          ]
+    " IRAN",
+    " PERSIA",
+    " SMH",
+    " AHHH"
+  ]
 };
+
+function setCustomTranslation() {
+  // Find the current Google Translate language
+  const select = document.querySelector(".goog-te-combo");
+  if (!select) return;
+
+  const lang = select.value; // e.g. "es", "fa", "en"
+  const h1 = document.getElementById("custom-translate");
+
+  if (customTranslations[lang]) {
+    h1.innerText = customTranslations[lang];
+  } else {
+    h1.innerText = customTranslations["en"]; // fallback to English
+  }
+}
+
+// Attach listener once Google Translate is ready
+document.addEventListener("DOMContentLoaded", function () {
+  // MutationObserver to detect dropdown being added by Google
+  const observer = new MutationObserver(() => {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.addEventListener("change", setCustomTranslation);
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
