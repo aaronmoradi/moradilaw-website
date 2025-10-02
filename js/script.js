@@ -1,4 +1,3 @@
-// js/script.js (replace your current file with this)
 
 // keep scroll restoration behavior
 if ('scrollRestoration' in history) {
@@ -210,3 +209,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(document.body, { childList: true, subtree: true });
 });
+
+const attachSelect = (selectEl) => {
+  if (!selectEl) return;
+  console.log("Google Translate dropdown found:", selectEl.value);
+  changeLanguage(selectEl.value);
+  selectEl.addEventListener('change', () => {
+    console.log("Language changed:", selectEl.value);
+    changeLanguage(selectEl.value);
+  });
+};
