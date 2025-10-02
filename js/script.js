@@ -74,3 +74,18 @@ dotsNav.addEventListener("click", e => {
   moveToSlide(track, currentSlide, targetSlide);
   updateDots(currentDot, targetDot);
 });
+
+const customTranslations = {
+  es: [
+            " CDMX",
+            " HOLA",
+            " Gracias",
+            " No!"
+          ],
+  fa: [
+            " IRAN",
+            " PERSIA",
+            " SMH",
+            " AHHH"
+          ]
+};
