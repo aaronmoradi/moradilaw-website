@@ -1,118 +1,210 @@
+// js/script.js (replace your current file with this)
+
+// keep scroll restoration behavior
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-
 window.addEventListener('load', function () {
   setTimeout(() => {
-    window.scrollTo(top); // negative values aren't needed
+    window.scrollTo(0, 0);
   }, 0);
 });
 
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const nextButton = document.querySelector(".carousel-button-right");
-const prevButton = document.querySelector(".carousel-button-left");
-const dotsNav = document.querySelector(".carousel-nav");
-const dots = Array.from(dotsNav.children);
+/* --- Safe carousel init (only runs if your custom carousel exists) --- */
+(function safeCarouselInit() {
+  const track = document.querySelector(".carousel-track");
+  if (!track) return; // nothing to do if custom carousel isn't in DOM
 
-const slideWidth = slides[0].getBoundingClientRect().width;
+  try {
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector(".carousel-button-right");
+    const prevButton = document.querySelector(".carousel-button-left");
+    const dotsNav = document.querySelector(".carousel-nav");
+    const dots = dotsNav ? Array.from(dotsNav.children) : [];
 
-// arrange slides next to one another
-slides.forEach((slide, index) => {
-  slide.style.left = slideWidth * index + "px";
-});
+    if (!slides.length) return;
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    });
 
-// lock carousel container height to tallest slide
-const carousel = document.querySelector(".carousel");
-const maxHeight = Math.max(...slides.map(slide => slide.offsetHeight));
-carousel.style.height = maxHeight + "px";
+    const carousel = document.querySelector(".carousel");
+    if (carousel) {
+      const maxHeight = Math.max(...slides.map(slide => slide.offsetHeight));
+      carousel.style.height = maxHeight + "px";
+    }
 
-const moveToSlide = (track, currentSlide, targetSlide) => {
-  track.style.transform = "translateX(-" + targetSlide.style.left + ")";
-  currentSlide.classList.remove("current-slide");
-  targetSlide.classList.add("current-slide");
-};
+    const moveToSlide = (track, currentSlide, targetSlide) => {
+      if (!targetSlide || !currentSlide) return;
+      track.style.transform = "translateX(-" + targetSlide.style.left + ")";
+      currentSlide.classList.remove("current-slide");
+      targetSlide.classList.add("current-slide");
+    };
 
-const updateDots = (currentDot, targetDot) => {
-  currentDot.classList.remove("current-slide");
-  targetDot.classList.add("current-slide");
-};
+    const updateDots = (currentDot, targetDot) => {
+      if (currentDot) currentDot.classList.remove("current-slide");
+      if (targetDot) targetDot.classList.add("current-slide");
+    };
 
-// click right
-nextButton.addEventListener("click", () => {
-  const currentSlide = track.querySelector(".current-slide");
-  const nextSlide = currentSlide.nextElementSibling || slides[0];
-  const currentDot = dotsNav.querySelector(".current-slide");
-  const nextDot = currentDot.nextElementSibling || dots[0];
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        const currentSlide = track.querySelector(".current-slide") || slides[0];
+        const nextSlide = currentSlide.nextElementSibling || slides[0];
+        const currentDot = dotsNav ? dotsNav.querySelector(".current-slide") : null;
+        const nextDot = currentDot ? currentDot.nextElementSibling || dots[0] : null;
+        moveToSlide(track, currentSlide, nextSlide);
+        updateDots(currentDot, nextDot);
+      });
+    }
 
-  moveToSlide(track, currentSlide, nextSlide);
-  updateDots(currentDot, nextDot);
-});
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        const currentSlide = track.querySelector(".current-slide") || slides[0];
+        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+        const currentDot = dotsNav ? dotsNav.querySelector(".current-slide") : null;
+        const prevDot = currentDot ? currentDot.previousElementSibling || dots[dots.length - 1] : null;
+        moveToSlide(track, currentSlide, prevSlide);
+        updateDots(currentDot, prevDot);
+      });
+    }
 
-// click left
-prevButton.addEventListener("click", () => {
-  const currentSlide = track.querySelector(".current-slide");
-  const prevSlide =
-    currentSlide.previousElementSibling || slides[slides.length - 1];
-  const currentDot = dotsNav.querySelector(".current-slide");
-  const prevDot = currentDot.previousElementSibling || dots[dots.length - 1];
+    if (dotsNav) {
+      dotsNav.addEventListener("click", e => {
+        const targetDot = e.target.closest("button");
+        if (!targetDot) return;
+        const currentSlide = track.querySelector(".current-slide") || slides[0];
+        const currentDot = dotsNav.querySelector(".current-slide") || dots[0];
+        const targetIndex = dots.findIndex(dot => dot === targetDot);
+        const targetSlide = slides[targetIndex];
+        moveToSlide(track, currentSlide, targetSlide);
+        updateDots(currentDot, targetDot);
+      });
+    }
+  } catch (err) {
+    // fail gracefully
+    console.warn("Carousel init skipped due to error:", err);
+  }
+})();
 
-  moveToSlide(track, currentSlide, prevSlide);
-  updateDots(currentDot, prevDot);
-});
-
-// click nav dots
-dotsNav.addEventListener("click", e => {
-  const targetDot = e.target.closest("button");
-  if (!targetDot) return;
-
-  const currentSlide = track.querySelector(".current-slide");
-  const currentDot = dotsNav.querySelector(".current-slide");
-  const targetIndex = dots.findIndex(dot => dot === targetDot);
-  const targetSlide = slides[targetIndex];
-
-  moveToSlide(track, currentSlide, targetSlide);
-  updateDots(currentDot, targetDot);
-});
-
+/* --- Custom translations (each language => array of typing phrases) --- */
 const customTranslations = {
+  en: [
+    " Workers' Compensation",
+    " Personal Injury",
+    " Defense of the Uninsured Employer",
+    " SIBTF"
+  ],
   es: [
-    " CDMX",
-    " HOLA",
-    " Gracias",
-    " No!"
+    "Compensación laboral",
+    "Lesiones personales",
+    "Defensa del empleador sin seguro",
+    "SIBTF"
   ],
   fa: [
-    " IRAN",
-    " PERSIA",
-    " SMH",
-    " AHHH"
+    "غرامت کارگران",
+    "جراحت شخصی",
+    "دفاع از کارفرمای بدون بیمه",
+    "SIBTF"
   ]
 };
 
-function setCustomTranslation() {
-  // Find the current Google Translate language
-  const select = document.querySelector(".goog-te-combo");
-  if (!select) return;
+/* --- Typing animation (controls .typing-header .text) --- */
+let phrases = customTranslations.en.slice(); // current phrases (copy)
+let textEl = null;
+let cursorEl = null;
+let currentPhrase = 0;
+let currentChar = 0;
+let isDeleting = false;
+let typingTimer = null;
 
-  const lang = select.value; // e.g. "es", "fa", "en"
-  const h1 = document.getElementById("custom-translate");
-
-  if (customTranslations[lang]) {
-    h1.innerText = customTranslations[lang];
+function tick() {
+  if (!textEl) return;
+  const full = phrases[currentPhrase] || "";
+  if (!isDeleting) {
+    // type forward
+    textEl.textContent = full.substring(0, currentChar + 1);
+    currentChar++;
+    if (currentChar === full.length) {
+      isDeleting = true;
+      typingTimer = setTimeout(tick, 1500); // pause at end
+      return;
+    }
+    typingTimer = setTimeout(tick, 100);
   } else {
-    h1.innerText = customTranslations["en"]; // fallback to English
+    // delete
+    if (currentChar > 0) {
+      textEl.textContent = full.substring(0, currentChar - 1);
+      currentChar--;
+      typingTimer = setTimeout(tick, 50);
+    } else {
+      isDeleting = false;
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      typingTimer = setTimeout(tick, 300);
+    }
   }
 }
 
-// Attach listener once Google Translate is ready
-document.addEventListener("DOMContentLoaded", function () {
-  // MutationObserver to detect dropdown being added by Google
-  const observer = new MutationObserver(() => {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.addEventListener("change", setCustomTranslation);
-      observer.disconnect();
+function startTyping() {
+  clearTimeout(typingTimer);
+  currentPhrase = 0;
+  currentChar = 0;
+  isDeleting = false;
+  if (textEl) textEl.textContent = "";
+  tick();
+}
+
+function resetTyping(newPhrases) {
+  if (!Array.isArray(newPhrases) || newPhrases.length === 0) {
+    newPhrases = customTranslations.en;
+  }
+  phrases = newPhrases.slice();
+  startTyping();
+}
+
+/* --- Language change handler --- */
+function changeLanguage(langCode) {
+  if (!langCode) langCode = 'en';
+  // Google may use values like "en", "es", "fa" — handle underscore variants too (e.g., en_US)
+  if (customTranslations[langCode]) {
+    resetTyping(customTranslations[langCode]);
+  } else if (langCode.indexOf('_') > -1) {
+    const short = langCode.split('_')[0];
+    if (customTranslations[short]) resetTyping(customTranslations[short]);
+    else resetTyping(customTranslations.en);
+  } else {
+    // fallback
+    resetTyping(customTranslations.en);
+  }
+}
+
+/* --- Wait for DOM and hook Google Translate select when available --- */
+document.addEventListener("DOMContentLoaded", () => {
+  textEl = document.querySelector('.typing-header .text');
+  cursorEl = document.querySelector('.typing-header .cursor');
+
+  // Start typing with default (English)
+  if (textEl) startTyping();
+
+  // If the google select is already present, hook it
+  const attachSelect = (selectEl) => {
+    if (!selectEl) return;
+    // set initial language immediately
+    changeLanguage(selectEl.value);
+    selectEl.addEventListener('change', () => {
+      changeLanguage(selectEl.value);
+    });
+  };
+
+  // immediate check
+  const immediate = document.querySelector('.goog-te-combo');
+  if (immediate) attachSelect(immediate);
+
+  // MutationObserver to detect when Google Translate injects its dropdown
+  const observer = new MutationObserver((mutations, obs) => {
+    const sel = document.querySelector('.goog-te-combo');
+    if (sel) {
+      attachSelect(sel);
+      obs.disconnect();
     }
   });
 
