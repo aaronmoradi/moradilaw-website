@@ -371,12 +371,12 @@ min-width: 250px;
 /* Override Google styles */
 #google_translate_element {
   display: inline-block;
-  background: #ffffff;
+  background: #1e90ff;
   color: white !important;
   padding: 8px 14px;
   border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 1000;
   cursor: pointer;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
   transition: background 0.2s ease-in-out;
