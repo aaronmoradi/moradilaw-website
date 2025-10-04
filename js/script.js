@@ -91,7 +91,7 @@ const customTranslations = {
     " Workers' Compensation",
     " Personal Injury",
     " Defense of the Uninsured Employer",
-    " SIBTF"
+    " Subsequent Injuries Benefits Trust Fund"
   ],
   es: [
     "Compensación laboral",
