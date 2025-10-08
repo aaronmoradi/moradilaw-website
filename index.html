@@ -14,25 +14,28 @@
     <img src="assets/img/MoradiLogo.png" alt="Moradi Law Group Logo" style="width:64px;height:64px;border-radius:50%;margin-bottom:0.5rem;" />
     <h1 style="font-size:1.5rem;font-weight:900;margin:0;color:#1e90ff;">Moradi Law Group, APC</h1>
     <nav style="margin-top:1rem;display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;">
-      <a href="#about" style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">About</a>
+      <a href="#about" style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">About 1</a>
       <a href="#practiceareas" style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">Practice</a>
       <a href="#testimonials" style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">Testimonials</a>
       <a href="#faq" style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">FAQ</a>
       <a href="#gethelp" style="padding:0.7rem 1.2rem;border-radius:8px;background:#367C2B;color:#fff;text-decoration:none;font-size:1rem;">Get Help</a>
     </nav>
+    <div id="translate-container" style="margin-top:1rem;text-align:center;">
+      <div id="google_translate_element"></div>
+    </div>
   </header>
 
   <main style="padding:1rem;max-width:480px;margin:0 auto;">
     <section class="hero" style="text-align:center;margin-top:2rem;">
       <img src="assets/img/LeeoraProfessional.JPG" alt="Leeora B. Moradi" style="width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:1rem;" />
       <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Leeora B. Moradi, Attorney at Law</h2>
-      <div style="font-size:1rem;color:#333;margin-bottom:1rem;">Specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer</div>
+      <div style="font-size:1rem;color:#333;margin-bottom:1rem;">Specializing in Workers' Compensation, Personal Injury, Defense of the Uninsured Employer, and Subsequent Injuries Benefits Trust Fund.</div>
       <div style="font-size:1.1rem;color:#1e90ff;font-weight:600;margin-bottom:1.5rem;">Helping you tackle legal issues with clarity, expertise, and results.</div>
     </section>
 
     <section id="about" style="margin-bottom:2rem;">
       <h3 style="font-size:1.1rem;color:#1e90ff;margin-bottom:0.5rem;">About</h3>
-      <p style="font-size:1rem;color:#222;line-height:1.6;">Leeora B. Moradi is an experienced attorney specializing in Workers' Compensation, Personal Injury, and Defense of the Uninsured Employer. With over 15 years of dedicated legal practice, she ensures her clients receive personalized attention and aggressive representation. Certified by the State Bar Association, Leeora is committed to justice and client advocacy.</p>
+      <p style="font-size:1rem;color:#222;line-height:1.6;">Leeora B. Moradi is an experienced attorney specializing in Workers' Compensation, Personal Injury, Defense of the Uninsured Employer, and Subsequent Injuries Benefits Trust Fund. With over 15 years of dedicated legal practice, she ensures her clients receive personalized attention and aggressive representation. Certified by the State Bar Association, Leeora is committed to justice and client advocacy.</p>
     </section>
 
     <section id="practiceareas" style="margin-bottom:2rem;">
@@ -148,5 +151,16 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
+  <!-- Google Translate Widget -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fa,hy,tl',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
