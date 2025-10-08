@@ -395,11 +395,11 @@ min-width: 250px;
 } */
 
 /* -------------------------------------
-   MOBILE STYLES (screens ≤ 768px)
+   MOBILE STYLES (stacked nav, ≤768px)
 ------------------------------------- */
 @media (max-width: 768px) {
 
-  /* GENERAL LAYOUT */
+  /* General */
   .wrap {
     padding: 0 1rem;
     max-width: 100%;
@@ -414,7 +414,7 @@ min-width: 250px;
     text-align: center;
   }
 
-  /* HEADER */
+  /* Header */
   .site-header {
     padding: 0.75rem 1rem;
     display: flex;
@@ -425,27 +425,29 @@ min-width: 250px;
 
   .site-header .wrap.header-inner {
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
   }
 
-  .site-header .logo {
-    font-size: 1.25rem;
+  .logo {
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
 
   .nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .nav a {
     font-size: 0.95rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.4rem 0.8rem;
+    text-decoration: none;
   }
 
-  /* HERO SECTION */
+  /* Hero Section */
   .hero .wrap {
     display: flex;
     flex-direction: column;
@@ -453,13 +455,7 @@ min-width: 250px;
     text-align: center;
   }
 
-  .hero-text {
-    order: 2;
-    width: 100%;
-  }
-
   .hero-photo {
-    order: 1;
     margin-bottom: 1rem;
   }
 
@@ -469,7 +465,11 @@ min-width: 250px;
     border-radius: 10px;
   }
 
-  /* ABOUT & PRACTICE AREAS */
+  .hero-text {
+    width: 100%;
+  }
+
+  /* Practice Areas / About Sections */
   .grid.two-col {
     display: block;
   }
@@ -485,7 +485,7 @@ min-width: 250px;
     height: auto;
   }
 
-  /* TESTIMONIALS */
+  /* Testimonials */
   #testimonials {
     padding: 2rem 1rem;
   }
@@ -495,12 +495,7 @@ min-width: 250px;
     line-height: 1.5;
   }
 
-  .carousel-control-prev,
-  .carousel-control-next {
-    display: none; /* Hide arrows on small screens */
-  }
-
-  /* CONTACT / GET HELP SECTION */
+  /* Contact / Get Help */
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -513,10 +508,6 @@ min-width: 250px;
 
   .contact-form .form-group {
     margin-bottom: 1rem;
-  }
-
-  .contact-form label {
-    font-weight: 600;
   }
 
   .contact-form input,
@@ -537,7 +528,7 @@ min-width: 250px;
     font-size: 1rem;
   }
 
-  /* FOOTER */
+  /* Footer */
   .site-footer {
     text-align: center;
     font-size: 0.9rem;
@@ -550,12 +541,11 @@ min-width: 250px;
   }
 
   .money-btn {
-    position: relative;
-    margin-top: 1rem;
     width: 80%;
+    margin: 1rem auto 0;
+    position: relative;
   }
 
-  /* GOOGLE TRANSLATE */
   #translate-container {
     text-align: center;
     margin-top: 0.5rem;
