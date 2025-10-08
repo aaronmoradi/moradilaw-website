@@ -169,20 +169,41 @@ border-radius: 4px 0 0 4px;
 }
 
 /* Phone */
+/* Phone */
 @media (max-width: 600px) {
   .wrap {
     padding: 1rem;
   }
-  
-  /* Show Hamburger, Hide Google Translate */
-  .menu-toggle {
-    display: block; /* Show the hamburger button */
+  body {
+    line-height: 1.7;
+    font-size: 0.95rem;
   }
-  #translate-container {
-    display: none; /* Hide Google Translate on small screens or move it elsewhere */
+  
+  /* --- HEADER FIX: Force elements onto their own lines --- */
+  .header-inner {
+    /* Ensure only logo and menu button are on the main row */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    /* Prevent the logo from wrapping onto multiple lines unnecessarily */
+    font-size: 1rem; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Navigation: Hide and style as a full-screen overlay */
+  /* Show Hamburger Button, Hide Google Translate from the top-right corner */
+  .menu-toggle {
+    display: block; 
+  }
+  #translate-container {
+    /* Hide Google Translate container from its original spot to declutter the header */
+    display: none; 
+  }
+  
+  /* --- Navigation: Style as a full-screen overlay for mobile --- */
   .nav {
     display: none; /* Hide by default */
     position: fixed;
@@ -190,12 +211,13 @@ border-radius: 4px 0 0 4px;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px); /* Add a small blur for better separation */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    z-index: 45; /* Below the toggle but above everything else */
+    z-index: 45; 
   }
   
   /* Show navigation when 'is-open' class is applied by JavaScript */
@@ -212,9 +234,9 @@ border-radius: 4px 0 0 4px;
     font-size: 1.2rem;
   }
 
-  /* Hamburger Animation (X icon) */
+  /* Hamburger Animation (X icon) - Keep this for the cross animation */
   .menu-toggle[aria-expanded="true"] .hamburger-icon {
-    background: transparent; /* middle bar disappears */
+    background: transparent; 
   }
 
   .menu-toggle[aria-expanded="true"] .hamburger-icon::before {
@@ -227,6 +249,7 @@ border-radius: 4px 0 0 4px;
     top: 0;
   }
 
+  /* --- Other Section Adjustments --- */
   /* Hero */
   .hero-photo img {
     max-width: 180px;
@@ -234,7 +257,7 @@ border-radius: 4px 0 0 4px;
   .typing-header {
     font-size: 2rem;
   }
-
+  
   /* Practice Areas Filters - Stack vertically */
   .section-head {
     flex-direction: column;
@@ -259,13 +282,10 @@ border-radius: 4px 0 0 4px;
   .contact-container {
     flex-direction: column;
   }
-  /* Ensure map takes full width */
-  .contact-container .col-md-6 {
-    width: 100%; 
-  }
   .contact-map {
-    min-height: 400px;
+    min-height: 400px; /* Ensure map has a visible height on mobile */
   }
+  /* The rest of the form/contact styles are fine */
 }
 
 .contact-form {
