@@ -21,7 +21,7 @@
       <a href="#gethelp" style="padding:0.7rem 1.2rem;border-radius:8px;background:#367C2B;color:#fff;text-decoration:none;font-size:1rem;">Get Help</a>
     </nav>
     <div id="translate-container" style="margin-top:1rem;text-align:center;">
-  <div id="google_translate_element" style="display:inline-block;background:#1e90ff;color:#fff;padding:6px 16px;border-radius:18px;font-size:0.95rem;font-weight:600;box-shadow:0 2px 6px rgba(30,144,255,0.08);min-width:120px;cursor:pointer;transition:background 0.2s;"></div>
+  <div id="google_translate_element" style="display:inline-block;background:#fff;color:#222;padding:4px 10px;border-radius:12px;font-size:0.95rem;font-weight:600;box-shadow:0 1px 4px rgba(30,144,255,0.08);min-width:100px;cursor:pointer;transition:background 0.2s;border:1px solid #eee;"></div>
     </div>
   </header>
 
@@ -166,21 +166,25 @@
     /* Compact Google Translate widget styles */
     #google_translate_element select {
       background: #fff;
-      color: #1e90ff;
-      border: none;
-      border-radius: 12px;
+      color: #222;
+      border: 1px solid #eee;
+      border-radius: 10px;
       padding: 4px 10px;
       font-size: 0.95rem;
       font-weight: 600;
       margin: 0;
       outline: none;
-      box-shadow: 0 1px 4px rgba(30,144,255,0.08);
+      box-shadow: none;
       cursor: pointer;
     }
     .goog-te-gadget {
       font-size: 0.95rem !important;
-      color: #fff !important;
+      color: #222 !important;
       font-weight: 600 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
     }
     .goog-te-gadget .goog-te-combo {
       margin: 0 !important;
