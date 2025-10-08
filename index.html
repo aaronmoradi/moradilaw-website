@@ -37,37 +37,38 @@
 
 <body>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="logo" href="/">MORADI LAW GROUP, APC</a>
-      <nav class="nav" aria-label="Main">
-        <a href="/">5</a>
+    <div class="container">
+      <a href="#" class="logo">Moradi Law Group, APC</a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#practiceareas">Practice Areas</a>
+        <a href="#practice">Practice Areas</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#faq">FAQ</a>
-        <a href="#gethelp" class="cta">Get Help</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
-    <!-- Google Translate Container -->
-    <div id="translate-container">
-      <div id="google_translate_element"></div>
-    </div>
+  </div>
+  <!-- Google Translate Container -->
+  <div id="translate-container">
+    <div id="google_translate_element"></div>
+  </div>
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: 'en',
-            includedLanguages: 'en,es,fa,fil,tl,hy', // Add language codes you want
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-          },
-          'google_translate_element'
-        );
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,fa,fil,tl,hy', // Add language codes you want
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
 
   </header>
 
@@ -360,7 +361,8 @@
           </h2>
           <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Our office offers English, Farsi, and Spanish speaking personnel. Additionally, we have translators available for easy communication.</div>
+              Our office offers English, Farsi, and Spanish speaking personnel. Additionally, we have translators
+              available for easy communication.</div>
           </div>
         </div>
       </div>
