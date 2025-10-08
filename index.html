@@ -19,7 +19,7 @@
     <nav style="margin-top:1rem;display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;">
       <a href="#about"
         style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">About
-        5</a>
+        1</a>
       <a href="#practiceareas"
         style="padding:0.7rem 1.2rem;border-radius:8px;background:#1e90ff;color:#fff;text-decoration:none;font-size:1rem;">Practice</a>
       <a href="#testimonials"
@@ -31,7 +31,7 @@
         Help</a>
     </nav>
     <div id="translate-container" style="margin-top:1rem;text-align:center;">
-      <div id="google_translate_element"></div>
+  <div id="google_translate_element"></div>
     </div>
   </header>
 
@@ -227,7 +227,7 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
-  <div id="google_translate_element"></div>
+  <!-- Only one google_translate_element should exist -->
   <!-- Google Translate Widget -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -238,32 +238,37 @@
       }, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <!-- <style>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
     #translate-container {
       text-align: right;
-      margin: 10px;
+      margin: 8px 8px 0 0;
     }
-
     #google_translate_element {
       display: inline-block;
-      background: #367C2B;
-      color: white !important;
-      padding: 20px 30px;
-      border-radius: 25px;
-      font-size: 28px;
-      font-weight: 1000;
+      background: #fff;
+      color: #222 !important;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 400;
       cursor: pointer;
-      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: none;
+      border: 1px solid #eee;
       transition: background 0.2s ease-in-out;
+      min-width: 0;
+      max-width: 120px;
     }
-
     #google_translate_element:hover {
-      background: #d20000;
-      background: #367C2B;
+      background: #f3f3f3;
     }
-  </style> -->
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+    .goog-logo-link, .goog-te-gadget span {
+      display: none !important;
+    }
+  </style>
 </body>
 
 </html>
