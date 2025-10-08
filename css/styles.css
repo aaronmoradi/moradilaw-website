@@ -111,6 +111,43 @@ height: 100%;
 background: var(--accent); /* uses your purple accent */
 border-radius: 4px 0 0 4px;
 }
+/* --- Hamburger Menu Icon (Initial Styles) --- */
+.menu-toggle {
+  display: none; /* Hide by default on desktop */
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 50; /* Ensure it's above the header */
+}
+
+.hamburger-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--muted);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--muted);
+  position: absolute;
+  transition: transform 0.3s, top 0.3s;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  top: 8px;
+}
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -133,36 +170,102 @@ border-radius: 4px 0 0 4px;
 
 /* Phone */
 @media (max-width: 600px) {
-.wrap {
-  padding:1rem;
-}
-body {
-  line-height:1.7;
-  font-size:0.95rem;
-}
-/* Hero */
-.hero-photo img {
-  max-width:180px;
-}
-.typing-header {
-  font-size:2rem;
-}
-/* Nav stays horizontal but shrinks */
-.nav {
-  gap:0.5rem;
-  flex-wrap:wrap;
-}
-.nav a {
-  font-size:0.85rem;
-}
-.nav .cta {
-  padding:0.4rem 1rem;
-  font-size:0.85rem;
-}
-/* Projects */
-.projects-grid {
-  grid-template-columns:1fr;
-}
+  .wrap {
+    padding: 1rem;
+  }
+  
+  /* Show Hamburger, Hide Google Translate */
+  .menu-toggle {
+    display: block; /* Show the hamburger button */
+  }
+  #translate-container {
+    display: none; /* Hide Google Translate on small screens or move it elsewhere */
+  }
+
+  /* Navigation: Hide and style as a full-screen overlay */
+  .nav {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 45; /* Below the toggle but above everything else */
+  }
+  
+  /* Show navigation when 'is-open' class is applied by JavaScript */
+  .nav.is-open {
+    display: flex; 
+  }
+
+  .nav a {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .nav .cta {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  /* Hamburger Animation (X icon) */
+  .menu-toggle[aria-expanded="true"] .hamburger-icon {
+    background: transparent; /* middle bar disappears */
+  }
+
+  .menu-toggle[aria-expanded="true"] .hamburger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .hamburger-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  /* Hero */
+  .hero-photo img {
+    max-width: 180px;
+  }
+  .typing-header {
+    font-size: 2rem;
+  }
+
+  /* Practice Areas Filters - Stack vertically */
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters {
+    margin-top: 1rem;
+  }
+  .filters button {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact/Get Help */
+  .contact-container {
+    flex-direction: column;
+  }
+  /* Ensure map takes full width */
+  .contact-container .col-md-6 {
+    width: 100%; 
+  }
+  .contact-map {
+    min-height: 400px;
+  }
 }
 
 .contact-form {
@@ -394,187 +497,13 @@ min-width: 250px;
   display: none !important;
 } */
 
-/* -------------------------------------
-   MOBILE STYLES (stacked nav, ≤768px)
-------------------------------------- */
-@media (max-width: 768px) {
-
-  /* General */
-  .wrap {
-    padding: 0 1rem;
-    max-width: 100%;
-  }
-
-  body {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  h1, h2, h3 {
-    text-align: center;
-  }
-
-  /* Header */
-  .site-header {
-    padding: 0.75rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .site-header .wrap.header-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .nav a {
-    font-size: 0.95rem;
-    padding: 0.4rem 0.8rem;
-    text-decoration: none;
-  }
-
-  /* Hero Section */
-  .hero .wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-photo {
-    margin-bottom: 1rem;
-  }
-
-  .hero-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  /* Practice Areas / About Sections */
-  .grid.two-col {
-    display: block;
-  }
-
-  .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Testimonials */
-  #testimonials {
-    padding: 2rem 1rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  /* Contact / Get Help */
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .contact-form {
-    width: 100%;
-  }
-
-  .contact-form .form-group {
-    margin-bottom: 1rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  iframe {
-    width: 100%;
-    min-height: 300px;
-  }
-
-  /* FAQ */
-  #faq .accordion-button {
-    font-size: 1rem;
-  }
-
-  /* Footer */
-  .site-footer {
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .site-footer a {
-    display: inline-block;
-    margin: 0.25rem 0.5rem;
-  }
-
-  .money-btn {
-    width: 80%;
-    margin: 1rem auto 0;
-    position: relative;
-  }
-
-  #translate-container {
-    text-align: center;
-    margin-top: 0.5rem;
-  }
+/* Contact Section (Add this near your .contact-container styles) */
+.contact-map {
+  flex: 1; /* Allows the map container to take remaining space on desktop */
+  min-width: 300px;
 }
-
-/* -------------------------------------
-   VERY SMALL SCREENS (≤480px)
-------------------------------------- */
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 1.4rem;
-  }
-
-  .nav a {
-    font-size: 0.85rem;
-  }
-
-  .btn {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.75rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.9rem;
-  }
-
-  .card-body p {
-    font-size: 0.95rem;
-  }
+/* Ensure map iframe takes up space */
+.contact-map iframe {
+  width: 100%; 
+  height: 100%;
 }
