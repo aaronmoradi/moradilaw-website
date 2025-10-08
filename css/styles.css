@@ -393,3 +393,198 @@ min-width: 250px;
 .goog-te-gadget img {
   display: none !important;
 } */
+
+/* -------------------------------------
+   MOBILE STYLES (screens ≤ 768px)
+------------------------------------- */
+@media (max-width: 768px) {
+
+  /* GENERAL LAYOUT */
+  .wrap {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  /* HEADER */
+  .site-header {
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-header .wrap.header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .site-header .logo {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* HERO SECTION */
+  .hero .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-photo {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* ABOUT & PRACTICE AREAS */
+  .grid.two-col {
+    display: block;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    padding: 2rem 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none; /* Hide arrows on small screens */
+  }
+
+  /* CONTACT / GET HELP SECTION */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form label {
+    font-weight: 600;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  iframe {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  /* FAQ */
+  #faq .accordion-button {
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .site-footer a {
+    display: inline-block;
+    margin: 0.25rem 0.5rem;
+  }
+
+  .money-btn {
+    position: relative;
+    margin-top: 1rem;
+    width: 80%;
+  }
+
+  /* GOOGLE TRANSLATE */
+  #translate-container {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* -------------------------------------
+   VERY SMALL SCREENS (≤480px)
+------------------------------------- */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+
+  .card-body p {
+    font-size: 0.95rem;
+  }
+}
