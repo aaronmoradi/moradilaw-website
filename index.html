@@ -21,6 +21,9 @@
   <!-- Bootstrap CSS (required for carousel) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <!-- structured data (resume snippet) -->
   <script type="application/ld+json">
   {
@@ -45,7 +48,7 @@
       </button>
 
       <nav class="nav" id="main-nav" aria-label="Main">
-        <a href="/">3</a>
+        <a href="/">Home 1</a>
         <a href="#about">About</a>
         <a href="#practiceareas">Practice Areas</a>
         <a href="#testimonials">Testimonials</a>
@@ -53,6 +56,7 @@
         <a href="#gethelp" class="cta">Get Help</a>
       </nav>
     </div>
+
     <!-- Google Translate Container -->
     <div id="translate-container">
       <div id="google_translate_element"></div>
@@ -64,7 +68,7 @@
         new google.translate.TranslateElement(
           {
             pageLanguage: 'en',
-            includedLanguages: 'en,es,fa,fil,tl,hy', // Add language codes you want
+            includedLanguages: 'en,es,fa,fil,tl,hy',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
           },
           'google_translate_element'
@@ -73,7 +77,6 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
-
   </header>
 
   <main>
@@ -92,44 +95,6 @@
         <div class="hero-photo">
           <img src="assets/img/LeeoraProfessional.JPG" alt="Photo of Leeora B. Moradi" />
         </div>
-        <!-- <script>
-          const textElement = document.querySelector('.typing-header .text');
-          const phrases = [
-            " Workers' Compensation",
-            " Personal Injury",
-            " Defense of the Uninsured Employer",
-            " SIBTF"
-          ];
-
-          let currentPhrase = 0;
-          let currentChar = 0;
-          let typing = true;
-
-          function typeEffect() {
-            const phrase = phrases[currentPhrase];
-
-            if (typing) {
-              textElement.textContent += phrase.charAt(currentChar);
-              currentChar++;
-              if (currentChar === phrase.length) {
-                typing = false;
-                setTimeout(typeEffect, 1500); // Wait before deleting
-                return;
-              }
-            } else {
-              textElement.textContent = phrase.substring(0, currentChar - 1) || "\u00A0";
-              currentChar--;
-              if (currentChar === 1) {
-                typing = true;
-                currentPhrase = (currentPhrase + 1) % phrases.length;
-              }
-            }
-
-            setTimeout(typeEffect, typing ? 100 : 50); // Typing speed / deleting speed
-          }
-
-          window.onload = typeEffect;
-        </script> -->
       </div>
     </section>
 
@@ -150,14 +115,13 @@
         <h2>Practice Areas</h2>
         <div class="filters" role="tablist" aria-label="Project filters">
           <button data-filter="*" class="active">All</button>
-          <button data-filter="wc">Workers' Compensation</button>
+          <button data-filter="wc">Workers' Comp</button>
           <button data-filter="pi">Personal Injury</button>
-          <button data-filter="due">Defense of the Uninsured Employer</button>
+          <button data-filter="due">Uninsured Employer</button>
         </div>
       </div>
 
       <div class="projects-grid" id="projects-grid">
-        <!-- Example card -->
         <article class="card" data-tags="wc">
           <img src="assets/img/wczoomedout.png" alt="Stick figure injured worker" />
           <div class="card-body">
@@ -165,11 +129,7 @@
             <p>Workers' compensation is a system designed to provide financial and medical benefits to employees who are
               injured or become ill as a result of their job. It ensures that workers receive the care and support they
               need while protecting employers from lawsuits related to workplace injuries, helping maintain a safer and
-              more accountable work environment.
-              <br>
-              <br>
-              <br>
-            </p>
+              more accountable work environment.</p>
           </div>
         </article>
 
@@ -179,11 +139,7 @@
             <h3>Personal Injury</h3>
             <p>Personal injury law helps individuals who have been harmed due to the negligence or wrongdoing of others.
               It allows victims to seek compensation for medical expenses, lost wages, pain and suffering, and other
-              damages, ensuring they have the support needed to recover and hold responsible parties accountable.<br>
-              <br>
-              <br>
-              <br>
-            </p>
+              damages, ensuring they have the support needed to recover and hold responsible parties accountable.</p>
           </div>
         </article>
 
@@ -193,10 +149,7 @@
             <h3>Defense of the Uninsured Employer</h3>
             <p>This area of law focuses on representing employers who face claims or disputes without having workers'
               compensation insurance. Legal defense helps navigate complex regulations, limit liability, and protect the
-              employer’s rights while ensuring compliance with state and federal requirements.
-              <br>
-              <br>
-            </p>
+              employer's rights while ensuring compliance with state and federal requirements.</p>
           </div>
         </article>
       </div>
@@ -249,11 +202,9 @@
     <section id="gethelp" class="wrap reveal">
       <h2>Get Help 24/7</h2>
       <div class="contact-container">
-        <!-- Formspree example -->
         <form class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
           <p>Complete this form or email us to get one step closer to justice!<br>
-            Email: <a href="mailto:moradilawgroup@gmail.com" target="_blank"
-              rel="noopener noreferrer">moradilawgroup@gmail.com</a><br>
+            Email: <a href="mailto:moradilawgroup@gmail.com">moradilawgroup@gmail.com</a><br>
             Phone: <a href="tel:+18187811579">(818) 781-1579</a>
           </p>
           <div class="form-group">
@@ -276,7 +227,7 @@
         <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.420736069645!2d-118.45263982360503!3d34.18672497310664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29705971df999%3A0xdc098540ab6833a4!2sMoradi%20Law%20Group%2C%20APC%20%7C%20Leeora%20B.%20Moradi!5e0!3m2!1sen!2sus!4v1758577804802!5m2!1sen!2sus"
-            width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy"></iframe>
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </section>
@@ -376,17 +327,18 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      © <span id="year"></span> Moradi Law Group, APC |
-      <a href="https://www.linkedin.com/company/moradilawgroup/posts/?feedView=all" target="_blank"
-        rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a> •
-      <a href="https://www.facebook.com/moradilaw" target="_blank" rel="noopener noreferrer"><i
-          class="fab fa-facebook-square"></i> Facebook</a> •
-      <a href="https://www.instagram.com/moradilawgroup/" target="_blank" rel="noopener noreferrer"><i
-          class="fab fa-instagram"></i> Instagram</a> •
-      <a href="https://share.google/83TPE3XvCKajn03fi" target="_blank" rel="noopener noreferrer"><i
-          class="fab fa-google"></i> Google</a> •
-      <a href="https://www.yelp.com/biz/moradi-law-group-van-nuys" target="_blank" rel="noopener noreferrer"><i
-          class="fab fa-yelp"></i> Yelp</a>
+      <p>© <span id="year"></span> Moradi Law Group, APC</p>
+      <p>
+        <a href="https://www.linkedin.com/company/moradilawgroup/posts/?feedView=all" target="_blank"
+          rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a> •
+        <a href="https://www.facebook.com/moradilaw" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-facebook-square"></i> Facebook</a> •
+        <a href="https://www.instagram.com/moradilawgroup/" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-instagram"></i> Instagram</a> •
+        <a href="https://share.google/83TPE3XvCKajn03fi" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-google"></i> Google</a> •
+        <a href="https://www.yelp.com/biz/moradi-law-group-van-nuys" target="_blank" rel="noopener noreferrer"><i
+            class="fab fa-yelp"></i> Yelp</a>
       </p>
     </div>
     <button class="money-btn" id="cashBtn">Get Money!</button>
@@ -399,7 +351,12 @@
   <script src="js/script.js"></script>
   <!-- Bootstrap JS Bundle (includes Popper for carousel functionality) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', () => {
       const toggleButton = document.querySelector('.menu-toggle');
       const nav = document.getElementById('main-nav');
@@ -407,10 +364,10 @@
       toggleButton.addEventListener('click', () => {
         const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
         toggleButton.setAttribute('aria-expanded', !isExpanded);
-        nav.classList.toggle('is-open'); // Toggles the 'is-open' class for CSS styling
+        nav.classList.toggle('is-open');
       });
 
-      // Close menu when a link is clicked (for single-page sites)
+      // Close menu when a link is clicked
       nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           if (nav.classList.contains('is-open')) {
