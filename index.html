@@ -3,27 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Los Angeles Personal Injury Lawyers | Moradi Law Group, APC</title>
-  <meta name="description" content="Moradi Law Group, APC – Top-rated personal injury attorneys in Los Angeles. No recovery, no fee. Over $500M won for our clients. Call for a free consultation." />
+  <title>Workers' Compensation Lawyer Van Nuys | Moradi Law Group, APC | Leeora B. Moradi</title>
+  <meta name="description" content="Moradi Law Group, APC – Workers' compensation attorney Leeora B. Moradi in Van Nuys, CA. Call (818) 781-1579 for a free consultation. No fee unless we win." />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'es,fa,hy,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        multilanguagePage: true
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <style>
     /* ─── RESET & ROOT ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:   #0b1f3a;
-      --navy2:  #0e2547;
-      --gold:   #c9a84c;
-      --gold2:  #f0c96e;
-      --white:  #ffffff;
-      --offwhite: #f7f5f0;
-      --light-gray: #e8e4dd;
-      --text-dark: #1a1a2e;
-      --text-body: #3a3a3a;
-      --font-heading: 'Playfair Display', Georgia, serif;
-      --font-body: 'Lato', sans-serif;
+      --burgundy:      #6b1a2a;
+      --burgundy-dark: #4e1120;
+      --burgundy-mid:  #7d2035;
+      --champagne:     #d4a96a;
+      --champagne-lt:  #e8c99a;
+      --champagne-pale:#faf4eb;
+      --charcoal:      #1c1c1c;
+      --white:         #ffffff;
+      --offwhite:      #faf8f5;
+      --light:         #f2ede6;
+      --text-body:     #3d3230;
+      --text-muted:    #7a6f6b;
+      --border:        #e6ddd4;
+      --font-display:  'Cormorant Garamond', Georgia, serif;
+      --font-body:     'DM Sans', sans-serif;
+      --radius:        6px;
+      --shadow-sm:     0 2px 12px rgba(107,26,42,0.08);
+      --shadow-md:     0 8px 30px rgba(107,26,42,0.12);
+      --shadow-lg:     0 20px 60px rgba(107,26,42,0.18);
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--text-body); background: var(--white); }
@@ -31,136 +55,275 @@
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
 
-    /* ─── TOP BAR ─── */
-    .topbar {
-      background: var(--gold);
-      color: var(--navy);
-      text-align: center;
-      padding: 8px 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+    /* ─── GOOGLE TRANSLATE TOPBAR ─── */
+    .translate-bar {
+      background: var(--champagne-pale);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .topbar a { color: var(--navy); }
-    .topbar span { margin: 0 12px; opacity: 0.4; }
+    .translate-bar-left {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .translate-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lang-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    /* Quick language buttons */
+    .lang-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .lang-btn {
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--burgundy);
+      cursor: pointer;
+      background: var(--white);
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .lang-btn:hover, .lang-btn.active { background: var(--burgundy); color: var(--white); border-color: var(--burgundy); }
+
+    /* Google Translate widget wrapper */
+    #google_translate_element {
+      display: inline-flex;
+      align-items: center;
+    }
+    /* Hide Google branding clutter a bit */
+    .goog-logo-link { display: none !important; }
+    .goog-te-gadget { font-size: 0 !important; }
+    .goog-te-gadget select {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      color: var(--burgundy);
+      background: var(--white);
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announcement-bar {
+      background: var(--burgundy);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .announcement-bar a { color: var(--champagne-lt); font-weight: 700; }
+    .announcement-bar strong { color: var(--champagne); }
 
     /* ─── HEADER ─── */
     header {
-      background: var(--navy);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      box-shadow: var(--shadow-sm);
     }
     .header-inner {
-      max-width: 1300px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 76px;
     }
-    .logo-wrap {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+    .logo-wrap { display: flex; flex-direction: column; line-height: 1.15; }
     .logo-name {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.5px;
+      color: var(--burgundy);
+      letter-spacing: 0.3px;
     }
-    .logo-sub {
-      font-size: 0.65rem;
-      color: var(--gold);
-      letter-spacing: 3px;
+    .logo-tag {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      font-weight: 300;
+      font-weight: 500;
     }
-    nav { display: flex; align-items: center; gap: 4px; }
+
+    /* Nav */
+    nav { display: flex; align-items: center; }
     nav > ul { display: flex; gap: 0; }
     nav > ul > li { position: relative; }
     nav > ul > li > a {
       display: block;
-      padding: 28px 14px;
-      color: var(--white);
+      padding: 26px 13px;
+      color: var(--charcoal);
       font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav > ul > li > a:hover,
-    nav > ul > li.active > a { color: var(--gold); }
+    nav > ul > li > a:hover { color: var(--burgundy); }
+    nav > ul > li > a.active { color: var(--burgundy); }
+
+    /* Active underline */
+    nav > ul > li > a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 13px; right: 13px;
+      height: 2px;
+      background: var(--burgundy);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+    nav > ul > li > a:hover::after { transform: scaleX(1); }
 
     /* Dropdown */
     .dropdown {
       position: absolute;
-      top: 100%;
-      left: 0;
-      background: var(--navy2);
-      min-width: 240px;
-      border-top: 3px solid var(--gold);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-8px);
-      transition: all 0.25s ease;
+      top: 100%; left: 0;
+      background: var(--white);
+      min-width: 230px;
+      border-top: 2px solid var(--burgundy);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--burgundy);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow-md);
+      opacity: 0; visibility: hidden;
+      transform: translateY(-6px);
+      transition: all 0.22s ease;
       z-index: 999;
     }
     nav > ul > li:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown li a {
       display: block;
-      padding: 11px 20px;
-      color: var(--white);
+      padding: 10px 18px;
+      color: var(--text-body);
       font-size: 0.78rem;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: background 0.2s, color 0.2s;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
     }
-    .dropdown li a:hover { background: rgba(201,168,76,0.15); color: var(--gold); }
+    .dropdown li a:hover { background: var(--champagne-pale); color: var(--burgundy); }
+    .dropdown li:last-child a { border-bottom: none; }
 
-    .cta-phone {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 10px 20px;
-      border-radius: 3px;
+    /* Header CTA */
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-left: 16px;
+    }
+    .header-phone {
+      font-size: 0.88rem;
       font-weight: 700;
-      font-size: 0.8rem;
+      color: var(--burgundy);
+      letter-spacing: 0.5px;
+    }
+    .header-phone span { display: block; font-size: 0.6rem; color: var(--text-muted); font-weight: 400; text-transform: uppercase; letter-spacing: 1px; }
+    .btn-cta-sm {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.76rem;
       letter-spacing: 1px;
       text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
       white-space: nowrap;
-      transition: background 0.2s;
-      margin-left: 10px;
     }
-    .cta-phone:hover { background: var(--gold2); }
+    .btn-cta-sm:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
 
-    /* Mobile hamburger */
+    /* Hamburger */
     .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--burgundy); transition: all 0.3s; border-radius: 2px; }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 2000;
+      padding: 30px;
+      overflow-y: auto;
+      flex-direction: column;
+    }
+    .mobile-menu.open { display: flex; animation: slideIn 0.25s ease; }
+    .mobile-menu-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+    .mobile-close {
+      background: none; border: none;
+      color: var(--burgundy); font-size: 2rem; cursor: pointer; line-height: 1;
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 16px 0;
+      color: var(--charcoal);
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:hover { color: var(--burgundy); }
+    .mobile-phone-btn {
+      margin-top: 28px;
+      display: block;
+      background: var(--burgundy);
+      color: var(--white);
+      text-align: center;
+      padding: 18px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .mobile-consult-btn {
+      margin-top: 12px;
+      display: block;
+      border: 2px solid var(--burgundy);
+      color: var(--burgundy);
+      text-align: center;
+      padding: 16px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
 
     /* ─── HERO ─── */
     .hero {
-      background: var(--navy);
+      background: var(--offwhite);
       position: relative;
       overflow: hidden;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
     }
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80') center/cover no-repeat;
-      opacity: 0.12;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-dark) 100%);
+      clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
     .hero-inner {
-      max-width: 1300px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 80px 30px;
+      padding: 90px 30px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
@@ -168,107 +331,340 @@
       position: relative;
       z-index: 1;
     }
-    .hero-content { animation: fadeUp 0.9s ease both; }
+    .hero-content { animation: fadeUp 0.8s ease both; }
     .hero-eyebrow {
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      color: var(--burgundy);
+      letter-spacing: 3px;
       text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 18px;
+      font-weight: 600;
+      background: rgba(107,26,42,0.08);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(107,26,42,0.15);
     }
+    .hero-eyebrow::before { content: '⚖'; font-size: 0.8rem; }
     .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 28px;
-      font-weight: 900;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--charcoal);
+      line-height: 1.12;
+      font-weight: 700;
+      margin-bottom: 26px;
     }
     .hero h1 em {
-      font-style: normal;
-      color: var(--gold);
+      font-style: italic;
+      color: var(--burgundy);
     }
-    .hero-bullets { margin-bottom: 32px; }
+    .hero-desc {
+      font-size: 0.98rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      max-width: 500px;
+    }
+    .hero-bullets { margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
     .hero-bullets li {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-      padding: 7px 0 7px 28px;
-      position: relative;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      font-weight: 500;
     }
-    .hero-bullets li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 0.7rem;
-      top: 9px;
+    .bullet-check {
+      width: 20px; height: 20px; min-width: 20px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: 0.6rem;
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-primary {
-      background: var(--gold);
-      color: var(--navy);
-      padding: 15px 32px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border-radius: 3px;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-block;
-    }
-    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,0.5);
+      background: var(--burgundy);
       color: var(--white);
-      padding: 13px 30px;
+      padding: 16px 34px;
+      border-radius: var(--radius);
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: inline-block;
+      box-shadow: 0 4px 20px rgba(107,26,42,0.3);
+    }
+    .btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(107,26,42,0.4); }
+    .btn-ghost {
+      border: 2px solid var(--burgundy);
+      color: var(--burgundy);
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { background: var(--burgundy); color: var(--white); }
+
+    /* Hero right panel */
+    .hero-panel {
+      background: var(--burgundy-dark);
+      border-radius: 12px;
+      padding: 40px 36px;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      animation: fadeUp 0.8s 0.15s ease both;
+      position: relative;
+    }
+    .hero-panel::before {
+      content: '';
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      border-radius: 13px;
+      border: 2px solid var(--champagne);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .hero-panel-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--champagne-lt);
+    }
+    .hero-panel-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.67rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      border-radius: 3px;
-      transition: border-color 0.2s, color 0.2s;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 5px;
+      font-weight: 600;
     }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* Hero image side */
-    .hero-img-wrap {
-      position: relative;
-      animation: fadeUp 0.9s 0.2s ease both;
-    }
-    .hero-img-wrap img {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
-      border-radius: 4px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      padding: 11px 14px;
+      border-radius: 5px;
+      font-family: var(--font-body);
+      font-size: 0.86rem;
+      outline: none;
+      transition: border-color 0.2s;
     }
-    .hero-badge {
-      position: absolute;
-      bottom: -20px;
-      left: -20px;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 20px 24px;
-      border-radius: 4px;
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.28); }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--champagne); }
+    .form-group textarea { height: 85px; resize: vertical; }
+    .form-group select option { background: var(--burgundy-dark); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--champagne), var(--champagne-lt));
+      color: var(--burgundy-dark);
+      border: none;
+      padding: 15px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-top: 6px;
+    }
+    .btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+    .form-disclaimer {
+      margin-top: 10px;
+      font-size: 0.67rem;
+      color: rgba(255,255,255,0.3);
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      line-height: 1.5;
     }
-    .hero-badge strong { display: block; font-size: 1.8rem; font-family: var(--font-heading); font-weight: 900; line-height: 1; }
-    .hero-badge span { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
 
-    /* ─── LOCATIONS STRIP ─── */
-    .locations {
-      background: var(--navy2);
-      border-top: 1px solid rgba(201,168,76,0.3);
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      background: var(--champagne-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 30px;
     }
-    .locations-inner {
-      max-width: 1300px;
+    .trust-inner {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 40px 30px;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 40px;
+      border-right: 1px solid var(--border);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon { font-size: 1.4rem; }
+    .trust-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--burgundy);
+      line-height: 1;
+    }
+    .trust-text span { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.8px; text-transform: uppercase; font-weight: 500; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 80px 30px; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-tag {
+      font-size: 0.65rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--champagne);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-tag.dark { color: var(--burgundy); }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      color: var(--charcoal);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .section-heading.white { color: var(--white); }
+    .rule { width: 50px; height: 2px; background: var(--burgundy); margin-bottom: 28px; }
+    .rule.champagne { background: var(--champagne); }
+
+    /* ─── ABOUT / WIN SECTION ─── */
+    .about-section { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .about-content p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+    .attorney-highlight {
+      background: var(--champagne-pale);
+      border-left: 4px solid var(--burgundy);
+      padding: 20px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 24px 0;
+    }
+    .attorney-highlight p {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .attorney-highlight cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      color: var(--burgundy);
+      letter-spacing: 0.5px;
+    }
+    .btn-outline-burgundy {
+      display: inline-block;
+      margin-top: 12px;
+      border: 2px solid var(--burgundy);
+      color: var(--burgundy);
+      padding: 13px 28px;
+      font-weight: 700;
+      font-size: 0.76rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+    }
+    .btn-outline-burgundy:hover { background: var(--burgundy); color: var(--white); }
+
+    /* Reviews col */
+    .reviews-col { display: flex; flex-direction: column; gap: 14px; }
+    .reviews-header { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-body);
+      box-shadow: var(--shadow-sm);
+    }
+    .google-g {
+      font-size: 1rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .review-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .review-stars { color: #e0a800; font-size: 0.82rem; letter-spacing: 2px; margin-bottom: 8px; }
+    .review-text {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .review-footer { display: flex; justify-content: space-between; align-items: center; }
+    .review-author { font-weight: 700; font-size: 0.78rem; color: var(--charcoal); }
+    .review-source { font-size: 0.68rem; color: var(--text-muted); }
+
+    /* ─── LOCATIONS ─── */
+    .locations-section { background: var(--burgundy); padding: 50px 30px; }
+    .locations-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      flex-wrap: wrap;
     }
     .loc-item {
       display: flex;
@@ -277,540 +673,406 @@
       gap: 10px;
       cursor: pointer;
       transition: transform 0.2s;
+      min-width: 90px;
     }
-    .loc-item:hover { transform: translateY(-4px); }
+    .loc-item:hover { transform: translateY(-5px); }
     .loc-circle {
-      width: 90px;
-      height: 90px;
+      width: 84px;
+      height: 84px;
       border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--gold);
-      background: var(--navy);
-    }
-    .loc-circle img { width: 100%; height: 100%; object-fit: cover; }
-    .loc-circle-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1a3660, #0b1f3a);
+      border: 2px solid rgba(212,169,106,0.5);
+      background: rgba(255,255,255,0.07);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .loc-item h4 { color: var(--white); font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
+    .loc-item:hover .loc-circle { border-color: var(--champagne); background: rgba(212,169,106,0.1); }
+    .loc-item h4 { color: rgba(255,255,255,0.85); font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
 
-    /* ─── TRUST STRIP ─── */
-    .trust-strip {
-      background: var(--gold);
-      padding: 14px 30px;
-      text-align: center;
-    }
-    .trust-strip-inner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .trust-item { color: var(--navy); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-    .trust-item strong { display: block; font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; }
-
-    /* ─── SECTION UTILITY ─── */
-    .section { padding: 80px 30px; }
-    .section-inner { max-width: 1300px; margin: 0 auto; }
-    .section-tag {
-      font-size: 0.65rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .section-heading {
-      font-family: var(--font-heading);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    .section-heading.white { color: var(--white); }
-    .gold-rule { width: 60px; height: 3px; background: var(--gold); margin-bottom: 28px; }
-
-    /* ─── WIN SECTION ─── */
-    .win-section { background: var(--offwhite); }
-    .win-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .win-content p {
-      color: var(--text-body);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .btn-secondary {
-      display: inline-block;
-      margin-top: 10px;
-      border: 2px solid var(--navy);
-      color: var(--navy);
-      padding: 13px 30px;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border-radius: 3px;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover { background: var(--navy); color: var(--white); }
-
-    /* Reviews */
-    .reviews-col { display: flex; flex-direction: column; gap: 16px; }
-    .review-card {
-      background: var(--white);
-      border-left: 4px solid var(--gold);
-      padding: 20px 22px;
-      border-radius: 0 4px 4px 0;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      animation: fadeUp 0.6s ease both;
-    }
-    .review-stars { color: #f5a623; font-size: 0.85rem; margin-bottom: 8px; letter-spacing: 2px; }
-    .review-text { font-size: 0.85rem; color: var(--text-body); line-height: 1.7; margin-bottom: 10px; font-style: italic; }
-    .review-author { font-weight: 700; font-size: 0.78rem; color: var(--navy); letter-spacing: 0.5px; }
-    .review-source { font-size: 0.7rem; color: #888; }
-
-    .google-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--white);
-      border: 1px solid #ddd;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #444;
-      margin-bottom: 14px;
-    }
-    .google-badge .g-dot { width: 16px; height: 16px; border-radius: 50%; background: #4285F4; }
-
-    /* ─── EXPERIENCE SECTION ─── */
-    .experience-section { background: var(--navy); }
-    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .exp-img {
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-    }
-    .exp-img img { width: 100%; height: 420px; object-fit: cover; filter: brightness(0.85); }
-    .exp-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 3px solid var(--gold);
-      border-radius: 4px;
-      transform: translate(12px, 12px);
-      z-index: -1;
-    }
-    .exp-content p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.85; margin-bottom: 16px; }
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 14px 30px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border-radius: 3px;
-      transition: background 0.2s;
-      margin-top: 10px;
-    }
-    .btn-gold:hover { background: var(--gold2); }
-
-    /* ─── PRACTICE AREAS ─── */
-    .practice-section { background: var(--white); }
-    .practice-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .practice-card {
-      border: 1px solid var(--light-gray);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: box-shadow 0.3s, transform 0.3s;
-      cursor: pointer;
-      background: var(--white);
-    }
-    .practice-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
-    .practice-card-img {
-      height: 160px;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .practice-card-img .icon-bg {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-    }
-    .practice-card-img::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 60px;
-      background: linear-gradient(transparent, rgba(11,31,58,0.8));
-    }
-    .practice-card-body { padding: 20px 22px; }
-    .practice-card-body h3 {
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-    .practice-card-body p { font-size: 0.83rem; color: var(--text-body); line-height: 1.7; }
-    .practice-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 14px;
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .practice-card-link::after { content: '→'; }
-
-    /* ─── PROTECT SECTION ─── */
-    .protect-section { background: var(--offwhite); }
-    .protect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .protect-content p { font-size: 0.95rem; color: var(--text-body); line-height: 1.85; margin-bottom: 18px; }
-
-    /* Checklist */
-    .checklist { margin: 24px 0; }
-    .checklist li {
-      padding: 10px 0 10px 36px;
-      position: relative;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      font-size: 0.9rem;
-      color: var(--text-dark);
-      font-weight: 700;
-    }
-    .checklist li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 900;
-      background: var(--navy);
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      top: 11px;
-    }
-
-    /* Contact Card */
-    .contact-card {
-      background: var(--navy);
-      border-radius: 4px;
-      padding: 40px 36px;
-      color: var(--white);
-      box-shadow: 0 20px 60px rgba(11,31,58,0.3);
-    }
-    .contact-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-      color: var(--white);
-    }
-    .contact-card p { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 24px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--white);
-      padding: 12px 16px;
-      border-radius: 3px;
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      transition: border-color 0.2s;
-      outline: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
-    .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--gold); }
-    .form-group textarea { height: 100px; resize: vertical; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-group select option { background: var(--navy); color: var(--white); }
-    .btn-submit {
-      width: 100%;
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      padding: 16px;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin-top: 8px;
-    }
-    .btn-submit:hover { background: var(--gold2); transform: translateY(-1px); }
-    .form-disclaimer { margin-top: 12px; font-size: 0.7rem; color: rgba(255,255,255,0.35); text-align: center; }
-
-    /* ─── ATTORNEYS SECTION ─── */
-    .attorneys-section { background: var(--white); }
-    .attorneys-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .attorney-card {
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .attorney-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.15); transform: translateY(-4px); }
-    .attorney-img {
-      height: 280px;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .attorney-img img { width: 100%; height: 100%; object-fit: cover; }
-    .attorney-img-placeholder {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      border: 3px solid var(--gold);
-    }
-    .attorney-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(11,31,58,0.95));
-      padding: 20px 18px 0;
-    }
-    .attorney-info { padding: 18px; background: var(--white); border-top: 3px solid var(--gold); }
-    .attorney-info h3 { font-family: var(--font-heading); font-size: 1.05rem; color: var(--navy); margin-bottom: 4px; }
-    .attorney-info p { font-size: 0.78rem; color: #777; letter-spacing: 0.5px; }
-    .attorney-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 10px;
-      color: var(--gold);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* ─── STATS BANNER ─── */
-    .stats-banner { background: var(--navy); padding: 50px 30px; }
-    .stats-inner {
+    /* ─── STATS ─── */
+    .stats-section { background: var(--champagne-pale); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-grid {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 60px 30px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 30px;
       text-align: center;
     }
     .stat-item {}
-    .stat-number {
-      font-family: var(--font-heading);
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: var(--gold);
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--burgundy);
       line-height: 1;
+      margin-bottom: 8px;
     }
-    .stat-label { color: rgba(255,255,255,0.65); font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 8px; }
+    .stat-label { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+
+    /* ─── PRACTICE AREAS ─── */
+    .practice-section { background: var(--white); }
+    .practice-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .practice-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      transition: box-shadow 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .practice-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .practice-card-top {
+      background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .practice-card-top::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.2));
+    }
+    .practice-icon {
+      font-size: 2.4rem;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .practice-card-body { padding: 22px; }
+    .practice-card-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .practice-card-body p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; }
+    .practice-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      color: var(--burgundy);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .practice-card-link::after { content: '→'; transition: transform 0.2s; }
+    .practice-card:hover .practice-card-link::after { transform: translateX(4px); }
+
+    /* ─── EXPERIENCE SECTION ─── */
+    .experience-section { background: var(--burgundy-dark); }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .exp-img-wrap {
+      position: relative;
+    }
+    .exp-img-wrap img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      filter: brightness(0.9) saturate(0.85);
+    }
+    .exp-frame {
+      position: absolute;
+      top: -14px; right: -14px; bottom: -14px; left: -14px;
+      border: 1px solid rgba(212,169,106,0.25);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+    .exp-content p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .btn-champagne {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid var(--champagne);
+      color: var(--champagne);
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .btn-champagne:hover { background: var(--champagne); color: var(--burgundy-dark); }
+
+    /* ─── ATTORNEY SECTION ─── */
+    .attorney-section { background: var(--offwhite); }
+    .attorney-feature {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .attorney-photo-wrap { position: relative; }
+    .attorney-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .attorney-photo img { width: 100%; height: 460px; object-fit: cover; object-position: top; }
+    .attorney-photo-placeholder {
+      width: 100%;
+      height: 460px;
+      background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 30px;
+    }
+    .attorney-photo-placeholder .placeholder-icon { font-size: 4rem; opacity: 0.4; }
+    .attorney-badge {
+      position: absolute;
+      bottom: -18px; right: -18px;
+      background: var(--champagne);
+      color: var(--burgundy-dark);
+      padding: 16px 22px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .attorney-badge strong { display: block; font-family: var(--font-display); font-size: 1.6rem; line-height: 1; }
+    .attorney-badge span { font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
+    .attorney-info-wrap { padding-top: 10px; }
+    .attorney-name {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+    .attorney-title { font-size: 0.8rem; color: var(--burgundy); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 24px; }
+    .attorney-bio p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+    .attorney-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+    .credential-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--burgundy);
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .attorney-contact {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    /* ─── PROTECT SECTION ─── */
+    .protect-section { background: var(--white); }
+    .protect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+    .protect-content p { font-size: 0.95rem; color: var(--text-body); line-height: 1.85; margin-bottom: 18px; }
+    .checklist { margin: 20px 0 30px; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .check-icon {
+      width: 22px; height: 22px; min-width: 22px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 900;
+    }
+
+    /* Contact card (protect section) */
+    .contact-card {
+      background: var(--burgundy-dark);
+      border-radius: 10px;
+      padding: 40px 36px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--champagne), var(--champagne-lt));
+    }
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-card > p { color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-bottom: 26px; }
 
     /* ─── FOOTER ─── */
-    footer { background: #060f1c; color: rgba(255,255,255,0.7); }
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.65); }
+    .footer-top {
+      background: var(--burgundy-dark);
+      padding: 20px 30px;
+      text-align: center;
+    }
+    .footer-top a {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--champagne);
+      font-weight: 700;
+    }
     .footer-main {
-      max-width: 1300px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 60px 30px 40px;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
       gap: 40px;
     }
     .footer-brand {}
-    .footer-logo-name {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
+    .f-logo-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
       color: var(--white);
       font-weight: 700;
     }
-    .footer-logo-sub { font-size: 0.6rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
-    .footer-desc { font-size: 0.82rem; line-height: 1.75; margin-bottom: 20px; }
-    .footer-contact-detail { font-size: 0.82rem; margin-bottom: 8px; }
-    .footer-contact-detail a { color: var(--gold); }
+    .f-logo-tag { font-size: 0.58rem; color: var(--champagne); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .f-desc { font-size: 0.82rem; line-height: 1.78; margin-bottom: 20px; }
+    .f-contact-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; margin-bottom: 9px; }
+    .f-contact-item a { color: var(--champagne-lt); transition: color 0.2s; }
+    .f-contact-item a:hover { color: var(--champagne); }
+    .f-icon { font-size: 0.9rem; }
     .footer-col h4 {
-      font-size: 0.7rem;
+      font-size: 0.67rem;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--champagne);
       font-weight: 700;
       margin-bottom: 18px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(201,168,76,0.3);
+      border-bottom: 1px solid rgba(212,169,106,0.2);
     }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col li a { font-size: 0.82rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
-    .footer-col li a:hover { color: var(--gold); }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col li a { font-size: 0.82rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--champagne-lt); }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 20px 30px;
+      padding: 22px 30px;
       text-align: center;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.35);
     }
     .footer-disclaimer {
-      max-width: 900px;
+      max-width: 880px;
       margin: 0 auto 12px;
-      line-height: 1.6;
+      font-size: 0.7rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.28);
     }
+    .footer-copy { font-size: 0.74rem; color: rgba(255,255,255,0.3); }
 
     /* ─── FLOATING CTA ─── */
     .floating-cta {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--gold);
-      color: var(--navy);
+      bottom: 28px;
+      right: 28px;
+      background: var(--burgundy);
+      color: var(--white);
       padding: 14px 24px;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 1px;
+      font-size: 0.8rem;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+      box-shadow: 0 6px 28px rgba(107,26,42,0.45);
       z-index: 999;
       display: flex;
       align-items: center;
       gap: 8px;
       transition: background 0.2s, transform 0.2s;
-      animation: pulse 2s infinite;
+      animation: float 3s ease-in-out infinite;
     }
-    .floating-cta:hover { background: var(--gold2); transform: translateY(-3px); }
-    .floating-cta svg { width: 16px; height: 16px; }
+    .floating-cta:hover { background: var(--burgundy-dark); transform: translateY(-3px) !important; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); box-shadow: 0 6px 28px rgba(107,26,42,0.45); }
+      50%       { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(107,26,42,0.55); }
+    }
 
-    /* ─── ANIMATIONS ─── */
+    /* ─── KEYFRAMES ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
-      50%       { box-shadow: 0 8px 40px rgba(201,168,76,0.7); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-
-    /* ─── MOBILE MENU ─── */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--navy);
-      z-index: 2000;
-      padding: 30px;
-      overflow-y: auto;
-      flex-direction: column;
-      gap: 0;
-      animation: fadeIn 0.2s ease;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-close {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 2rem;
-      cursor: pointer;
-      margin-bottom: 20px;
-    }
-    .mobile-menu a {
-      display: block;
-      padding: 15px 0;
-      color: var(--white);
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .mobile-menu a:hover { color: var(--gold); }
-    .mobile-menu .mobile-phone {
-      margin-top: 30px;
-      background: var(--gold);
-      color: var(--navy);
-      text-align: center;
-      padding: 18px;
-      border-radius: 4px;
-      font-size: 1.1rem;
-      font-weight: 700;
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      nav > ul > li > a { padding: 28px 10px; font-size: 0.72rem; }
-      .attorneys-grid { grid-template-columns: repeat(2, 1fr); }
-      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 1100px) {
+      .hero-inner { gap: 36px; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 768px) {
-      nav { display: none; }
-      .cta-phone.desktop { display: none; }
+    @media (max-width: 900px) {
+      nav, .header-cta { display: none; }
       .hamburger { display: flex; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-img-wrap { display: none; }
-      .win-grid, .exp-grid, .protect-grid { grid-template-columns: 1fr; }
-      .practice-grid { grid-template-columns: 1fr; }
-      .attorneys-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .footer-main { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .hero::before { display: none; }
+      .hero-panel { margin-top: 10px; }
+      .about-grid, .exp-grid, .protect-grid, .attorney-feature { grid-template-columns: 1fr; }
+      .attorney-feature { grid-template-columns: 1fr; }
+      .attorney-badge { position: static; display: inline-block; margin-top: 16px; }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 480px) {
-      .attorneys-grid { grid-template-columns: 1fr; }
-      .stats-inner { grid-template-columns: 1fr; }
+    @media (max-width: 580px) {
+      .practice-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .footer-main { grid-template-columns: 1fr; }
+      .trust-item { padding: 10px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .translate-bar { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 400px) {
+      .stats-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -818,28 +1080,50 @@
 
 <!-- ─── MOBILE MENU ─── -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMobileMenu()">&times;</button>
+  <div class="mobile-menu-top">
+    <div class="logo-wrap">
+      <span class="logo-name">Moradi Law Group</span>
+      <span class="logo-tag">APC · moradilaw.com</span>
+    </div>
+    <button class="mobile-close" onclick="closeMobileMenu()">&times;</button>
+  </div>
   <a href="#home">Home</a>
   <a href="#practice">Practice Areas</a>
   <a href="#experience">Experience &amp; Results</a>
-  <a href="#attorneys">Attorneys</a>
+  <a href="#attorney">Attorney Leeora B. Moradi</a>
   <a href="#about">About Us</a>
   <a href="#contact">Contact</a>
-  <a href="tel:3105551234" class="mobile-phone">📞 Call (310) 555-1234 — Free Consultation</a>
+  <a href="tel:8187811579" class="mobile-phone-btn">📞 Call (818) 781-1579 — Free Consultation</a>
+  <a href="#contact" class="mobile-consult-btn" onclick="closeMobileMenu()">Get Free Case Review</a>
 </div>
 
-<!-- ─── TOP BAR ─── -->
-<div class="topbar">
-  Moradi Law Group, APC &nbsp;|&nbsp; Los Angeles Personal Injury Attorneys &nbsp;|&nbsp;
-  <a href="tel:3105551234"><strong>(310) 555-1234</strong></a> &nbsp;|&nbsp; Free Consultation — No Fee Unless We Win
+<!-- ─── TRANSLATE BAR ─── -->
+<div class="translate-bar">
+  <span class="translate-bar-left">🌐 Serving Los Angeles in multiple languages</span>
+  <div class="translate-bar-right">
+    <span class="lang-label">Translate:</span>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('en')">English</button>
+      <button class="lang-btn" onclick="setLang('es')">Español</button>
+      <button class="lang-btn" onclick="setLang('fa')">فارسی</button>
+      <button class="lang-btn" onclick="setLang('hy')">Հայերեն</button>
+    </div>
+    <div id="google_translate_element"></div>
+  </div>
+</div>
+
+<!-- ─── ANNOUNCEMENT BAR ─── -->
+<div class="announcement-bar">
+  <strong>Workers' Compensation Law</strong> &nbsp;·&nbsp; No Fee Unless We Win &nbsp;·&nbsp;
+  <a href="tel:8187811579">(818) 781-1579</a> &nbsp;·&nbsp; Free Consultations — Call Now
 </div>
 
 <!-- ─── HEADER ─── -->
 <header id="header">
   <div class="header-inner">
     <a href="#home" class="logo-wrap">
-      <span class="logo-name">Moradi Law Group</span>
-      <span class="logo-sub">APC &nbsp;·&nbsp; moradilaw.com</span>
+      <span class="logo-name">Moradi Law Group, APC</span>
+      <span class="logo-tag">Leeora B. Moradi, Attorney at Law · moradilaw.com</span>
     </a>
 
     <nav>
@@ -848,32 +1132,28 @@
         <li>
           <a href="#practice">Practice Areas ▾</a>
           <ul class="dropdown">
-            <li><a href="#practice">Vehicle Accidents</a></li>
-            <li><a href="#practice">Uber/Lyft Accidents</a></li>
-            <li><a href="#practice">Motorcycle Accidents</a></li>
-            <li><a href="#practice">Wrongful Death</a></li>
-            <li><a href="#practice">Brain &amp; Spinal Injuries</a></li>
-            <li><a href="#practice">Dog Bites</a></li>
-            <li><a href="#practice">Burn Injuries</a></li>
-            <li><a href="#practice">Slip &amp; Fall / Trip &amp; Fall</a></li>
-            <li><a href="#practice">Product Liability</a></li>
-            <li><a href="#practice">Serious Injuries</a></li>
+            <li><a href="#practice">Workers' Compensation</a></li>
+            <li><a href="#practice">Workplace Injuries</a></li>
+            <li><a href="#practice">Denied Claims &amp; Appeals</a></li>
+            <li><a href="#practice">Permanent Disability</a></li>
+            <li><a href="#practice">Medical Treatment Disputes</a></li>
+            <li><a href="#practice">Repetitive Stress Injuries</a></li>
           </ul>
         </li>
-        <li><a href="#experience">Experience &amp; Results</a></li>
-        <li>
-          <a href="#attorneys">Attorneys ▾</a>
-          <ul class="dropdown">
-            <li><a href="#attorneys">Our Attorneys</a></li>
-            <li><a href="#attorneys">Founding Partner</a></li>
-          </ul>
-        </li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#experience">Results</a></li>
+        <li><a href="#attorney">Attorney</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <a href="tel:3105551234" class="cta-phone desktop">📞 (310) 555-1234</a>
+    <div class="header-cta">
+      <div class="header-phone">
+        <a href="tel:8187811579">(818) 781-1579</a>
+        <span>Free Consultation</span>
+      </div>
+      <a href="#contact" class="btn-cta-sm">Get Help Now</a>
+    </div>
     <div class="hamburger" onclick="openMobileMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -884,194 +1164,217 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="hero-eyebrow">Los Angeles Personal Injury Attorneys</p>
-      <h1>Fighting For <em>Maximum Compensation</em> — On Your Side From Day One</h1>
+      <div class="hero-eyebrow">Workers' Compensation Attorney · Van Nuys, CA</div>
+      <h1>Injured at Work?<br/>Fight Back with <em>Leeora B. Moradi</em></h1>
+      <p class="hero-desc">
+        When a workplace injury changes your life, you deserve an attorney who knows exactly 
+        how to fight for the compensation you're owed. Attorney Leeora B. Moradi has helped 
+        countless injured workers across Los Angeles recover medical benefits, lost wages, 
+        and permanent disability compensation.
+      </p>
       <ul class="hero-bullets">
-        <li>No Recovery, No Fee — You Pay Nothing Unless We Win</li>
-        <li>Over $500 Million Recovered for Injured Clients</li>
-        <li>20+ Years of Personal Injury Trial Experience</li>
-        <li>Available 24/7 — Free Consultations</li>
+        <li><div class="bullet-check">✓</div> No fee unless we win — ever</li>
+        <li><div class="bullet-check">✓</div> Free confidential consultation</li>
+        <li><div class="bullet-check">✓</div> We handle denied and disputed claims</li>
+        <li><div class="bullet-check">✓</div> English · Español · فارسی · Հայերեն</li>
       </ul>
       <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Get Free Consultation</a>
-        <a href="tel:3105551234" class="btn-outline">📞 (310) 555-1234</a>
+        <a href="tel:8187811579" class="btn-primary">📞 Call (818) 781-1579</a>
+        <a href="#contact" class="btn-ghost">Free Case Review</a>
       </div>
     </div>
-    <div class="hero-img-wrap">
-      <!-- Replace this src with an actual photo of your attorney -->
-      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=700&q=80" alt="Moradi Law Group Attorneys" />
-      <div class="hero-badge">
-        <strong>$500M+</strong>
-        <span>Won for Clients</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ─── LOCATIONS STRIP ─── -->
-<section class="locations">
-  <div class="locations-inner">
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🏙️</div>
+    <!-- Hero Contact Form -->
+    <div class="hero-panel" id="contact">
+      <div class="hero-panel-title">Get Your Free Consultation</div>
+      <div class="hero-panel-sub">We respond within 1 business hour · No obligation</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Maria" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Garcia" />
+        </div>
       </div>
-      <h4>Los Angeles</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🎬</div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(818) 000-0000" />
       </div>
-      <h4>Hollywood</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">⭐</div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com" />
       </div>
-      <h4>Beverly Hills</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🌊</div>
+      <div class="form-group">
+        <label>Type of Workers' Comp Issue</label>
+        <select>
+          <option value="">Select your situation…</option>
+          <option>Workplace Accident / Injury</option>
+          <option>Denied Workers' Comp Claim</option>
+          <option>Employer Retaliation</option>
+          <option>Permanent Disability</option>
+          <option>Medical Treatment Dispute</option>
+          <option>Repetitive Stress / Occupational Illness</option>
+          <option>Death Benefits (Surviving Family)</option>
+          <option>Other</option>
+        </select>
       </div>
-      <h4>Santa Monica</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🏘️</div>
+      <div class="form-group">
+        <label>Brief Description</label>
+        <textarea placeholder="What happened? When were you injured?"></textarea>
       </div>
-      <h4>Glendale</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🌆</div>
-      </div>
-      <h4>West LA</h4>
-    </a>
-    <a href="#contact" class="loc-item">
-      <div class="loc-circle">
-        <div class="loc-circle-placeholder">🌴</div>
-      </div>
-      <h4>Pasadena</h4>
-    </a>
+      <button class="btn-submit" type="button">Send My Free Case Review →</button>
+      <p class="form-disclaimer">
+        Confidential · Attorney-client privilege applies · No spam, ever
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- ─── TRUST STRIP ─── -->
 <div class="trust-strip">
-  <div class="trust-strip-inner">
-    <div class="trust-item"><strong>$500M+</strong> Recovered</div>
-    <div class="trust-item"><strong>99%</strong> Success Rate</div>
-    <div class="trust-item"><strong>15,000+</strong> Cases Won</div>
-    <div class="trust-item"><strong>No Fee</strong> Unless We Win</div>
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">⚖️</div>
+      <div class="trust-text">
+        <strong>4.7★</strong>
+        <span>Google Reviews</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🏆</div>
+      <div class="trust-text">
+        <strong>$0</strong>
+        <span>Upfront Costs</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📋</div>
+      <div class="trust-text">
+        <strong>100%</strong>
+        <span>Workers' Comp Focused</span>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📞</div>
+      <div class="trust-text">
+        <strong>24/7</strong>
+        <span>Available to Clients</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ─── WIN SECTION ─── -->
-<section class="section win-section" id="about">
-  <div class="section-inner win-grid">
-    <div class="win-content">
-      <p class="section-tag">Why Choose Us</p>
-      <h2 class="section-heading">If We Don't Win, <br/>You Don't Pay — Period.</h2>
-      <div class="gold-rule"></div>
+<!-- ─── LOCATIONS ─── -->
+<section class="locations-section">
+  <div style="text-align:center; margin-bottom:28px;">
+    <p style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--champagne); font-weight:700; margin-bottom:6px;">We Serve All Of</p>
+    <h2 style="font-family:var(--font-display); font-size:1.8rem; color:var(--white); font-weight:600;">Los Angeles County &amp; Beyond</h2>
+  </div>
+  <div class="locations-inner">
+    <div class="loc-item"><div class="loc-circle">🏙️</div><h4>Van Nuys</h4></div>
+    <div class="loc-item"><div class="loc-circle">🌆</div><h4>Los Angeles</h4></div>
+    <div class="loc-item"><div class="loc-circle">🏘️</div><h4>Glendale</h4></div>
+    <div class="loc-item"><div class="loc-circle">⭐</div><h4>Burbank</h4></div>
+    <div class="loc-item"><div class="loc-circle">🎬</div><h4>Hollywood</h4></div>
+    <div class="loc-item"><div class="loc-circle">🌴</div><h4>Chatsworth</h4></div>
+    <div class="loc-item"><div class="loc-circle">🏔️</div><h4>Reseda</h4></div>
+    <div class="loc-item"><div class="loc-circle">🌊</div><h4>Sherman Oaks</h4></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT / WIN SECTION ─── -->
+<section class="section about-section" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-content">
+      <p class="section-tag dark">About Moradi Law Group</p>
+      <h2 class="section-heading">If We Don't Win,<br/>You Don't Pay — Period.</h2>
+      <div class="rule"></div>
+
       <p>
-        When you're hurt, the last thing you should worry about is legal fees. At Moradi Law Group, APC, 
-        we operate on a pure contingency fee basis — meaning you owe us absolutely nothing unless we 
-        secure compensation for you. No hidden costs, no upfront retainers, no surprises.
+        When you're injured on the job, your life can change in the blink of an eye. 
+        You could find yourself facing mounting medical bills, lost wages, and real physical 
+        limitations — all while your employer's insurance company works to minimize what 
+        you're owed. You shouldn't have to face any of that alone.
       </p>
       <p>
-        Our firm has recovered over $500 million for injured clients across Los Angeles County and 
-        Southern California. With a 99% success rate across more than 15,000 personal injury cases, 
-        insurance companies know our name — and they know we fight.
+        Moradi Law Group, APC can help you fight for the compensation you deserve. As a 
+        workers' compensation law firm based in Van Nuys, CA, we have helped countless 
+        clients recover the full benefits owed to them under California law.
       </p>
+
+      <div class="attorney-highlight">
+        <p>"You can trust attorney Leeora B. Moradi to help you too. When your employer's 
+        insurance company is trying to deny or minimize your claim, you need someone in 
+        your corner who knows the system inside and out — and who fights for you."</p>
+        <cite>— Moradi Law Group, APC</cite>
+      </div>
+
       <p>
-        When insurance companies see our name on a case, they take it seriously. Our track record 
-        of trial victories means they're far more likely to offer a fair settlement than risk facing 
-        us in court. That reputation is your leverage.
+        Call <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a> now 
+        to speak with a reputable workers' compensation attorney in Van Nuys about your legal matters. 
+        You can schedule a consultation right away.
       </p>
-      <a href="#about" class="btn-secondary">About Moradi Law Group</a>
+      <a href="#about" class="btn-outline-burgundy">Learn More About Our Firm</a>
     </div>
 
     <!-- Reviews -->
     <div class="reviews-col">
       <div class="google-badge">
-        <div class="g-dot"></div>
-        <span>Google Reviews — 5.0 ★ &nbsp; 300+ Reviews</span>
+        <span class="google-g">G</span>
+        <span>4.7 · Google Reviews · 300+ Verified Clients</span>
       </div>
 
-      <div class="review-card" style="animation-delay:0.1s">
+      <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Moradi Law Group fought relentlessly for my family after our car accident. They secured a settlement far beyond what I thought possible. Professional, compassionate, and incredibly effective."</p>
-        <div class="review-author">Maria G.</div>
-        <div class="review-source">Google Review &nbsp;·&nbsp; Verified Client</div>
+        <p class="review-text">"Outstanding service from start to finish! Attorney Moradi and her team fought tirelessly for my workers' comp claim after I was injured on the job. I received every benefit I was entitled to."</p>
+        <div class="review-footer">
+          <div class="review-author">Rosa M.</div>
+          <div class="review-source">Google · Verified Client</div>
+        </div>
       </div>
 
-      <div class="review-card" style="animation-delay:0.2s">
+      <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"After my slip and fall, I was overwhelmed and in pain. The team at Moradi Law took everything off my plate, kept me informed at every step, and got me the compensation I deserved."</p>
-        <div class="review-author">James T.</div>
-        <div class="review-source">Google Review &nbsp;·&nbsp; Verified Client</div>
+        <p class="review-text">"Not only is she completely personable but she knows her stuff. I felt confident and informed throughout my entire case. She got my claim approved after it was initially denied."</p>
+        <div class="review-footer">
+          <div class="review-author">David H.</div>
+          <div class="review-source">Google · Verified Client</div>
+        </div>
       </div>
 
-      <div class="review-card" style="animation-delay:0.3s">
+      <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"I can't thank Moradi Law Group enough. They were available to answer my calls anytime, handled everything with the insurance company, and the result was outstanding. Truly felt like family."</p>
-        <div class="review-author">Aisha K.</div>
-        <div class="review-source">Google Review &nbsp;·&nbsp; Verified Client</div>
+        <p class="review-text">"God bless you and your family 🙏 Attorney Moradi helped me when no one else would. My employer's insurance company denied my claim twice before she stepped in and turned everything around."</p>
+        <div class="review-footer">
+          <div class="review-author">Elena V.</div>
+          <div class="review-source">Google · Verified Client</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── STATS BANNER ─── -->
-<section class="stats-banner">
-  <div class="stats-inner">
+<!-- ─── STATS ─── -->
+<section class="stats-section">
+  <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-number">$500M+</div>
-      <div class="stat-label">Recovered for Clients</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">15,000+</div>
-      <div class="stat-label">Cases Won</div>
+      <div class="stat-num">4.7★</div>
+      <div class="stat-label">Google Rating</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">99%</div>
-      <div class="stat-label">Success Rate</div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Workers' Comp Focus</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">20+</div>
-      <div class="stat-label">Years of Experience</div>
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Upfront Legal Fees</div>
     </div>
-  </div>
-</section>
-
-<!-- ─── EXPERIENCE SECTION ─── -->
-<section class="section experience-section" id="experience">
-  <div class="section-inner exp-grid">
-    <div class="exp-img">
-      <!-- Replace with an actual firm photo or attorney headshot -->
-      <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=700&q=80" alt="Moradi Law Group Courtroom Experience" />
-    </div>
-    <div class="exp-content">
-      <p class="section-tag" style="color:var(--gold)">Our Track Record</p>
-      <h2 class="section-heading white">Decades of Combined Legal Excellence</h2>
-      <div class="gold-rule"></div>
-      <p>
-        Moradi Law Group, APC was founded on a singular mission: to be the law firm that Los Angeles 
-        families call first when they've been seriously hurt. Our attorneys bring decades of combined 
-        personal injury trial experience, with a deep specialization in catastrophic injury cases.
-      </p>
-      <p>
-        Our founding partner built this firm from the ground up, earning a reputation as one of 
-        Southern California's most formidable personal injury trial lawyers. From motorcycle accidents 
-        on the 405 to product liability claims against Fortune 500 companies, we've seen it — and 
-        won it — all.
-      </p>
-      <p>
-        Insurance companies have entire legal departments dedicated to minimizing your payout. 
-        We are the equalizer. Our results speak for themselves, and our clients' recoveries 
-        reflect what happens when the right attorneys go to work.
-      </p>
-      <a href="#attorneys" class="btn-gold">Meet Our Attorneys</a>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Languages Served</div>
     </div>
   </div>
 </section>
@@ -1079,73 +1382,66 @@
 <!-- ─── PRACTICE AREAS ─── -->
 <section class="section practice-section" id="practice">
   <div class="section-inner">
-    <p class="section-tag">What We Handle</p>
-    <h2 class="section-heading">Practice Areas</h2>
-    <div class="gold-rule"></div>
+    <div class="practice-header">
+      <div>
+        <p class="section-tag dark">What We Handle</p>
+        <h2 class="section-heading">Workers' Compensation<br/>Practice Areas</h2>
+        <div class="rule"></div>
+      </div>
+      <a href="#contact" class="btn-primary" style="align-self:center;">Free Consultation</a>
+    </div>
 
     <div class="practice-grid">
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">🚗</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">🏗️</div></div>
         <div class="practice-card-body">
-          <h3>Vehicle Accidents</h3>
-          <p>Car crashes cause devastating injuries. We fight to recover every dollar of compensation you're owed — medical bills, lost wages, pain and suffering.</p>
+          <h3>Workplace Accidents</h3>
+          <p>Slip and falls, equipment failures, construction site injuries — if it happened at work, you're entitled to benefits regardless of fault.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
 
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">⚖️</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">📋</div></div>
         <div class="practice-card-body">
-          <h3>Wrongful Death</h3>
-          <p>Losing a loved one due to another's negligence is devastating. We pursue justice on behalf of surviving family members and dependents.</p>
+          <h3>Denied Claims &amp; Appeals</h3>
+          <p>A denied claim isn't the end. We specialize in overturning wrongful denials and winning at Workers' Compensation Appeals Board hearings.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
 
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">🏍️</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">🧠</div></div>
         <div class="practice-card-body">
-          <h3>Motorcycle Accidents</h3>
-          <p>Motorcyclists face unique dangers and biases. Our attorneys have deep experience protecting riders' rights and securing maximum recovery.</p>
+          <h3>Permanent Disability</h3>
+          <p>If your injury results in a lasting impairment, you may qualify for permanent disability payments. We fight for the full rating you deserve.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
 
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">🧠</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">🏥</div></div>
         <div class="practice-card-body">
-          <h3>Brain &amp; Spinal Injuries</h3>
-          <p>Traumatic brain and spinal cord injuries can alter your life forever. We pursue the large verdicts these catastrophic cases demand.</p>
+          <h3>Medical Treatment Disputes</h3>
+          <p>Insurance companies routinely deny or delay necessary medical care. We compel them to authorize the treatment your doctor has prescribed.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
 
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">🚶</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">🔄</div></div>
         <div class="practice-card-body">
-          <h3>Slip &amp; Fall / Trip &amp; Fall</h3>
-          <p>Property owners must maintain safe premises. When they fail, we hold them accountable and recover what you deserve.</p>
+          <h3>Repetitive Stress Injuries</h3>
+          <p>Carpal tunnel, back injuries, and other conditions caused by repetitive work motions are fully compensable under California workers' comp law.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
 
       <div class="practice-card">
-        <div class="practice-card-img">
-          <div class="icon-bg">📦</div>
-        </div>
+        <div class="practice-card-top"><div class="practice-icon">⚖️</div></div>
         <div class="practice-card-body">
-          <h3>Product Liability</h3>
-          <p>Defective and dangerous products hurt thousands every year. We take on manufacturers and retailers to get you compensated.</p>
+          <h3>Employer Retaliation</h3>
+          <p>It is illegal for employers to fire or punish you for filing a workers' comp claim. If this happened to you, we can help you fight back.</p>
           <span class="practice-card-link">Learn More</span>
         </div>
       </div>
@@ -1153,198 +1449,246 @@
   </div>
 </section>
 
-<!-- ─── WE PROTECT YOU ─── -->
+<!-- ─── EXPERIENCE SECTION ─── -->
+<section class="section experience-section" id="experience">
+  <div class="section-inner exp-grid">
+    <div class="exp-img-wrap">
+      <!-- Replace with an actual photo of Attorney Moradi or your office -->
+      <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=700&q=80" alt="Moradi Law Group office" />
+      <div class="exp-frame"></div>
+    </div>
+    <div class="exp-content">
+      <p class="section-tag">Our Commitment</p>
+      <h2 class="section-heading white">Why Clients Choose<br/>Moradi Law Group</h2>
+      <div class="rule champagne"></div>
+
+      <p>
+        Workers' compensation cases are complex, time-sensitive, and often stacked in favor 
+        of insurance carriers and employers. Attorney Leeora B. Moradi has dedicated her 
+        practice entirely to this area of law — meaning when you hire our firm, you get 
+        a specialist, not a generalist.
+      </p>
+      <p>
+        We know how to investigate your claim, gather the medical evidence needed, navigate 
+        the Workers' Compensation Appeals Board, and force insurance companies to honor their 
+        obligations. Our clients consistently describe feeling genuinely cared for, not like 
+        just another file.
+      </p>
+      <p>
+        With bilingual staff in English, Spanish, Farsi, and Armenian, we make sure every 
+        client is fully heard and informed at every stage of their case — from the first 
+        call through final settlement.
+      </p>
+      <a href="#contact" class="btn-champagne">Schedule Your Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ATTORNEY ─── -->
+<section class="section attorney-section" id="attorney">
+  <div class="section-inner">
+    <div class="attorney-feature">
+      <div class="attorney-photo-wrap">
+        <div class="attorney-photo">
+          <!-- ↓ REPLACE THIS with a professional headshot of Attorney Leeora B. Moradi ↓ -->
+          <div class="attorney-photo-placeholder">
+            <div class="placeholder-icon">👩‍⚖️</div>
+            <p>Replace with photo of<br/><strong>Attorney Leeora B. Moradi</strong></p>
+          </div>
+        </div>
+        <div class="attorney-badge">
+          <strong>APC</strong>
+          <span>Licensed California<br/>Workers' Comp Attorney</span>
+        </div>
+      </div>
+
+      <div class="attorney-info-wrap">
+        <p class="section-tag dark" style="margin-bottom:8px;">Lead Attorney</p>
+        <div class="attorney-name">Leeora B. Moradi</div>
+        <div class="attorney-title">Founder &amp; Managing Attorney · Moradi Law Group, APC</div>
+
+        <div class="attorney-credentials">
+          <span class="credential-tag">Workers' Compensation Specialist</span>
+          <span class="credential-tag">California State Bar</span>
+          <span class="credential-tag">Los Angeles County</span>
+          <span class="credential-tag">Bilingual Consultations</span>
+        </div>
+
+        <div class="attorney-bio">
+          <p>
+            Attorney Leeora B. Moradi founded Moradi Law Group, APC with a clear purpose: to give 
+            injured California workers the powerful legal representation they deserve. When employers 
+            and their insurance companies try to deny or minimize a legitimate claim, she fights back 
+            with skill, dedication, and genuine care for every client.
+          </p>
+          <p>
+            Based in Van Nuys, Moradi Law Group serves the entire San Fernando Valley and greater 
+            Los Angeles area. Attorney Moradi is known among her clients not just for her legal 
+            expertise, but for her personal commitment to walking alongside them through one of the 
+            most difficult times of their lives.
+          </p>
+          <p>
+            Clients describe her as "completely personable" and say she "knows her stuff" — a 
+            combination that has earned the firm a 4.7-star rating across hundreds of Google reviews. 
+            Call <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a> 
+            to speak with Attorney Moradi directly.
+          </p>
+        </div>
+
+        <div class="attorney-contact">
+          <a href="tel:8187811579" class="btn-primary">📞 (818) 781-1579</a>
+          <a href="#contact" class="btn-outline-burgundy">Free Case Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROTECT / CONTACT ─── -->
 <section class="section protect-section">
   <div class="section-inner protect-grid">
     <div class="protect-content">
-      <p class="section-tag">Our Commitment</p>
-      <h2 class="section-heading">We Will Fight For You — Relentlessly.</h2>
-      <div class="gold-rule"></div>
+      <p class="section-tag dark">We're On Your Side</p>
+      <h2 class="section-heading">We Will Protect Your<br/>Rights as a Worker.</h2>
+      <div class="rule"></div>
+
       <p>
-        If you need a skilled and aggressive personal injury lawyer in Los Angeles, 
-        Moradi Law Group, APC is your first and last call. Every attorney at our firm 
-        brings unwavering integrity, deep experience, and the knowledge to win.
+        At Moradi Law Group, APC, every client receives dedicated, personalized attention. 
+        We know what it's like to feel overwhelmed after a work injury — the medical bills, 
+        the missed work, the uncertainty. Our team handles every aspect of your case so 
+        you can focus on what matters most: healing.
       </p>
       <p>
-        At Moradi Law Group, our attorneys are committed to ensuring you receive the 
-        proper medical treatment you need after an accident. While insurance companies 
-        deploy armies of adjusters and lawyers to minimize your claim, our team works 
-        tirelessly to make sure you are never taken advantage of.
+        The insurance company has a team of lawyers. You deserve one too — and ours work 
+        on a contingency fee basis, meaning you pay us absolutely nothing unless and until 
+        we win your case.
       </p>
+
       <ul class="checklist">
-        <li>Free case evaluation — no obligation</li>
-        <li>We handle all insurance company communications</li>
-        <li>We connect you with top medical providers</li>
-        <li>24/7 availability for our clients</li>
-        <li>Bilingual staff — English &amp; Farsi</li>
-        <li>No upfront costs, ever</li>
+        <li><div class="check-icon">✓</div> Free confidential case review</li>
+        <li><div class="check-icon">✓</div> No fee unless we win your case</li>
+        <li><div class="check-icon">✓</div> We handle all insurance company communications</li>
+        <li><div class="check-icon">✓</div> We coordinate medical care and treatment approvals</li>
+        <li><div class="check-icon">✓</div> Bilingual staff — English, Spanish, Farsi, Armenian</li>
+        <li><div class="check-icon">✓</div> Located in Van Nuys, serving all of LA County</li>
       </ul>
+
+      <div style="margin-top:24px; padding:18px 22px; background:var(--champagne-pale); border-radius:var(--radius); border:1px solid var(--border);">
+        <p style="font-size:0.82rem; font-weight:700; color:var(--charcoal); margin-bottom:4px;">📍 Office Location</p>
+        <p style="font-size:0.85rem; color:var(--text-body); line-height:1.6;">
+          14545 Victory Blvd #403<br/>
+          Van Nuys, CA 91411<br/>
+          <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a>
+        </p>
+        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;">Mon–Fri: 8:30 AM – 5:30 PM · Consultations available by appointment</p>
+      </div>
     </div>
 
-    <div id="contact" class="contact-card">
+    <!-- Secondary Contact Form -->
+    <div class="contact-card">
       <h3>Get Your Free Consultation</h3>
-      <p>Tell us about your case — we'll respond within hours.</p>
+      <p>Tell us what happened — we'll respond fast and keep everything confidential.</p>
 
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="John" />
+          <input type="text" placeholder="Maria" />
         </div>
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" placeholder="Smith" />
+          <input type="text" placeholder="Garcia" />
         </div>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" placeholder="(310) 000-0000" />
+        <input type="tel" placeholder="(818) 000-0000" />
       </div>
       <div class="form-group">
-        <label>Email Address</label>
+        <label>Email</label>
         <input type="email" placeholder="you@email.com" />
       </div>
       <div class="form-group">
-        <label>Type of Injury / Case</label>
+        <label>Workers' Comp Issue</label>
         <select>
-          <option value="">Select a practice area…</option>
-          <option>Vehicle / Car Accident</option>
-          <option>Motorcycle Accident</option>
-          <option>Slip &amp; Fall</option>
-          <option>Wrongful Death</option>
-          <option>Brain or Spinal Injury</option>
-          <option>Dog Bite</option>
-          <option>Burn Injury</option>
-          <option>Product Liability</option>
-          <option>Uber / Lyft Accident</option>
+          <option value="">Select your situation…</option>
+          <option>Workplace Accident / Injury</option>
+          <option>Denied Workers' Comp Claim</option>
+          <option>Employer Retaliation</option>
+          <option>Permanent Disability</option>
+          <option>Medical Treatment Dispute</option>
+          <option>Repetitive Stress / Occupational Illness</option>
+          <option>Death Benefits</option>
           <option>Other</option>
         </select>
       </div>
       <div class="form-group">
-        <label>Brief Description of Your Case</label>
-        <textarea placeholder="What happened? When did the accident occur?"></textarea>
+        <label>Tell Us What Happened</label>
+        <textarea placeholder="When were you injured? What happened?"></textarea>
       </div>
       <button class="btn-submit" type="button">Send My Free Case Review →</button>
       <p class="form-disclaimer">
-        Confidential. Submitting this form does not create an attorney-client relationship.<br/>
-        We typically respond within 1 business hour.
+        Confidential · No spam · We typically respond within 1 business hour
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── ATTORNEYS ─── -->
-<section class="section attorneys-section" id="attorneys">
-  <div class="section-inner">
-    <p class="section-tag">The Team</p>
-    <h2 class="section-heading">Meet Our Attorneys</h2>
-    <div class="gold-rule"></div>
-    <p style="max-width:680px; font-size:0.95rem; color:var(--text-body); line-height:1.75; margin-bottom:0;">
-      Every attorney at Moradi Law Group, APC was carefully selected for their track record, 
-      integrity, and deep commitment to client advocacy. Together, our team brings decades 
-      of combined personal injury trial experience.
-    </p>
-
-    <div class="attorneys-grid">
-
-      <div class="attorney-card">
-        <div class="attorney-img">
-          <!-- Replace src with actual attorney photo -->
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80" alt="Lead Attorney" />
-        </div>
-        <div class="attorney-info">
-          <h3>Founding Partner</h3>
-          <p>Managing Attorney, APC</p>
-          <span class="attorney-link">View Bio →</span>
-        </div>
-      </div>
-
-      <div class="attorney-card">
-        <div class="attorney-img">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Senior Partner" />
-        </div>
-        <div class="attorney-info">
-          <h3>Senior Partner</h3>
-          <p>Trial Litigation Division</p>
-          <span class="attorney-link">View Bio →</span>
-        </div>
-      </div>
-
-      <div class="attorney-card">
-        <div class="attorney-img">
-          <img src="https://images.unsplash.com/photo-1580894908361-967195033215?w=400&q=80" alt="Associate Attorney" />
-        </div>
-        <div class="attorney-info">
-          <h3>Associate Attorney</h3>
-          <p>Catastrophic Injury Cases</p>
-          <span class="attorney-link">View Bio →</span>
-        </div>
-      </div>
-
-      <div class="attorney-card">
-        <div class="attorney-img">
-          <div class="attorney-img-placeholder">⚖️</div>
-        </div>
-        <div class="attorney-info">
-          <h3>Of Counsel</h3>
-          <p>Complex Litigation</p>
-          <span class="attorney-link">View Bio →</span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
+  <div class="footer-top">
+    <a href="#home">Moradi Law Group, APC</a>
+  </div>
   <div class="footer-main">
     <div class="footer-brand">
-      <div class="footer-logo-name">Moradi Law Group</div>
-      <div class="footer-logo-sub">APC &nbsp;·&nbsp; moradilaw.com</div>
-      <p class="footer-desc">
-        Moradi Law Group, APC is a premier personal injury law firm serving Los Angeles 
-        and all of Southern California. We fight for injured people against powerful insurance 
-        companies — and we win.
+      <div class="f-logo-name">Moradi Law Group, APC</div>
+      <span class="f-logo-tag">Leeora B. Moradi · Workers' Compensation · moradilaw.com</span>
+      <p class="f-desc">
+        Moradi Law Group, APC is a dedicated workers' compensation law firm serving Van Nuys 
+        and all of Los Angeles County. Attorney Leeora B. Moradi fights for injured workers 
+        to recover the full medical, wage, and disability benefits they are owed under 
+        California law.
       </p>
-      <p class="footer-contact-detail">📞 <a href="tel:3105551234">(310) 555-1234</a></p>
-      <p class="footer-contact-detail">📧 <a href="mailto:info@moradilaw.com">info@moradilaw.com</a></p>
-      <p class="footer-contact-detail" style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:8px;">
-        [Your Address Here]<br/>Los Angeles, CA
-      </p>
+      <div class="f-contact-item"><span class="f-icon">📞</span><a href="tel:8187811579">(818) 781-1579</a></div>
+      <div class="f-contact-item"><span class="f-icon">📍</span><span>14545 Victory Blvd #403, Van Nuys, CA 91411</span></div>
+      <div class="f-contact-item"><span class="f-icon">🕐</span><span>Mon–Fri: 8:30 AM – 5:30 PM</span></div>
+      <div class="f-contact-item"><span class="f-icon">🌐</span><a href="https://moradilaw.com">moradilaw.com</a></div>
     </div>
 
     <div class="footer-col">
       <h4>Practice Areas</h4>
       <ul>
-        <li><a href="#practice">Vehicle Accidents</a></li>
-        <li><a href="#practice">Wrongful Death</a></li>
-        <li><a href="#practice">Motorcycle Accidents</a></li>
-        <li><a href="#practice">Brain &amp; Spinal Injuries</a></li>
-        <li><a href="#practice">Slip &amp; Fall</a></li>
-        <li><a href="#practice">Dog Bites</a></li>
+        <li><a href="#practice">Workers' Compensation</a></li>
+        <li><a href="#practice">Workplace Accidents</a></li>
+        <li><a href="#practice">Denied Claims / Appeals</a></li>
+        <li><a href="#practice">Permanent Disability</a></li>
+        <li><a href="#practice">Medical Disputes</a></li>
+        <li><a href="#practice">Repetitive Stress</a></li>
+        <li><a href="#practice">Employer Retaliation</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>More Areas</h4>
-      <ul>
-        <li><a href="#practice">Burn Injuries</a></li>
-        <li><a href="#practice">Product Liability</a></li>
-        <li><a href="#practice">Uber/Lyft Accidents</a></li>
-        <li><a href="#practice">Serious Injuries</a></li>
-        <li><a href="#practice">Aviation Accidents</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Quick Links</h4>
+      <h4>Firm</h4>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#experience">Results</a></li>
-        <li><a href="#attorneys">Our Attorneys</a></li>
+        <li><a href="#attorney">Attorney Moradi</a></li>
+        <li><a href="#experience">Results &amp; Reviews</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact">Free Consultation</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <ul>
+        <li><a href="#contact">Van Nuys</a></li>
+        <li><a href="#contact">Los Angeles</a></li>
+        <li><a href="#contact">Glendale</a></li>
+        <li><a href="#contact">Burbank</a></li>
+        <li><a href="#contact">Sherman Oaks</a></li>
+        <li><a href="#contact">Reseda</a></li>
+        <li><a href="#contact">Chatsworth</a></li>
       </ul>
     </div>
   </div>
@@ -1352,24 +1696,22 @@
   <div class="footer-bottom">
     <p class="footer-disclaimer">
       This website is for informational purposes only and does not constitute legal advice. 
-      Visiting this site or sending a message does not create an attorney-client relationship. 
-      This site constitutes attorney advertising. Prior results do not guarantee a similar outcome. 
-      Moradi Law Group, APC is licensed to practice law in California.
+      Visiting this site or contacting Moradi Law Group, APC does not create an attorney-client relationship. 
+      This site constitutes attorney advertising under the California Rules of Professional Conduct. 
+      Prior results do not guarantee a similar outcome. Moradi Law Group, APC is licensed to practice law in California.
     </p>
-    <p>© 2025 Moradi Law Group, APC · moradilaw.com · All Rights Reserved.</p>
+    <p class="footer-copy">© 2025 Moradi Law Group, APC · Leeora B. Moradi, Attorney at Law · Van Nuys, CA · moradilaw.com · All Rights Reserved.</p>
   </div>
 </footer>
 
 <!-- ─── FLOATING CALL CTA ─── -->
-<a href="tel:3105551234" class="floating-cta">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.71a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-  </svg>
-  Free Call — (310) 555-1234
+<a href="tel:8187811579" class="floating-cta">
+  📞 Call (818) 781-1579
 </a>
 
+<!-- ─── SCRIPTS ─── -->
 <script>
-  /* Mobile menu */
+  /* ── Mobile menu ── */
   function openMobileMenu() {
     document.getElementById('mobileMenu').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1378,35 +1720,64 @@
     document.getElementById('mobileMenu').classList.remove('open');
     document.body.style.overflow = '';
   }
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
-  /* Sticky header shadow enhancement */
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 60) {
-      header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
+  /* ── Language switcher (quick buttons trigger Google Translate) ── */
+  function setLang(langCode) {
+    // Update active state
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // Trigger Google Translate
+    var selectEl = document.querySelector('.goog-te-combo');
+    if (selectEl) {
+      selectEl.value = langCode;
+      selectEl.dispatchEvent(new Event('change'));
     } else {
-      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.4)';
+      // Fallback: reload with Google Translate hash
+      var currentUrl = window.location.href.split('#')[0];
+      if (langCode !== 'en') {
+        document.cookie = 'googtrans=/en/' + langCode + '; path=/';
+        location.reload();
+      } else {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        location.reload();
+      }
+    }
+  }
+
+  /* ── Sticky header scroll enhancement ── */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.style.boxShadow = '0 4px 24px rgba(107,26,42,0.12)';
+    } else {
+      header.style.boxShadow = '0 2px 12px rgba(107,26,42,0.08)';
     }
   });
 
-  /* Scroll reveal */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.animation = 'fadeUp 0.7s ease forwards';
-        observer.unobserve(e.target);
+  /* ── Scroll-reveal animation ── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeUp 0.65s ease forwards';
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.practice-card, .attorney-card, .stat-item, .review-card').forEach(el => {
+  document.querySelectorAll(
+    '.practice-card, .review-card, .stat-item, .trust-item, .loc-item'
+  ).forEach(el => {
     el.style.opacity = '0';
-    observer.observe(el);
+    revealObserver.observe(el);
   });
 
-  /* Smooth close mobile menu on nav click */
-  document.querySelectorAll('.mobile-menu a').forEach(a => {
-    a.addEventListener('click', closeMobileMenu);
+  /* ── Stagger children ── */
+  document.querySelectorAll('.practice-grid, .stats-grid, .locations-inner').forEach(grid => {
+    Array.from(grid.children).forEach((child, i) => {
+      child.style.animationDelay = (i * 0.07) + 's';
+    });
   });
 </script>
 </body>
