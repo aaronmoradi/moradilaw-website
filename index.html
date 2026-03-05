@@ -799,22 +799,29 @@
       line-height: 1.85;
       margin-bottom: 18px;
     }
-    .btn-champagne {
+   .btn-champagne {
       display: inline-block;
-      background: transparent;
+      background: var(--champagne);
       border: 2px solid var(--champagne);
-      color: var(--champagne);
+      color: var(--burgundy-dark);
       padding: 13px 28px;
       border-radius: var(--radius);
       font-weight: 700;
       font-size: 0.78rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      transition: all 0.2s;
       margin-top: 10px;
+      animation: btnFlash 1.6s ease-in-out infinite;
+      position: relative;
     }
-    .btn-champagne:hover { background: var(--champagne); color: var(--burgundy-dark); }
-
+    .btn-champagne:hover {
+      background: var(--champagne-lt);
+      border-color: var(--champagne-lt);
+      color: var(--burgundy-dark);
+      animation: none;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(212,169,106,0.55);
+    }
     /* ─── ATTORNEY SECTION ─── */
     .attorney-section { background: var(--offwhite); }
     .attorney-feature {
