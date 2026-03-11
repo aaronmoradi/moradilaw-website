@@ -145,14 +145,19 @@
       border-color: var(--burgundy);
     }
 
-    /* Google Translate widget wrapper */
+    /* Google Translate widget — hidden, kept functional */
     #google_translate_element {
-      display: inline-flex;
-      align-items: center;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    /* Hide Google branding clutter a bit */
-    .goog-logo-link {
+    .goog-logo-link,
+    .goog-te-gadget img,
+    .goog-te-gadget span {
       display: none !important;
     }
 
@@ -161,14 +166,8 @@
     }
 
     .goog-te-gadget select {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 10px;
-      color: var(--burgundy);
-      background: var(--white);
-      cursor: pointer;
+      font-size: 0 !important;
+      border: none;
       outline: none;
     }
 
@@ -1840,24 +1839,38 @@
         <div class="hero-panel-title">Get Your Free Consultation</div>
         <div class="hero-panel-sub">We respond within 1 business hour · No obligation</div>
 
-        <!-- Formspree example -->
-        <form class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required />
+        <form id="heroForm" action="https://formspree.io/f/manpwgey" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hero-fname">First Name</label>
+              <input id="hero-fname" type="text" name="first_name" placeholder="Maria" required />
+            </div>
+            <div class="form-group">
+              <label for="hero-lname">Last Name</label>
+              <input id="hero-lname" type="text" name="last_name" placeholder="Garcia" required />
+            </div>
           </div>
-
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
+            <label for="hero-phone">Phone Number</label>
+            <input id="hero-phone" type="tel" name="phone" placeholder="(818) 000-0000" required />
           </div>
-
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+            <label for="hero-email">Email Address</label>
+            <input id="hero-email" type="email" name="_replyto" placeholder="your@email.com" required />
           </div>
-
-          <button class="btn" type="submit">Send Message</button>
+          <div class="form-group">
+            <label for="hero-msg">Brief Description</label>
+            <textarea id="hero-msg" name="message" placeholder="What happened? When were you injured?"
+              required></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="New Case Inquiry — Moradi Law Group" />
+          <button class="btn-submit" type="submit">Send My Free Case Review →</button>
+          <div id="heroSuccess"
+            style="display:none; margin-top:14px; padding:12px 16px; background:rgba(212,169,106,0.15); border:1px solid var(--champagne); border-radius:5px; color:var(--champagne-lt); font-size:0.82rem; text-align:center;">
+            ✅ Thank you! We'll contact you soon.
+          </div>
+          <p class="form-disclaimer">Confidential · No spam</p>
         </form>
       </div>
     </div>
@@ -2284,31 +2297,53 @@
         <h3>Get Your Free Consultation</h3>
         <p>Tell us what happened — we'll respond fast and keep everything confidential.</p>
 
-        <div class="hero-panel" id="contact">
-          <div class="hero-panel-title">Get Your Free Consultation</div>
-          <div class="hero-panel-sub">We respond within 1 business hour · No obligation</div>
-
-          <!-- Formspree example -->
-          <form class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/manpwgey" method="POST">
+          <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
+              <label for="cf-fname">First Name</label>
+              <input id="cf-fname" type="text" name="first_name" placeholder="Maria" required />
             </div>
-
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
+              <label for="cf-lname">Last Name</label>
+              <input id="cf-lname" type="text" name="last_name" placeholder="Garcia" required />
             </div>
-
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
-                required></textarea>
-            </div>
-
-            <button class="btn" type="submit">Send Message</button>
-          </form>
-        </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input id="cf-phone" type="tel" name="phone" placeholder="(818) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" name="_replyto" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="cf-issue">Type of Issue</label>
+            <select id="cf-issue" name="case_type" required>
+              <option value="">Select your situation…</option>
+              <option>Workplace Accident / Injury</option>
+              <option>Denied Workers' Comp Claim</option>
+              <option>Employer Retaliation</option>
+              <option>Permanent Disability</option>
+              <option>Medical Treatment Dispute</option>
+              <option>Repetitive Stress / Occupational Illness</option>
+              <option>Death Benefits</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-msg">Tell Us What Happened</label>
+            <textarea id="cf-msg" name="message" placeholder="When were you injured? What happened?"
+              required></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="New Case Inquiry — Moradi Law Group" />
+          <button class="btn-submit" type="submit">Send My Free Case Review →</button>
+          <div id="contactSuccess"
+            style="display:none; margin-top:14px; padding:12px 16px; background:rgba(212,169,106,0.15); border:1px solid var(--champagne); border-radius:5px; color:var(--champagne-lt); font-size:0.82rem; text-align:center;">
+            ✅ Thank you! We'll contact you within 1 business hour.
+          </div>
+          <p class="form-disclaimer">Confidential · No spam · We typically respond within 1 business hour</p>
+        </form>
       </div>
     </div>
   </section>
