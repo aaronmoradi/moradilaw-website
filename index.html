@@ -1839,38 +1839,24 @@
         <div class="hero-panel-title">Get Your Free Consultation</div>
         <div class="hero-panel-sub">We respond within 1 business hour · No obligation</div>
 
-        <form id="heroForm" action="https://formspree.io/f/manpwgey" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="hero-fname">First Name</label>
-              <input id="hero-fname" type="text" name="first_name" placeholder="Jane" required />
-            </div>
-            <div class="form-group">
-              <label for="hero-lname">Last Name</label>
-              <input id="hero-lname" type="text" name="last_name" placeholder="Smith" required />
-            </div>
-          </div>
+        <!-- Formspree example -->
+        <form class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
           <div class="form-group">
-            <label for="hero-phone">Phone Number</label>
-            <input id="hero-phone" type="tel" name="phone" placeholder="(818) 000-0000" required />
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
           </div>
+
           <div class="form-group">
-            <label for="hero-email">Email Address</label>
-            <input id="hero-email" type="email" name="_replyto" placeholder="your@email.com" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
+
           <div class="form-group">
-            <label for="hero-msg">Brief Description</label>
-            <textarea id="hero-msg" name="message" placeholder="What happened? When were you injured?"
-              required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
-          <input type="text" name="_gotcha" style="display:none" />
-          <input type="hidden" name="_subject" value="New Case Inquiry — Moradi Law Group" />
-          <button class="btn-submit" type="submit">Send My Free Case Review →</button>
-          <div id="heroSuccess"
-            style="display:none; margin-top:14px; padding:12px 16px; background:rgba(212,169,106,0.15); border:1px solid var(--champagne); border-radius:5px; color:var(--champagne-lt); font-size:0.82rem; text-align:center;">
-            ✅ Thank you! We'll contact you soon.
-          </div>
-          <p class="form-disclaimer">Confidential · No spam</p>
+
+          <button class="btn" type="submit">Send Message</button>
         </form>
       </div>
     </div>
