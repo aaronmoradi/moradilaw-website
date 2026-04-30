@@ -2500,6 +2500,29 @@
         child.style.animationDelay = (i * 0.07) + 's';
       });
     });
+
+/* ── Phone number auto-formatter ── */
+    function formatPhone(e) {
+      let input = e.target;
+      let digits = input.value.replace(/\D/g, '').slice(0, 10); // strip non-digits, cap at 10
+      let formatted = '';
+
+      if (digits.length === 0) {
+        formatted = '';
+      } else if (digits.length <= 3) {
+        formatted = `(${digits}`;
+      } else if (digits.length <= 6) {
+        formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+      } else {
+        formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+      }
+
+      input.value = formatted;
+    }
+
+document.querySelectorAll('input[type="tel"]').forEach(input => {
+  input.addEventListener('input', formatPhone);
+});
   </script>
 </body>
 
