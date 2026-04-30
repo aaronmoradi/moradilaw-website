@@ -1840,28 +1840,29 @@
         <div class="hero-panel-sub">We respond within 1 business hour · No obligation</div>
 
         <!-- Formspree example -->
-          <form id="heroForm"class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone"placeholder="(555) 555-5555" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
-            </div>
+        <form id="heroForm" class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
+          </div>
 
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-            </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
 
-            <button class="btn-submit" type="submit">Send Message</button>
-          </form>
-        <p id="heroSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">✅ Message sent! We'll be in touch shortly.</p>
+          <button class="btn-submit" type="submit">Send Message</button>
+        </form>
+        <p id="heroSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">✅ Message sent!
+          We'll be in touch shortly.</p>
       </div>
     </div>
   </section>
@@ -2302,14 +2303,15 @@
             <label for="email">Email Address</label>
             <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
-           <div class="form-group">
+          <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
 
           <button class="btn-submit" type="submit">Send Message</button>
         </form>
-        <p id="contactSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">✅ Message sent! We'll be in touch shortly.</p>
+        <p id="contactSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">✅ Message sent!
+          We'll be in touch shortly.</p>
       </div>
     </div>
   </section>
@@ -2458,43 +2460,48 @@
       revealObserver.observe(el);
     });
 
-    /* ── Formspree AJAX submission (both forms) ── */
-    async function handleFormSubmit(formEl, successId) {
-      const data = new FormData(formEl);
-      const submitBtn = formEl.querySelector('.btn-submit');
+    /* ── Formspree AJAX submission ── */
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const formEl = e.target;
+      const submitBtn = formEl.querySelector('button[type="submit"]'); // works regardless of class name
+      const formId = formEl.id;
+      const successId = formId === 'heroForm' ? 'heroSuccess' : 'contactSuccess';
+
+      // Button feedback
+      const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
 
       try {
         const response = await fetch(formEl.action, {
           method: 'POST',
-          body: data,
+          body: new FormData(formEl),
           headers: { 'Accept': 'application/json' }
         });
 
         if (response.ok) {
           formEl.reset();
-          document.getElementById(successId).style.display = 'block';
           submitBtn.textContent = '✅ Message Sent!';
+          const successEl = document.getElementById(successId);
+          if (successEl) successEl.style.display = 'block';
         } else {
-          submitBtn.textContent = 'Error — Please Try Again';
+          const json = await response.json();
+          console.error('Formspree error:', json);
+          submitBtn.textContent = originalText;
           submitBtn.disabled = false;
+          alert('Submission failed. Please call us at (818) 781-1579 or try again.');
         }
       } catch (err) {
-        submitBtn.textContent = 'Error — Please Try Again';
+        console.error('Network error:', err);
+        submitBtn.textContent = originalText;
         submitBtn.disabled = false;
+        alert('Network error. Please call us at (818) 781-1579 or try again.');
       }
     }
 
-    document.getElementById('heroForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      handleFormSubmit(this, 'heroSuccess');
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      handleFormSubmit(this, 'contactSuccess');
-    });
+    document.getElementById('heroForm').addEventListener('submit', handleFormSubmit);
+    document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
 
     /* ── Stagger children ── */
     document.querySelectorAll('.practice-grid, .stats-grid, .locations-inner').forEach(grid => {
@@ -2503,7 +2510,7 @@
       });
     });
 
-/* ── Phone number auto-formatter ── */
+    /* ── Phone number auto-formatter ── */
     function formatPhone(e) {
       let input = e.target;
       let digits = input.value.replace(/\D/g, '').slice(0, 10); // strip non-digits, cap at 10
@@ -2514,17 +2521,17 @@
       } else if (digits.length <= 3) {
         formatted = `(${digits}`;
       } else if (digits.length <= 6) {
-        formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+        formatted = `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
       } else {
-        formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+        formatted = `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
       }
 
       input.value = formatted;
     }
 
-document.querySelectorAll('input[type="tel"]').forEach(input => {
-  input.addEventListener('input', formatPhone);
-});
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+      input.addEventListener('input', formatPhone);
+    });
   </script>
 </body>
 
