@@ -16,6 +16,20 @@
     rel="stylesheet" />
   <link rel="icon" href="/assets/img/please.png" />
 
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'es,hy,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        multilanguagePage: true
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <style>
     /* ─── RESET & ROOT ─── */
     *,
@@ -72,7 +86,7 @@
       display: block;
     }
 
-    /* ─── LANGUAGE TOPBAR ─── */
+    /* ─── GOOGLE TRANSLATE TOPBAR ─── */
     .translate-bar {
       background: var(--champagne-pale);
       border-bottom: 1px solid var(--border);
@@ -132,14 +146,30 @@
       border-color: var(--burgundy);
     }
 
-    .lang-btn:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
+    /* Google Translate widget — hidden, kept functional */
+    #google_translate_element {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    .lang-btn:disabled:hover {
-      background: var(--white);
-      color: var(--burgundy);
+    .goog-logo-link,
+    .goog-te-gadget img,
+    .goog-te-gadget span {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      font-size: 0 !important;
+    }
+
+    .goog-te-gadget select {
+      font-size: 0 !important;
+      border: none;
+      outline: none;
     }
 
     /* ─── ANNOUNCEMENT BAR ─── */
@@ -1719,35 +1749,35 @@
       </div>
       <button class="mobile-close" onclick="closeMobileMenu()">&times;</button>
     </div>
-    <a href="#home" data-i18n="mobile.home">Home</a>
-    <a href="#practice" data-i18n="nav.practiceAreasPlain">Practice Areas</a>
-    <a href="#experience" data-i18n="mobile.experience">Experience &amp; Results</a>
-    <a href="#attorney" data-i18n="mobile.attorney">Attorney Leeora B. Moradi</a>
-    <a href="#about" data-i18n="mobile.about">About Us</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-    <a href="tel:8187811579" class="mobile-phone-btn" data-i18n="mobile.callBtn">📞 Call (818) 781-1579 — Free Consultation</a>
-    <a href="#contact" class="mobile-consult-btn" onclick="closeMobileMenu()" data-i18n="mobile.consultBtn">Get Free Case Review</a>
+    <a href="#home">Home</a>
+    <a href="#practice">Practice Areas</a>
+    <a href="#experience">Experience &amp; Results</a>
+    <a href="#attorney">Attorney Leeora B. Moradi</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:8187811579" class="mobile-phone-btn">📞 Call (818) 781-1579 — Free Consultation</a>
+    <a href="#contact" class="mobile-consult-btn" onclick="closeMobileMenu()">Get Free Case Review</a>
   </div>
 
-  <!-- ─── LANGUAGE BAR ─── -->
+  <!-- ─── TRANSLATE BAR ─── -->
   <div class="translate-bar">
-    <span class="translate-bar-left" data-i18n="translate.serving">🌐 Serving Los Angeles in multiple languages</span>
+    <span class="translate-bar-left">🌐 Serving Los Angeles in multiple languages</span>
     <div class="translate-bar-right">
-      <span class="lang-label" data-i18n="translate.label">Translate:</span>
+      <span class="lang-label">Translate:</span>
       <div class="lang-btns">
-        <button class="lang-btn active" id="langBtnEn" onclick="setLang('en', this)">English</button>
-        <button class="lang-btn" id="langBtnEs" onclick="setLang('es', this)">Español</button>
-        <button class="lang-btn" id="langBtnHy" onclick="setLang('hy', this)" title="Հայերեն — coming soon">Հայերեն</button>
+        <button class="lang-btn active" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('es')">Español</button>
+        <!--<button class="lang-btn" onclick="setLang('fa')">فارسی</button>-->
+        <button class="lang-btn" onclick="setLang('hy')">Հայերեն</button>
       </div>
+      <div id="google_translate_element"></div>
     </div>
   </div>
 
   <!-- ─── ANNOUNCEMENT BAR ─── -->
   <div class="announcement-bar">
-    <strong data-i18n="announce.title">Workers' Compensation Law</strong> &nbsp;·&nbsp;
-    <span data-i18n="announce.noFee">No Fee Unless We Win</span> &nbsp;·&nbsp;
-    <a href="tel:8187811579">(818) 781-1579</a> &nbsp;·&nbsp;
-    <span data-i18n="announce.freeConsult">Free Consultations — Call Now</span>
+    <strong>Workers' Compensation Law</strong> &nbsp;·&nbsp; No Fee Unless We Win &nbsp;·&nbsp;
+    <a href="tel:8187811579">(818) 781-1579</a> &nbsp;·&nbsp; Free Consultations — Call Now
   </div>
 
   <!-- ─── HEADER ─── -->
@@ -1760,30 +1790,30 @@
 
       <nav>
         <ul>
-          <li><a href="#home" data-i18n="mobile.home">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li>
-            <a href="#practice" data-i18n="nav.practiceAreas">Practice Areas ▾</a>
+            <a href="#practice">Practice Areas ▾</a>
             <ul class="dropdown">
-              <li><a href="#practice" data-i18n="nav.dropdown.workersComp">Workers' Compensation</a></li>
-              <li><a href="#practice" data-i18n="nav.dropdown.personalInjury">Personal Injury</a></li>
-              <li><a href="#practice" data-i18n="nav.dropdown.uninsuredEmployer">Defense of the Uninsured Employer</a></li>
-              <li><a href="#practice" data-i18n="nav.dropdown.subsequentInjuries">Subsequent Injuries Benefits Trust Fund</a></li>
+              <li><a href="#practice">Workers' Compensation</a></li>
+              <li><a href="#practice">Personal Injury</a></li>
+              <li><a href="#practice">Defense of the Uninsured Employer</a></li>
+              <li><a href="#practice">Subsequent Injuries Benefits Trust Fund</a></li>
             </ul>
           </li>
-          <li><a href="#experience" data-i18n="nav.results">Results</a></li>
-          <li><a href="#attorney" data-i18n="nav.attorney">Attorney</a></li>
-          <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="#experience">Results</a></li>
+          <li><a href="#attorney">Attorney</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-cta">
         <div class="header-phone">
           <a href="tel:8187811579">(818)-781-1579</a>
-          <span data-i18n="header.freeConsult">Free Consultation</span>
+          <span>Free Consultation</span>
         </div>
-        <a href="#contact" class="btn-cta-sm" data-i18n="header.getHelp">Get Help Now</a>
-        <a href="https://g.page/r/CaQzaKtAhQncEBM/review" target="_blank" rel="noopener noreferrer" class="btn-cta-google" data-i18n="header.writeReview">Write a Review!</a>
+        <a href="#contact" class="btn-cta-sm">Get Help Now</a>
+        <a href="https://g.page/r/CaQzaKtAhQncEBM/review" target="_blank" rel="noopener noreferrer" class="btn-cta-google">Write a Review!</a>
       </div>
       <div class="hamburger" onclick="openMobileMenu()">
         <span></span><span></span><span></span>
@@ -1796,11 +1826,9 @@
 
     <div class="hero-inner">
       <div class="hero-content">
-        <a href="#contact" class="btn-cta-sm" data-i18n="header.getHelp">Get Help Now</a>
-        <a href="https://g.page/r/CaQzaKtAhQncEBM/review" target="_blank" rel="noopener noreferrer" class="btn-cta-google" data-i18n="header.writeReview">Write a Review!</a>
-        <div class="hero-eyebrow" data-i18n="hero.eyebrow">Workers' Compensation Attorney · Van Nuys, CA</div>
-        <h1 data-i18n="hero.h1">Injured at Work?<br />Fight Back with <br><em>Moradi Law Group</em></h1>
-        <p class="hero-desc" data-i18n="hero.desc">
+        <div class="hero-eyebrow">Workers' Compensation Attorney · Van Nuys, CA</div>
+        <h1>Injured at Work?<br />Fight Back with <br><em>Moradi Law Group</em></h1>
+        <p class="hero-desc">
           When a workplace injury changes your life, you deserve an attorney who knows exactly
           how to fight for the compensation you're owed. Attorney Leeora B. Moradi has helped
           countless injured workers across Los Angeles recover medical benefits, lost wages,
@@ -1808,52 +1836,52 @@
         </p>
         <ul class="hero-bullets">
           <li>
-            <div class="bullet-check">✓</div> <span data-i18n="hero.bullet1">No fee unless we win — ever</span>
+            <div class="bullet-check">✓</div> No fee unless we win — ever
           </li>
           <li>
-            <div class="bullet-check">✓</div> <span data-i18n="hero.bullet2">Free confidential consultation</span>
+            <div class="bullet-check">✓</div> Free confidential consultation
           </li>
           <li>
-            <div class="bullet-check">✓</div> <span data-i18n="hero.bullet3">We handle denied and disputed claims</span>
+            <div class="bullet-check">✓</div> We handle denied and disputed claims
           </li>
           <li>
-            <div class="bullet-check">✓</div> <span>English · Español · فارسی · Հայերեն</span>
+            <div class="bullet-check">✓</div> English · Español · فارسی · Հայերեն
           </li>
         </ul>
         <div class="hero-btns">
-          <a href="tel:8187811579" class="btn-primary" data-i18n="hero.callBtn">📞 Call (818) 781-1579</a>
-          <a href="#contact" class="btn-ghost" data-i18n="hero.reviewBtn">Free Case Review</a>
+          <a href="tel:8187811579" class="btn-primary">📞 Call (818) 781-1579</a>
+          <a href="#contact" class="btn-ghost">Free Case Review</a>
         </div>
       </div>
 
       <!-- Hero Contact Form -->
       <div class="hero-panel" id="contact">
-        <div class="hero-panel-title" data-i18n="panel.title">Get Your Free Consultation</div>
-        <div class="hero-panel-sub" data-i18n="panel.sub">We aim to respond within 1 business hour · No obligation</div>
+        <div class="hero-panel-title">Get Your Free Consultation</div>
+        <div class="hero-panel-sub">We aim to respond within 1 business hour · No obligation</div>
 
         <!-- Formspree example -->
         <form id="heroForm" class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
           <div class="form-group">
-            <label for="name" data-i18n="form.name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" data-i18n-placeholder="form.namePh" required />
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
           </div>
           <div class="form-group">
-            <label for="phone" data-i18n="form.phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" data-i18n-placeholder="form.phonePh" required />
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
           </div>
           <div class="form-group">
-            <label for="email" data-i18n="form.email">Email Address</label>
-            <input type="email" id="email" name="_replyto" placeholder="your@email.com" data-i18n-placeholder="form.emailPh" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
 
           <div class="form-group">
-            <label for="message" data-i18n="form.message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." data-i18n-placeholder="form.messagePh" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
 
-          <button class="btn-submit" type="submit" data-i18n="form.submit">Send Message</button>
+          <button class="btn-submit" type="submit">Send Message</button>
         </form>
-        <p id="heroSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;" data-i18n="form.success">
+        <p id="heroSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">
           We'll be in touch shortly.</p>
       </div>
     </div>
@@ -1866,28 +1894,28 @@
         <div class="trust-icon">⚖️</div>
         <div class="trust-text">
           <strong>4.6★</strong>
-          <span data-i18n="trust.google">Google Reviews</span>
+          <span>Google Reviews</span>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">🏆</div>
         <div class="trust-text">
           <strong>$0</strong>
-          <span data-i18n="trust.upfront">Upfront Costs</span>
+          <span>Upfront Costs</span>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">📋</div>
         <div class="trust-text">
           <strong>100%</strong>
-          <span data-i18n="trust.focus">Workers' Comp Focused</span>
+          <span>Workers' Comp Focused</span>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">📞</div>
         <div class="trust-text">
           <strong>24/7</strong>
-          <span data-i18n="trust.working">Working For You!</span>
+          <span>Working For You!</span>
         </div>
       </div>
     </div>
@@ -1897,9 +1925,9 @@
   <section class="locations-section">
     <div style="text-align:center; margin-bottom:28px;">
       <p
-        style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--champagne); font-weight:700; margin-bottom:6px;"
-        data-i18n="loc.heading1">We Serve All Of</p>
-      <h2 style="font-family:var(--font-display); font-size:1.8rem; color:var(--white); font-weight:600;" data-i18n="loc.heading2">Los Angeles
+        style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--champagne); font-weight:700; margin-bottom:6px;">
+        We Serve All Of</p>
+      <h2 style="font-family:var(--font-display); font-size:1.8rem; color:var(--white); font-weight:600;">Los Angeles
         County &amp; Beyond</h2>
     </div>
     <div class="locations-inner">
@@ -1942,72 +1970,72 @@
   <section class="section about-section" id="about">
     <div class="section-inner about-grid">
       <div class="about-content">
-        <p class="section-tag dark" data-i18n="about.tag">About Moradi Law Group</p>
-        <h2 class="section-heading" data-i18n="about.heading">If We Don't Win,<br />You Don't Pay — Period.</h2>
+        <p class="section-tag dark">About Moradi Law Group</p>
+        <h2 class="section-heading">If We Don't Win,<br />You Don't Pay — Period.</h2>
         <div class="rule"></div>
 
-        <p data-i18n="about.p1">
+        <p>
           When you're injured on the job, your life can change in the blink of an eye.
           You could find yourself facing mounting medical bills, lost wages, and real physical
           limitations, all while your employer's insurance company works to minimize what
           you're owed. You shouldn't have to face any of that alone.
         </p>
-        <p data-i18n="about.p2">
+        <p>
           Moradi Law Group, APC can help you fight for the compensation you deserve. As a
           workers' compensation law firm based in Van Nuys, CA, we have helped countless
           clients recover the full benefits owed to them under California law.
         </p>
 
         <div class="attorney-highlight">
-          <p data-i18n="about.quote">"You can trust attorney Leeora B. Moradi to help you too. When your employer's
+          <p>"You can trust attorney Leeora B. Moradi to help you too. When your employer's
             insurance company is trying to deny or minimize your claim, you need someone in
             your corner who knows the system inside and out, and who fights for you."</p>
           <cite>— Moradi Law Group, APC</cite>
         </div>
 
-        <p data-i18n="about.p3">
+        <p>
           Call <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a> now
           to speak with a reputable workers' compensation attorney in Van Nuys about your legal matters.
           You can schedule a consultation right away.
         </p>
-        <a href="#about" class="btn-outline-burgundy" data-i18n="about.btn">Learn More About Our Firm</a>
+        <a href="#about" class="btn-outline-burgundy">Learn More About Our Firm</a>
       </div>
 
       <!-- Reviews -->
       <div class="reviews-col">
         <div class="google-badge">
           <span class="google-g">G</span>
-          <span data-i18n="reviews.badge">4.6 · Google Reviews · 300+ Verified Clients</span>
+          <span>4.6 · Google Reviews · 300+ Verified Clients</span>
         </div>
 
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="review1.text">"Outstanding service from start to finish! Attorney Moradi and her team fought
+          <p class="review-text">"Outstanding service from start to finish! Attorney Moradi and her team fought
             tirelessly for my workers' comp claim after I was injured on the job. I received every benefit I was
             entitled to."</p>
           <div class="review-footer">
             <div class="review-author">Rosa M.</div>
-            <div class="review-source" data-i18n="review.source">Google · Verified Client</div>
+            <div class="review-source">Google · Verified Client</div>
           </div>
         </div>
 
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="review2.text">"Not only is she completely personable but she knows her stuff. I felt confident and
+          <p class="review-text">"Not only is she completely personable but she knows her stuff. I felt confident and
             informed throughout my entire case. She got my claim approved after it was initially denied."</p>
           <div class="review-footer">
             <div class="review-author">David H.</div>
-            <div class="review-source" data-i18n="review.source">Google · Verified Client</div>
+            <div class="review-source">Google · Verified Client</div>
           </div>
         </div>
 
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text" data-i18n="review3.text">"God bless you and your family 🙏 Attorney Moradi helped me when no one else would. My
+          <p class="review-text">"God bless you and your family 🙏 Attorney Moradi helped me when no one else would. My
             employer's insurance company denied my claim twice before she stepped in and turned everything around."</p>
           <div class="review-footer">
             <div class="review-author">Elena V.</div>
-            <div class="review-source" data-i18n="review.source">Google · Verified Client</div>
+            <div class="review-source">Google · Verified Client</div>
           </div>
         </div>
       </div>
@@ -2019,19 +2047,19 @@
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-num">4.6★</div>
-        <div class="stat-label" data-i18n="stats.rating">Google Rating</div>
+        <div class="stat-label">Google Rating</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100%</div>
-        <div class="stat-label" data-i18n="stats.focus">Workers' Comp Focus</div>
+        <div class="stat-label">Workers' Comp Focus</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">$0</div>
-        <div class="stat-label" data-i18n="stats.fees">Upfront Legal Fees</div>
+        <div class="stat-label">Upfront Legal Fees</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">3</div>
-        <div class="stat-label" data-i18n="stats.languages">Languages Served</div>
+        <div class="stat-label">Languages Served</div>
       </div>
     </div>
   </section>
@@ -2041,11 +2069,11 @@
     <div class="section-inner">
       <div class="practice-header">
         <div>
-          <p class="section-tag dark" data-i18n="practice.tag">What We Handle</p>
-          <h2 class="section-heading" data-i18n="practice.heading">Workers' Compensation<br />Practice Areas</h2>
+          <p class="section-tag dark">What We Handle</p>
+          <h2 class="section-heading">Workers' Compensation<br />Practice Areas</h2>
           <div class="rule"></div>
         </div>
-        <a href="#contact" class="btn-primary" style="align-self:center;" data-i18n="header.freeConsult">Free Consultation</a>
+        <a href="#contact" class="btn-primary" style="align-self:center;">Free Consultation</a>
       </div>
 
       <div class="practice-grid">
@@ -2054,10 +2082,10 @@
             <div class="practice-icon">🏗️</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card1.title">Workplace Accidents</h3>
-            <p data-i18n="card1.desc">Slip and falls, equipment failures, construction site injuries — if it happened at work, you're entitled
+            <h3>Workplace Accidents</h3>
+            <p>Slip and falls, equipment failures, construction site injuries — if it happened at work, you're entitled
               to benefits regardless of fault.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
 
@@ -2066,10 +2094,10 @@
             <div class="practice-icon">📋</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card2.title">Denied Claims &amp; Appeals</h3>
-            <p data-i18n="card2.desc">A denied claim isn't the end. We specialize in overturning wrongful denials and winning at Workers'
+            <h3>Denied Claims &amp; Appeals</h3>
+            <p>A denied claim isn't the end. We specialize in overturning wrongful denials and winning at Workers'
               Compensation Appeals Board hearings.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
 
@@ -2078,10 +2106,10 @@
             <div class="practice-icon">🧠</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card3.title">Permanent Disability</h3>
-            <p data-i18n="card3.desc">If your injury results in a lasting impairment, you may qualify for permanent disability payments. We
+            <h3>Permanent Disability</h3>
+            <p>If your injury results in a lasting impairment, you may qualify for permanent disability payments. We
               fight for the full rating you deserve.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
 
@@ -2090,10 +2118,10 @@
             <div class="practice-icon">🏥</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card4.title">Medical Treatment Disputes</h3>
-            <p data-i18n="card4.desc">Insurance companies routinely deny or delay necessary medical care. We compel them to authorize the
+            <h3>Medical Treatment Disputes</h3>
+            <p>Insurance companies routinely deny or delay necessary medical care. We compel them to authorize the
               treatment your doctor has prescribed.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
 
@@ -2102,10 +2130,10 @@
             <div class="practice-icon">🔄</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card5.title">Repetitive Stress Injuries</h3>
-            <p data-i18n="card5.desc">Carpal tunnel, back injuries, and other conditions caused by repetitive work motions are fully
+            <h3>Repetitive Stress Injuries</h3>
+            <p>Carpal tunnel, back injuries, and other conditions caused by repetitive work motions are fully
               compensable under California workers' comp law.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
 
@@ -2114,10 +2142,10 @@
             <div class="practice-icon">⚖️</div>
           </div>
           <div class="practice-card-body">
-            <h3 data-i18n="card6.title">Employer Retaliation</h3>
-            <p data-i18n="card6.desc">It is illegal for employers to fire or punish you for filing a workers' comp claim. If this happened to
+            <h3>Employer Retaliation</h3>
+            <p>It is illegal for employers to fire or punish you for filing a workers' comp claim. If this happened to
               you, we can help you fight back.</p>
-            <span class="practice-card-link" data-i18n="practice.learnMore">Learn More</span>
+            <span class="practice-card-link">Learn More</span>
           </div>
         </div>
       </div>
@@ -2133,28 +2161,28 @@
         <div class="exp-frame"></div>
       </div>
       <div class="exp-content">
-        <p class="section-tag" data-i18n="exp.tag">Our Commitment</p>
-        <h2 class="section-heading white" data-i18n="exp.heading">Why Clients Choose<br />Moradi Law Group</h2>
+        <p class="section-tag">Our Commitment</p>
+        <h2 class="section-heading white">Why Clients Choose<br />Moradi Law Group!</h2>
         <div class="rule champagne"></div>
 
-        <p data-i18n="exp.p1">
+        <p>
           Workers' compensation cases are complex, time-sensitive, and often stacked in favor
           of insurance carriers and employers. Attorney Leeora B. Moradi has dedicated her
           practice entirely to this area of law, meaning when you hire Moradi Law Group, you get
           a specialist, not a generalist.
         </p>
-        <p data-i18n="exp.p2">
+        <p>
           We know how to investigate your claim, gather the medical evidence needed, navigate
           the Workers' Compensation Appeals Board, and force insurance companies to honor their
           obligations. Our clients consistently describe feeling genuinely cared for, not
           just another file.
         </p>
-        <p data-i18n="exp.p3">
+        <p>
           With bilingual staff in English, Spanish, and Farsi, we make sure every
           client is fully heard and informed at every stage of their case, from the first
           call through final settlement.
         </p>
-        <a href="#contact" class="btn-champagne" data-i18n="exp.btn">Schedule Your Free Consultation</a>
+        <a href="#contact" class="btn-champagne">Schedule Your Free Consultation</a>
       </div>
     </div>
   </section>
@@ -2174,36 +2202,36 @@
           </div>
           <div class="attorney-badge">
             <strong>20+ Yrs</strong>
-            <span data-i18n="attorney.badge2">Experience in<br />Workers' Comp Law</span>
+            <span>Experience in<br />Workers' Comp Law</span>
           </div>
         </div>
 
         <div class="attorney-info-wrap">
-          <p class="section-tag dark" style="margin-bottom:8px;" data-i18n="attorney.tag">Lead Attorney</p>
+          <p class="section-tag dark" style="margin-bottom:8px;">Lead Attorney</p>
           <div class="attorney-name">Leeora B. Moradi</div>
-          <div class="attorney-title" data-i18n="attorney.title">Founder &amp; Managing Attorney · Moradi Law Group, APC</div>
+          <div class="attorney-title">Founder &amp; Managing Attorney · Moradi Law Group, APC</div>
 
           <div class="attorney-credentials">
-            <span class="credential-tag" data-i18n="cred1">Workers' Compensation Specialist</span>
-            <span class="credential-tag" data-i18n="cred2">California State Bar</span>
-            <span class="credential-tag" data-i18n="cred3">Los Angeles County</span>
-            <span class="credential-tag" data-i18n="cred4">Bilingual Consultations</span>
+            <span class="credential-tag">Workers' Compensation Specialist</span>
+            <span class="credential-tag">California State Bar</span>
+            <span class="credential-tag">Los Angeles County</span>
+            <span class="credential-tag">Bilingual Consultations</span>
           </div>
 
           <div class="attorney-bio">
-            <p data-i18n="attorney.bio1">
+            <p>
               Attorney Leeora B. Moradi founded Moradi Law Group, APC with a clear purpose to give
               injured California workers the powerful legal representation they deserve. When employers
               and their insurance companies try to deny or minimize a legitimate claim, she fights back
               with skill, dedication, and genuine care for every client.
             </p>
-            <p data-i18n="attorney.bio2">
+            <p>
               Based in Van Nuys, Moradi Law Group serves the entire San Fernando Valley and greater
               Los Angeles area. Attorney Moradi is known among her clients not just for her legal
               expertise, but for her personal commitment to walking alongside them through one of the
               most difficult times of their lives.
             </p>
-            <p data-i18n="attorney.bio3">
+            <p>
               Clients describe her as "completely personable" and say she "knows her stuff", a
               combination that has earned the firm a 4.6 star rating across numerous Google reviews.
               Call <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a>
@@ -2213,7 +2241,7 @@
 
           <div class="attorney-contact">
             <a href="tel:8187811579" class="btn-primary">📞 (818) 781-1579</a>
-            <a href="#contact" class="btn-outline-burgundy" data-i18n="hero.reviewBtn">Free Case Review</a>
+            <a href="#contact" class="btn-outline-burgundy">Free Case Review</a>
           </div>
         </div>
       </div>
@@ -2224,17 +2252,17 @@
   <section class="section protect-section">
     <div class="section-inner protect-grid">
       <div class="protect-content">
-        <p class="section-tag dark" data-i18n="protect.tag">We're On Your Side</p>
-        <h2 class="section-heading" data-i18n="protect.heading">We Will Protect Your<br />Rights as a Worker.</h2>
+        <p class="section-tag dark">We're On Your Side</p>
+        <h2 class="section-heading">We Will Protect Your<br />Rights as a Worker.</h2>
         <div class="rule"></div>
 
-        <p data-i18n="protect.p1">
+        <p>
           At Moradi Law Group, APC, every client receives dedicated, personalized attention.
           We know what it's like to feel overwhelmed after a work injury, the medical bills,
           the missed work, the uncertainty. Our team handles every aspect of your case so
           you can focus on what matters most: healing.
         </p>
-        <p data-i18n="protect.p2">
+        <p>
           The insurance company has a team of lawyers. You deserve one too, and we work
           on a contingency fee basis, meaning you pay us absolutely nothing unless and until
           we win your case.
@@ -2242,67 +2270,67 @@
 
         <ul class="checklist">
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check1">Free confidential case review</span>
+            <div class="check-icon">✓</div> Free confidential case review
           </li>
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check2">No fee unless we win your case</span>
+            <div class="check-icon">✓</div> No fee unless we win your case
           </li>
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check3">We handle all insurance company communications</span>
+            <div class="check-icon">✓</div> We handle all insurance company communications
           </li>
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check4">We coordinate medical care and treatment approvals</span>
+            <div class="check-icon">✓</div> We coordinate medical care and treatment approvals
           </li>
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check5">Bilingual staff — English, Spanish, Farsi</span>
+            <div class="check-icon">✓</div> Bilingual staff — English, Spanish, Farsi
           </li>
           <li>
-            <div class="check-icon">✓</div> <span data-i18n="check6">Located in Van Nuys, serving all of LA County</span>
+            <div class="check-icon">✓</div> Located in Van Nuys, serving all of LA County
           </li>
         </ul>
 
         <div
           style="margin-top:24px; padding:18px 22px; background:var(--champagne-pale); border-radius:var(--radius); border:1px solid var(--border);">
-          <p style="font-size:0.82rem; font-weight:700; color:var(--charcoal); margin-bottom:4px;" data-i18n="office.title">📍 Office Location
+          <p style="font-size:0.82rem; font-weight:700; color:var(--charcoal); margin-bottom:4px;">📍 Office Location
           </p>
           <p style="font-size:0.85rem; color:var(--text-body); line-height:1.6;">
             14545 Victory Blvd #403<br />
             Van Nuys, CA 91411<br />
             <a href="tel:8187811579" style="color:var(--burgundy); font-weight:700;">(818) 781-1579</a>
           </p>
-          <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;" data-i18n="office.hours">Mon–Fri: 8:30 AM – 5:00 PM ·
+          <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;">Mon–Fri: 8:30 AM – 5:00 PM ·
             Consultations available by appointment</p>
         </div>
       </div>
 
       <!-- Secondary Contact Form -->
       <div class="contact-card">
-        <h3 data-i18n="panel.title">Get Your Free Consultation</h3>
-        <p data-i18n="contactCard.sub">Tell us what happened — we'll respond fast and keep everything confidential.</p>
+        <h3>Get Your Free Consultation</h3>
+        <p>Tell us what happened — we'll respond fast and keep everything confidential.</p>
 
         <form id="contactForm" class="contact-form" action="https://formspree.io/f/manpwgey" method="POST">
           <div class="form-group">
-            <label for="name" data-i18n="form.name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" data-i18n-placeholder="form.namePh" required />
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
           </div>
 
           <div class="form-group">
-            <label for="phone" data-i18n="form.phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" data-i18n-placeholder="form.phonePh" required />
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
           </div>
 
           <div class="form-group">
-            <label for="email" data-i18n="form.email">Email Address</label>
-            <input type="email" id="email" name="_replyto" placeholder="your@email.com" data-i18n-placeholder="form.emailPh" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required />
           </div>
           <div class="form-group">
-            <label for="message" data-i18n="form.message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." data-i18n-placeholder="form.messagePh" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
 
-          <button class="btn-submit" type="submit" data-i18n="form.submit">Send Message</button>
+          <button class="btn-submit" type="submit">Send Message</button>
         </form>
-        <p id="contactSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;" data-i18n="form.success">
+        <p id="contactSuccess" style="display:none; color:#a8d5a2; margin-top:10px; font-size:0.85rem;">
           We'll be in touch shortly.</p>
       </div>
     </div>
@@ -2317,7 +2345,7 @@
       <div class="footer-brand">
         <div class="f-logo-name">Moradi Law Group, APC</div>
         <span class="f-logo-tag">Leeora B. Moradi · Workers' Compensation · moradilaw.com</span>
-        <p class="f-desc" data-i18n="footer.desc">
+        <p class="f-desc">
           Moradi Law Group, APC is a dedicated workers' compensation law firm serving Van Nuys
           and all of Los Angeles County. Attorney Leeora B. Moradi fights for injured workers
           to recover the full medical, wage, and disability benefits they are owed under
@@ -2326,38 +2354,38 @@
         <div class="f-contact-item"><span class="f-icon">📞</span><a href="tel:8187811579">(818) 781-1579</a></div>
         <div class="f-contact-item"><span class="f-icon">📍</span><span>14545 Victory Blvd #403, Van Nuys, CA
             91411</span></div>
-        <div class="f-contact-item"><span class="f-icon">🕐</span><span data-i18n="footer.hours">Mon–Fri: 8:30 AM – 5:00 PM</span></div>
+        <div class="f-contact-item"><span class="f-icon">🕐</span><span>Mon–Fri: 8:30 AM – 5:00 PM</span></div>
         <div class="f-contact-item"><span class="f-icon">🌐</span><a href="https://moradilaw.com">moradilaw.com</a>
         </div>
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="footer.col1.title">Practice Areas</h4>
+        <h4>Practice Areas</h4>
         <ul>
-          <li><a href="#practice" data-i18n="nav.dropdown.workersComp">Workers' Compensation</a></li>
-          <li><a href="#practice" data-i18n="card1.title">Workplace Accidents</a></li>
-          <li><a href="#practice" data-i18n="card2.title">Denied Claims / Appeals</a></li>
-          <li><a href="#practice" data-i18n="card3.title">Permanent Disability</a></li>
-          <li><a href="#practice" data-i18n="footer.medicalDisputes">Medical Disputes</a></li>
-          <li><a href="#practice" data-i18n="card5.title">Repetitive Stress Injuries</a></li>
-          <li><a href="#practice" data-i18n="card6.title">Employer Retaliation</a></li>
+          <li><a href="#practice">Workers' Compensation</a></li>
+          <li><a href="#practice">Workplace Accidents</a></li>
+          <li><a href="#practice">Denied Claims / Appeals</a></li>
+          <li><a href="#practice">Permanent Disability</a></li>
+          <li><a href="#practice">Medical Disputes</a></li>
+          <li><a href="#practice">Repetitive Stress</a></li>
+          <li><a href="#practice">Employer Retaliation</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="footer.col2.title">Firm</h4>
+        <h4>Firm</h4>
         <ul>
-          <li><a href="#home" data-i18n="mobile.home">Home</a></li>
-          <li><a href="#attorney" data-i18n="footer.attorneyMoradi">Attorney Moradi</a></li>
-          <li><a href="#experience" data-i18n="footer.resultsReviews">Results &amp; Reviews</a></li>
-          <li><a href="#about" data-i18n="mobile.about">About Us</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-          <li><a href="#contact" data-i18n="header.freeConsult">Free Consultation</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#attorney">Attorney Moradi</a></li>
+          <li><a href="#experience">Results &amp; Reviews</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Free Consultation</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 data-i18n="footer.col3.title">Service Areas</h4>
+        <h4>Service Areas</h4>
         <ul>
           <li><a href="#contact">Van Nuys</a></li>
           <li><a href="#contact">Los Angeles</a></li>
@@ -2371,20 +2399,20 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-disclaimer" data-i18n="footer.disclaimer">
+      <p class="footer-disclaimer">
         This website is for informational purposes only and does not constitute legal advice.
         Visiting this site or contacting Moradi Law Group, APC does not create an attorney-client relationship.
         This site constitutes attorney advertising under the California Rules of Professional Conduct.
         Prior results do not guarantee a similar outcome. Moradi Law Group, APC is licensed to practice law in
         California.
       </p>
-      <p class="footer-copy" data-i18n="footer.copy">© 2026 Moradi Law Group, APC · Leeora B. Moradi, Attorney at Law · Van Nuys, CA ·
+      <p class="footer-copy">© 2026 Moradi Law Group, APC · Leeora B. Moradi, Attorney at Law · Van Nuys, CA ·
         moradilaw.com · All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- ─── FLOATING CALL CTA ─── -->
-  <a href="tel:8187811579" class="floating-cta" data-i18n="floating.call">
+  <a href="tel:8187811579" class="floating-cta">
     📞 Call (818) 781-1579
   </a>
 
@@ -2401,177 +2429,28 @@
     }
     document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
-    /* ── Custom translations (no Google Translate) ── */
-    const translations = {
-      es: {
-        "mobile.home": "Inicio",
-        "nav.practiceAreasPlain": "Áreas de Práctica",
-        "mobile.experience": "Resultados y Experiencia",
-        "mobile.attorney": "Abogada Leeora B. Moradi",
-        "mobile.about": "Sobre Nosotros",
-        "nav.contact": "Contacto",
-        "mobile.callBtn": "📞 Llame al (818) 781-1579 — Consulta Gratuita",
-        "mobile.consultBtn": "Obtenga una Evaluación Gratuita",
-        "translate.serving": "🌐 Sirviendo a Los Ángeles en múltiples idiomas",
-        "translate.label": "Traducir:",
-        "announce.title": "Ley de Compensación Laboral",
-        "announce.noFee": "Sin Honorarios a Menos que Ganemos",
-        "announce.freeConsult": "Consultas Gratuitas — Llame Ahora",
-        "nav.practiceAreas": "Áreas de Práctica ▾",
-        "nav.dropdown.workersComp": "Compensación Laboral",
-        "nav.dropdown.personalInjury": "Lesiones Personales",
-        "nav.dropdown.uninsuredEmployer": "Defensa del Empleador No Asegurado",
-        "nav.dropdown.subsequentInjuries": "Fondo Fiduciario de Beneficios por Lesiones Subsecuentes",
-        "nav.results": "Resultados",
-        "nav.attorney": "Abogada",
-        "nav.about": "Nosotros",
-        "header.freeConsult": "Consulta Gratuita",
-        "header.getHelp": "Obtenga Ayuda Ahora",
-        "header.writeReview": "¡Escriba una Reseña!",
-        "hero.eyebrow": "Abogada de Compensación Laboral · Van Nuys, CA",
-        "hero.h1": "¿Se Lesionó en el Trabajo?<br />Luche con <br><em>Moradi Law Group</em>",
-        "hero.desc": "Cuando una lesión laboral le cambia la vida, usted merece una abogada que sepa exactamente cómo luchar por la compensación que le corresponde. La abogada Leeora B. Moradi ha ayudado a innumerables trabajadores lesionados en todo Los Ángeles a recuperar beneficios médicos, salarios perdidos y compensación por discapacidad permanente.",
-        "hero.bullet1": "Sin honorarios a menos que ganemos — nunca",
-        "hero.bullet2": "Consulta confidencial gratuita",
-        "hero.bullet3": "Manejamos reclamos denegados y disputados",
-        "hero.callBtn": "📞 Llame al (818) 781-1579",
-        "hero.reviewBtn": "Evaluación Gratuita del Caso",
-        "panel.title": "Obtenga su Consulta Gratuita",
-        "panel.sub": "Nuestro objetivo es responder en 1 hora hábil · Sin obligación",
-        "form.name": "Nombre Completo",
-        "form.namePh": "Su nombre completo",
-        "form.phone": "Número de Teléfono",
-        "form.phonePh": "(555) 555-5555",
-        "form.email": "Correo Electrónico",
-        "form.emailPh": "su@correo.com",
-        "form.message": "Mensaje",
-        "form.messagePh": "Escriba su mensaje aquí...",
-        "form.submit": "Enviar Mensaje",
-        "form.success": "Nos pondremos en contacto pronto.",
-        "trust.google": "Reseñas de Google",
-        "trust.upfront": "Costos Iniciales",
-        "trust.focus": "Enfocados en Compensación Laboral",
-        "trust.working": "¡Trabajando Para Usted!",
-        "loc.heading1": "Servimos a Todo",
-        "loc.heading2": "El Condado de Los Ángeles y Más Allá",
-        "about.tag": "Sobre Moradi Law Group",
-        "about.heading": "Si No Ganamos,<br />Usted No Paga — Punto.",
-        "about.p1": "Cuando usted se lesiona en el trabajo, su vida puede cambiar en un instante. Podría enfrentarse a facturas médicas crecientes, salarios perdidos y limitaciones físicas reales, todo mientras la aseguradora de su empleador trabaja para minimizar lo que le corresponde. Usted no debería tener que enfrentar todo esto solo.",
-        "about.p2": "Moradi Law Group, APC puede ayudarle a luchar por la compensación que merece. Como bufete de compensación laboral con sede en Van Nuys, CA, hemos ayudado a innumerables clientes a recuperar todos los beneficios que les corresponden bajo la ley de California.",
-        "about.quote": "\"Usted también puede confiar en la abogada Leeora B. Moradi para ayudarle. Cuando la aseguradora de su empleador intenta negar o minimizar su reclamo, necesita a alguien de su lado que conozca el sistema a fondo y que luche por usted.\"",
-        "about.p3": "Llame al <a href=\"tel:8187811579\" style=\"color:var(--burgundy); font-weight:700;\">(818) 781-1579</a> ahora para hablar con una reconocida abogada de compensación laboral en Van Nuys sobre su caso. Puede programar una consulta de inmediato.",
-        "about.btn": "Conozca Más Sobre Nuestra Firma",
-        "reviews.badge": "4.6 · Reseñas de Google · Más de 300 Clientes Verificados",
-        "review1.text": "\"¡Servicio excepcional de principio a fin! La abogada Moradi y su equipo lucharon incansablemente por mi reclamo de compensación laboral después de lesionarme en el trabajo. Recibí todos los beneficios a los que tenía derecho.\"",
-        "review2.text": "\"No solo es completamente accesible, sino que sabe lo que hace. Me sentí segura e informada durante todo mi caso. Logró que aprobaran mi reclamo después de que inicialmente fue denegado.\"",
-        "review3.text": "\"Dios la bendiga a usted y a su familia 🙏 La abogada Moradi me ayudó cuando nadie más lo hizo. La aseguradora de mi empleador negó mi reclamo dos veces antes de que ella interviniera y cambiara todo por completo.\"",
-        "review.source": "Google · Cliente Verificado",
-        "stats.rating": "Calificación de Google",
-        "stats.focus": "Enfoque en Compensación Laboral",
-        "stats.fees": "Honorarios Legales Iniciales",
-        "stats.languages": "Idiomas Atendidos",
-        "practice.tag": "Lo Que Manejamos",
-        "practice.heading": "Áreas de Práctica de<br />Compensación Laboral",
-        "practice.learnMore": "Más Información",
-        "card1.title": "Accidentes Laborales",
-        "card1.desc": "Resbalones y caídas, fallas de equipo, lesiones en obras de construcción — si ocurrió en el trabajo, usted tiene derecho a beneficios sin importar la culpa.",
-        "card2.title": "Reclamos Denegados y Apelaciones",
-        "card2.desc": "Un reclamo denegado no es el final. Nos especializamos en revertir denegaciones injustas y ganar en las audiencias de la Junta de Apelaciones de Compensación Laboral.",
-        "card3.title": "Discapacidad Permanente",
-        "card3.desc": "Si su lesión resulta en una discapacidad duradera, puede calificar para pagos por discapacidad permanente. Luchamos por la calificación completa que usted merece.",
-        "card4.title": "Disputas de Tratamiento Médico",
-        "card4.desc": "Las aseguradoras suelen negar o retrasar la atención médica necesaria. Las obligamos a autorizar el tratamiento que su médico ha recetado.",
-        "card5.title": "Lesiones por Esfuerzo Repetitivo",
-        "card5.desc": "El túnel carpiano, las lesiones de espalda y otras condiciones causadas por movimientos laborales repetitivos son totalmente compensables bajo la ley de compensación laboral de California.",
-        "card6.title": "Represalias del Empleador",
-        "card6.desc": "Es ilegal que los empleadores despidan o castiguen a un trabajador por presentar un reclamo de compensación laboral. Si esto le sucedió, podemos ayudarle a defenderse.",
-        "exp.tag": "Nuestro Compromiso",
-        "exp.heading": "Por Qué Los Clientes Eligen<br />Moradi Law Group",
-        "exp.p1": "Los casos de compensación laboral son complejos, sensibles al tiempo y a menudo están inclinados a favor de las aseguradoras y los empleadores. La abogada Leeora B. Moradi ha dedicado su práctica por completo a esta área del derecho, lo que significa que al contratar a Moradi Law Group, usted obtiene una especialista, no una generalista.",
-        "exp.p2": "Sabemos cómo investigar su reclamo, reunir la evidencia médica necesaria, navegar la Junta de Apelaciones de Compensación Laboral y obligar a las aseguradoras a cumplir con sus obligaciones. Nuestros clientes describen constantemente sentirse genuinamente atendidos, no solo otro expediente.",
-        "exp.p3": "Con personal bilingüe en inglés, español y farsi, nos aseguramos de que cada cliente sea completamente escuchado e informado en cada etapa de su caso, desde la primera llamada hasta el acuerdo final.",
-        "exp.btn": "Programe su Consulta Gratuita",
-        "attorney.tag": "Abogada Principal",
-        "attorney.title": "Fundadora y Abogada Directora · Moradi Law Group, APC",
-        "attorney.badge2": "Experiencia en<br />Derecho Laboral",
-        "cred1": "Especialista en Compensación Laboral",
-        "cred2": "Colegio de Abogados de California",
-        "cred3": "Condado de Los Ángeles",
-        "cred4": "Consultas Bilingües",
-        "attorney.bio1": "La abogada Leeora B. Moradi fundó Moradi Law Group, APC con un propósito claro: brindar a los trabajadores lesionados de California la sólida representación legal que merecen. Cuando los empleadores y sus aseguradoras intentan negar o minimizar un reclamo legítimo, ella responde con habilidad, dedicación y un cuidado genuino por cada cliente.",
-        "attorney.bio2": "Con sede en Van Nuys, Moradi Law Group atiende a todo el Valle de San Fernando y el área metropolitana de Los Ángeles. La abogada Moradi es conocida entre sus clientes no solo por su experiencia legal, sino por su compromiso personal de acompañarlos durante uno de los momentos más difíciles de sus vidas.",
-        "attorney.bio3": "Los clientes la describen como \"completamente accesible\" y dicen que \"sabe lo que hace\", una combinación que le ha valido al bufete una calificación de 4.6 estrellas en numerosas reseñas de Google. Llame al <a href=\"tel:8187811579\" style=\"color:var(--burgundy); font-weight:700;\">(818) 781-1579</a> para hablar con la abogada Moradi.",
-        "protect.tag": "Estamos de Su Lado",
-        "protect.heading": "Protegeremos Sus<br />Derechos como Trabajador.",
-        "protect.p1": "En Moradi Law Group, APC, cada cliente recibe atención dedicada y personalizada. Sabemos lo abrumador que puede ser sentirse tras una lesión laboral: las facturas médicas, el trabajo perdido, la incertidumbre. Nuestro equipo maneja cada aspecto de su caso para que usted pueda concentrarse en lo más importante: sanar.",
-        "protect.p2": "La aseguradora tiene un equipo de abogados. Usted también merece uno, y trabajamos bajo un esquema de honorarios de contingencia, lo que significa que no nos paga absolutamente nada a menos que ganemos su caso.",
-        "check1": "Evaluación confidencial gratuita del caso",
-        "check2": "Sin honorarios a menos que ganemos su caso",
-        "check3": "Manejamos toda la comunicación con la aseguradora",
-        "check4": "Coordinamos la atención médica y las aprobaciones de tratamiento",
-        "check5": "Personal bilingüe — inglés, español, farsi",
-        "check6": "Ubicados en Van Nuys, atendiendo a todo el condado de LA",
-        "office.title": "📍 Ubicación de la Oficina",
-        "office.hours": "Lun–Vie: 8:30 AM – 5:00 PM · Consultas disponibles con cita previa",
-        "contactCard.sub": "Cuéntenos qué sucedió — responderemos rápido y mantendremos todo confidencial.",
-        "footer.desc": "Moradi Law Group, APC es un bufete dedicado a la compensación laboral que atiende a Van Nuys y a todo el condado de Los Ángeles. La abogada Leeora B. Moradi lucha para que los trabajadores lesionados recuperen todos los beneficios médicos, salariales y por discapacidad que les corresponden bajo la ley de California.",
-        "footer.hours": "Lun–Vie: 8:30 AM – 5:00 PM",
-        "footer.col1.title": "Áreas de Práctica",
-        "footer.medicalDisputes": "Disputas Médicas",
-        "footer.col2.title": "Firma",
-        "footer.attorneyMoradi": "Abogada Moradi",
-        "footer.resultsReviews": "Resultados y Reseñas",
-        "footer.col3.title": "Áreas de Servicio",
-        "footer.disclaimer": "Este sitio web es solo para fines informativos y no constituye asesoría legal. Visitar este sitio o comunicarse con Moradi Law Group, APC no crea una relación abogado-cliente. Este sitio constituye publicidad de abogados conforme a las Reglas de Conducta Profesional de California. Los resultados anteriores no garantizan un resultado similar. Moradi Law Group, APC está autorizada para ejercer la abogacía en California.",
-        "footer.copy": "© 2026 Moradi Law Group, APC · Leeora B. Moradi, Abogada · Van Nuys, CA · moradilaw.com · Todos los Derechos Reservados.",
-        "floating.call": "📞 Llame al (818) 781-1579"
-      }
-    };
-
-    let currentLang = 'en';
-
-    function applyLanguage(lang) {
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (el.dataset.enCache === undefined) {
-          el.dataset.enCache = el.innerHTML;
-        }
-        if (lang === 'es' && translations.es[key]) {
-          el.innerHTML = translations.es[key];
-        } else {
-          el.innerHTML = el.dataset.enCache;
-        }
-      });
-
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (el.dataset.enPh === undefined) {
-          el.dataset.enPh = el.placeholder;
-        }
-        if (lang === 'es' && translations.es[key]) {
-          el.placeholder = translations.es[key];
-        } else {
-          el.placeholder = el.dataset.enPh;
-        }
-      });
-
-      currentLang = lang;
-    }
-
-    /* ── Language switcher buttons ── */
-    function setLang(langCode, btnEl) {
-      if (langCode === 'hy') {
-        // Armenian translation not yet available without Google Translate.
-        alert('Հայերեն translation is coming soon. Please check back shortly, or call (818) 781-1579 for assistance in Armenian.');
-        return;
-      }
-
+    /* ── Language switcher (quick buttons trigger Google Translate) ── */
+    function setLang(langCode) {
+      // Update active state
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      btnEl.classList.add('active');
+      event.target.classList.add('active');
 
-      applyLanguage(langCode);
+      // Trigger Google Translate
+      var selectEl = document.querySelector('.goog-te-combo');
+      if (selectEl) {
+        selectEl.value = langCode;
+        selectEl.dispatchEvent(new Event('change'));
+      } else {
+        // Fallback: reload with Google Translate hash
+        var currentUrl = window.location.href.split('#')[0];
+        if (langCode !== 'en') {
+          document.cookie = 'googtrans=/en/' + langCode + '; path=/';
+          location.reload();
+        } else {
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+          location.reload();
+        }
+      }
     }
 
     /* ── Sticky header scroll enhancement ── */
@@ -2611,7 +2490,7 @@
 
       // Button feedback
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
+      submitBtn.textContent = 'Sending…';
       submitBtn.disabled = true;
 
       try {
@@ -2623,7 +2502,7 @@
 
         if (response.ok) {
           formEl.reset();
-          submitBtn.textContent = currentLang === 'es' ? '✅ ¡Mensaje Enviado!' : '✅ Message Sent!';
+          submitBtn.textContent = '✅ Message Sent!';
           const successEl = document.getElementById(successId);
           if (successEl) successEl.style.display = 'block';
         } else {
@@ -2631,17 +2510,13 @@
           console.error('Formspree error:', json);
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
-          alert(currentLang === 'es'
-            ? 'El envío falló. Por favor llame al (818) 781-1579 o intente de nuevo.'
-            : 'Submission failed. Please call us at (818) 781-1579 or try again.');
+          alert('Submission failed. Please call us at (818) 781-1579 or try again.');
         }
       } catch (err) {
         console.error('Network error:', err);
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        alert(currentLang === 'es'
-          ? 'Error de red. Por favor llame al (818) 781-1579 o intente de nuevo.'
-          : 'Network error. Please call us at (818) 781-1579 or try again.');
+        alert('Network error. Please call us at (818) 781-1579 or try again.');
       }
     }
 
